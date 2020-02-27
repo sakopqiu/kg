@@ -1,0 +1,32 @@
+@use '../../../themes/tm';
+
+.searchable-tree {
+  height: 100%;
+  overflow-y: auto;
+  padding: 10px;
+  position: relative;
+
+  @include tm.themeify {
+    background: tm.themed('component-background');
+    border: 1px solid tm.themed('border-color');
+  }
+
+  .select-all-checkbox {
+    margin-top: 17px;
+    position: relative;
+
+    .ant-checkbox {
+      margin-right: 8px;
+    }
+  }
+
+  .ant-tree {
+    margin-left: -8px;// marginLeft是为了去除多余空白
+    &.no-folder {
+      margin-left: -2px;// marginLeft是为了去除多余空白
+      li span.ant-tree-switcher-noop {
+        display: none; // 显示为none是为了去除多余空白
+      }
+    }
+  }
+}

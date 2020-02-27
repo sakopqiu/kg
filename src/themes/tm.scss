@@ -1,0 +1,24 @@
+/*
+  该文件定义了实现主题切换的scss mixin
+ */
+@use 'tms/default.scss';
+@use 'tms/dark.scss';
+
+$themes: (
+  default: default.$theme,
+  dark: dark.$theme,
+);
+
+@mixin themeify {
+  @each $theme-name, $theme-map in $themes {
+    $theme-map: $theme-map !global;
+
+    @at-root body[data-theme=#{$theme-name}] #{&} {
+      @content;
+    }
+  }
+}
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}

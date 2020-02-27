@@ -1,0 +1,11 @@
+@use '../../../../../../themes/tm';
+
+.attribute-filter {
+  .sophon-search {
+    margin-bottom: 12px;
+
+    @include tm.themeify {
+      background-color: tm.themed('component-background');
+    }
+  }
+}

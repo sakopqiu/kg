@@ -1,0 +1,32 @@
+.sophon-search-div {
+  margin-bottom: 8px;
+  position: relative;
+
+  .sophon-search {
+    border-radius: 2px;
+    border-style: hidden;
+    display: block;
+    height: 32px;
+    outline: none;
+    padding: 0 30px;
+    width: 100%;
+  }
+
+  .sophon-search-icon {
+    font-size: 16px;
+    left: 8px;
+    position: absolute;
+    top: 9px;
+  }
+
+  .sophon-search-clear {
+    align-items: center;
+    bottom: 0;
+    cursor: pointer;
+    display: flex;
+    font-size: 12px;
+    position: absolute;
+    right: 8px;
+    top: 0;
+  }
+}

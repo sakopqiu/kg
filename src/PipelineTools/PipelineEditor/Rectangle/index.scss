@@ -1,0 +1,78 @@
+@use '../../common/common.scss';
+@use '../svg.scss';
+@use '../../../themes/tm';
+
+.widget-rectangle-wrapper {
+  cursor: move;
+  will-change: transform;
+
+  @include tm.themeify {
+    color: tm.themed('text-color');
+  }
+
+  .pipeline-text {
+    @include tm.themeify {
+      color: tm.themed('text-color');
+    }
+  }
+
+  .widget-rectangle {
+    @extend .widget-common;
+
+    stroke-width: 1px;
+
+    @include tm.themeify {
+      fill: tm.themed('pipeline-widget-rectangle-background');
+      stroke: tm.themed('pipeline-canvas-common-color');
+    }
+
+    &.error {
+      animation: candidate 5s linear backwards infinite;
+      stroke-dasharray: 5;
+      stroke-width: 3px;
+
+      @include tm.themeify {
+        stroke: tm.themed('error-color');
+      }
+    }
+  }
+
+  .inport {
+    cursor: pointer;
+    fill: #848BAF;
+
+    .big-icon {
+      fill: white;
+    }
+  }
+
+  .outport {
+    cursor: pointer;
+    fill: #848BAF;
+  }
+
+  .pending-upside-down,
+  .running-icon {
+    background: white;
+    border-radius: 50%;
+    position: fixed;
+  }
+}
+
+@keyframes upsidedown {
+  0% {
+    transform: rotate(0);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
+}
+
+//.pending-upside-down {
+//  animation: upsidedown 2s ease-out forwards infinite;
+//}

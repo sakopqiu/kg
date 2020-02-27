@@ -1,0 +1,93 @@
+@use '../../global.scss';
+@use '../../themes/tm';
+
+@mixin sophon-context-menu-item {
+  cursor: pointer;
+  font-size: 12px !important;
+  height: 24px !important;
+  line-height: 24px !important;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  padding-left: 20px;
+  user-select: none;
+}
+
+@mixin context-menu-wrapper {
+  @include global.common-box-shadow;
+
+  border-radius: 5px;
+  position: fixed;
+  z-index: global.$medium_z_index + 1;
+
+  @include tm.themeify {
+    background: tm.themed('component-background');
+    box-shadow: tm.themed('shadow1');
+  }
+}
+
+// 编辑模式和展现模式共同的上下文菜单样式
+@mixin sophon-context-menu {
+  .ant-menu-submenu {
+    &.hide {
+      display: none;
+    }
+
+    &.ant-menu-submenu-open {
+      @include tm.themeify {
+        background: tm.themed('component-background');
+      }
+    }
+
+    .ant-menu-submenu-title {
+      @include sophon-context-menu-item;
+
+      .ant-menu-submenu-arrow {
+        top: 40% !important;
+      }
+    }
+  }
+
+  .ant-menu-item {
+    @include sophon-context-menu-item;
+
+    &.hide {
+      display: none;
+    }
+
+    &.horizontal-separator-line {
+      height: 1px !important;
+      margin: 12px 0;
+      padding: 0;
+      width: 100%;
+
+      @include tm.themeify {
+        background-color: tm.themed('border-color_light');
+      }
+    }
+
+    &.with-description {
+      height: 50px !important;
+
+      .menu-item-description {
+        margin-top: 10px;
+
+        @include tm.themeify {
+          color: tm.themed('text-color_tip');
+        }
+      }
+    }
+  }
+}
+
+// kg中社群，节点类型，边类型的menu
+@mixin canvas-attribute-menu {
+  .ant-popover-inner-content {
+    padding: 5px;
+
+    .ant-menu {
+      @include sophon-context-menu;
+      // 导出菜单清除默认的右border
+      border-right: 0;
+    }
+  }
+}

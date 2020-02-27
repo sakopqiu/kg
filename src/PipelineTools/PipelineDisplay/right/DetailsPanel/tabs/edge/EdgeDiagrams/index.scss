@@ -1,0 +1,90 @@
+@use '../../../../../../../global.scss';
+@use '../../../../../../../themes/tm';
+
+.edge-diagram-wrapper {
+  cursor: pointer;
+  display: flex;
+  font-family: global.$global-font-family-medium;
+  font-size: 12px;
+  margin-top: 20px;
+
+  @include tm.themeify {
+    color: tm.themed('text-color');
+  }
+
+  .start,
+  .end {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 56px;
+  }
+
+  .end {
+    text-align: right;
+  }
+
+  .edge {
+    $commonColor: #D4D4D4;
+
+    align-items: center;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 6px;
+    position: relative;
+    top: -7px;
+
+    @include tm.themeify {
+      $commonColor: tm.themed('layout-background');
+    }
+
+    .edge-arrow {
+      background-color: $commonColor;
+      height: 1px;
+      position: relative;
+      width: 100%;
+
+      &::after {
+        background-color: $commonColor;
+        border-left: 8px solid $commonColor;
+        content: '';
+        height: 0;
+        position: absolute;
+        right: 0;
+        transform: translateY(-3.5px);
+        width: 0;
+
+        @include tm.themeify {
+          border-bottom: 4px solid tm.themed('border-color');
+          border-top: 4px solid tm.themed('border-color');
+        }
+      }
+    }
+
+    .edge-label {
+      overflow: hidden;
+      text-align: center;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 80px;
+
+      @include tm.themeify {
+        color: tm.themed('active-color');
+      }
+    }
+  }
+}
+
+.edge-diagram-tooltip {
+  border-radius: 2px;
+  box-shadow: 0 3px 12px 0 rgba(14, 34, 68, 0.06);
+  display: flex;
+  flex-direction: column;
+  opacity: 0.8;
+
+  @include tm.themeify {
+    background: tm.themed('text-color_enhance');
+  }
+}

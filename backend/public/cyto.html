@@ -1,0 +1,16 @@
+<html>
+<title>cyto generator</title>
+<body>
+<div id="cyto-container"></div>
+<script>
+    function render(config) {
+        // config.headless = false;
+        // config.layout.fit = false;
+        config.container = document.getElementById('cyto-container');
+        var cy = cytoscape(config);
+        console.log(JSON.stringify(cy.json()));
+        cy.destroy();
+    }
+</script>
+</body>
+</html>

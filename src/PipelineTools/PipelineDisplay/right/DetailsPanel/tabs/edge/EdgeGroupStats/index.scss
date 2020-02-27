@@ -1,0 +1,145 @@
+@use '../../../../../../../global.scss';
+@use '../../../../../../../themes/tm';
+
+.edge-group-stats {
+  margin-top: 12px;
+  padding: 10px;
+  width: 100%;
+
+  @include tm.themeify {
+    background: tm.themed('component-background');
+  }
+
+  .stats-indicator {
+    align-items: center;
+    display: flex;
+    margin-bottom: 10px;
+    font: {
+      family: global.$global-font-family;
+      size: 12px;
+    }
+
+    &-title {
+      margin-right: 10px;
+
+      @include tm.themeify {
+        color: tm.themed('text-color');
+      }
+    }
+
+    .main-selector {
+      flex: 1;
+    }
+
+    .advanced-statistics {
+      cursor: pointer;
+      margin-left: 10px;
+
+      @include tm.themeify {
+        color: tm.themed('active-color');
+      }
+    }
+  }
+
+  .edge-group-stats-rows {
+    border-radius: 2px;
+
+    @include tm.themeify {
+      border: 1px solid tm.themed('border-color');
+    }
+
+    &-first {
+      font-size: 14px;
+      padding: 10px;
+
+      @include tm.themeify {
+        background: tm.themed('layout-background');
+        border-bottom: 1px solid tm.themed('border-color');
+        color: tm.themed('text-color');
+      }
+
+      span:nth-child(2) {
+        margin-left: 10px;
+
+        @include tm.themeify {
+          color: tm.themed('active-color');
+        }
+      }
+    }
+
+    &-second {
+      @include tm.themeify {
+        color: tm.themed('text-color_enhance');
+      }
+
+      .ant-col {
+        padding: 12px 10px;
+
+        &:last-child {
+          border-left: 1px solid #DCE3EE;
+        }
+      }
+
+      font: {
+        family: global.$global-font-family-bold;
+        size: 14px;
+      }
+    }
+  }
+
+  .indicator-row {
+    display: flex;
+
+    .ant-col {
+      align-items: center;
+      display: flex;
+      padding: 12px 10px;
+
+      @include tm.themeify {
+        color: tm.themed('text-color_enhance');
+      }
+      font: {
+        family: global.$global-font-family-medium;
+        size: 12px;
+      }
+
+      &.left-col {
+        justify-content: space-between;
+
+        .sophon-ellipse-text {
+          transform: translateX(-1.5px) scale(0.875);
+        }
+
+        .ant-select-selection-selected-value {
+          font-size: 12px;
+          transform: translateX(-1.5px) scale(0.875);
+        }
+      }
+
+      &.right-col {
+        justify-content: center;
+
+        @include tm.themeify {
+          border-left: 1px solid tm.themed('border-color');
+        }
+      }
+    }
+
+    &:nth-child(2n) {
+      @include tm.themeify {
+        background: tm.themed('layout-background');
+      }
+    }
+
+    &:nth-child(2n + 1) {
+      @include tm.themeify {
+        background: tm.themed('component-background');
+      }
+    }
+  }
+}
+
+.inner-selector {
+  padding-left: 5px;
+  width: 100px;
+}

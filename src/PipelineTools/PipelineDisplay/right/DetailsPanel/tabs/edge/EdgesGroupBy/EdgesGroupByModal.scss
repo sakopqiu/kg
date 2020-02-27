@@ -1,0 +1,42 @@
+@use '../../../../../../../global.scss';
+@use '../../../../../../../themes/tm';
+
+.advanced-statistics-modal {
+  @include tm.themeify {
+    color: tm.themed('text-color_enhance');
+  }
+
+  .label-header {
+    font-family: global.$global-font-family-medium;
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+
+  .ant-select {
+    width: 122px;
+
+    .ant-select-selection-selected-value {
+      font-size: 12px;
+      transform: translateX(-1.5px) scale(0.875);
+    }
+  }
+
+  .group-by-area {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .group-by-table {
+    margin-top: 20px;
+
+    table {
+      table-layout: fixed;
+
+      tbody > tr > td {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@use '../../../../../global.scss';
+@use '../../../../../themes/tm';
+
+.description-text-editor {
+  border: 1px dashed #4D5850;
+  display: inline-block;
+  font-size: 20px;
+  outline: none;
+  padding: 8px;
+  position: fixed;
+  z-index: global.$max_z_index;
+
+  @include tm.themeify {
+    color: tm.themed('error-color');
+  }
+  //font-weight: 700;
+}

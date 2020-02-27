@@ -1,0 +1,30 @@
+@use '../../../global';
+@use '../../../themes/tm';
+
+.canvas-background {
+  font-family: global.$global-font-family;
+  height: calc(100% - 82px);
+  overflow: hidden;
+
+  @include tm.themeify {
+    background: tm.themed('component-background');
+  }
+
+  #complex-cyto-container {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.simple-canvas-background,
+.universal-canvas-background {
+  .sophon-minimap-wrapper {
+    bottom: 0;
+  }
+
+  #simple-cyto-container,
+  #universal-cyto-container {
+    height: 100%;
+    width: 100%;
+  }
+}

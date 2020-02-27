@@ -1,0 +1,46 @@
+@use '../../../../../../global.scss';
+@use '../../../../../../themes/tm';
+
+.stats-wrapper {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+
+  .stats-progress-wrapper {
+    height: 25px;
+
+    @include tm.themeify {
+      background-color: tm.themed('layout-background');
+    }
+
+    .stats-progress {
+      display: inline-block;
+      font-family: global.$global-font-family-medium;
+      font-size: 10px;
+      height: 100%;
+      line-height: 25px;
+      padding-left: 8px;
+      padding-right: 8px;
+      white-space: nowrap;
+
+      @include tm.themeify {
+        background: tm.themed('active-color');
+        color: tm.themed('text-color');
+      }
+
+      &.translucent {
+        opacity: 0.5;
+      }
+    }
+
+    .stats-count {
+      font-size: 14px;
+      font-weight: bold;
+
+      @include tm.themeify {
+        color: tm.themed('active-color');
+      }
+    }
+  }
+}

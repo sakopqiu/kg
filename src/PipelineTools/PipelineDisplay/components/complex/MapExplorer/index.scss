@@ -1,0 +1,20 @@
+@use '../../../../../global.scss';
+@use '../../../../../themes/tm';
+@use '../../../../common/common.scss';
+@use '../../../../../components/SophonWordTabContainer/index' as SophonWordTabContainer;
+
+$diffTop: SophonWordTabContainer.$word-tabs-total-height  - 2;
+$collapsed-diffTop: SophonWordTabContainer.$word-tabs-height - 2;
+
+.map-wrapper {
+  height: calc(100% - #{$collapsed-diffTop});
+  left: 0;
+  position: absolute;
+  top: $collapsed-diffTop;
+  width: 100%;
+  z-index: global.$max_z_index;
+
+  @include tm.themeify {
+    background-color: tm.themed('component-background');
+  }
+}

@@ -1,0 +1,46 @@
+.rule-guard {
+  align-items: center;
+  display: flex;
+  height: 12px;
+  left: 0;
+  position: absolute;
+  width: calc(100% - 21px);
+
+  &.upper {
+    top: -12px;
+  }
+
+  &.lower {
+    bottom: -12px;
+  }
+
+  &.first-child {
+    bottom: 0;
+    left: 15px;
+  }
+
+  .center-line {
+    background: #549BE7;
+    height: 2px;
+    left: 8px;
+    position: relative;
+    visibility: hidden;
+    width: calc(100% - 8px);
+
+    &.visible {
+      visibility: visible;
+    }
+
+    &::before {
+      border: 2px solid #549BE7;
+      border-radius: 50%;
+      content: '';
+      height: 8px;
+      left: -8px;
+      position: absolute;
+      top: -3px;
+      width: 8px;
+      z-index: 9;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+@use '../../../../../../global.scss';
+@use '../../../../../../themes/tm';
+
+.detail-panel-separator {
+  height: 1px;
+  left: -15px;
+  position: relative;
+  width: calc(100% + 30px);
+
+  @include tm.themeify {
+    background-color: tm.themed('border-color');
+  }
+}

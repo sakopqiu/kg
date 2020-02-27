@@ -1,0 +1,23 @@
+.icon-select-pop-wrapper {
+  .ant-cascader-menu-item {
+    .icon-image-wrapper {
+      display: inline-block;
+      text-align: center;
+      width: 100%;
+    }
+  }
+}
+
+.icon-select-wrapper {
+  width: 100%;
+
+  .display-category {
+    margin-left: 8px;
+  }
+
+  .icon-image-wrapper {
+    img {
+      vertical-align: top;
+    }
+  }
+}

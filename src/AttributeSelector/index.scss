@@ -1,0 +1,10 @@
+@use '../themes/tm';
+
+.attribute-selector {
+  min-width: 600px;
+
+  @include tm.themeify {
+    background-color: tm.themed('layout-background');
+    border: 1px solid tm.themed('border-color');
+  }
+}

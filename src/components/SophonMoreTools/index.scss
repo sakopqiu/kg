@@ -1,0 +1,33 @@
+@use '../../themes/tm';
+
+@mixin morebtnmenu {
+  border: none;
+
+  .ant-menu-item {
+    font-size: 12px;
+    height: 22px;
+    line-height: 22px;
+    margin: 0;
+    padding: 3px 0;
+
+    &:active {
+      background-color: transparent;
+    }
+
+    &-selected.ant-menu-item {
+      * {
+        @include tm.themeify {
+          color: tm.themed('text-color');
+        }
+      }
+    }
+  }
+}
+
+.ant-menu.more-btn-menu {
+  @include morebtnmenu;
+}
+
+.more-btn {
+  cursor: pointer;
+}

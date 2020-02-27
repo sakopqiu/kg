@@ -1,0 +1,55 @@
+@use '../../global.scss';
+@use '../../themes/tm';
+
+.sophon-tab {
+  padding: 20px 15px;
+  user-select: none;
+  width: 100%;
+
+  &-header {
+    display: flex;
+    justify-content: space-around;
+    padding-left: 10px;
+    padding-right: 10px;
+    font: {
+      family: global.$global-font-family-medium;
+      size: 14px;
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+
+      &-label {
+        cursor: pointer;
+
+        @include tm.themeify {
+          color: tm.themed('text-color_tip');
+        }
+      }
+
+      &-marker {
+        height: 3px;
+        margin-top: 5px;
+        visibility: hidden;
+        width: 25px;
+
+        @include tm.themeify {
+          background-color: tm.themed('active-color');
+        }
+      }
+
+      &.active {
+        .sophon-tab-header-item-label {
+          @include tm.themeify {
+            color: tm.themed('active-color');
+          }
+        }
+
+        .sophon-tab-header-item-marker {
+          visibility: visible;
+        }
+      }
+    }
+  }
+}

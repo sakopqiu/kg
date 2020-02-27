@@ -1,0 +1,14 @@
+@use '../../../../../themes/tm';
+
+.path-find-hint {
+  border-radius: 3px;
+  cursor: pointer;
+  padding: 3px 10px;
+  position: fixed;
+  z-index: 9999;
+
+  @include tm.themeify {
+    background-color: tm.themed('text-color');
+    color: tm.themed('text-color_reverse');
+  }
+}

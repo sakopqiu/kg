@@ -1,0 +1,119 @@
+@use '../../../../../global.scss';
+@use '../../../../common/common.scss';
+@use '../../../../../components/SophonWordTabContainer/index' as sophonWordTab;
+@use '../../../../../themes/tm';
+
+$diffTop: sophonWordTab.$word-tabs-total-height  - 2;
+$collapsed-diffTop: sophonWordTab.$word-tabs-height - 2;
+
+.pipeline-diff-wrapper {
+  display: flex;
+  height: calc(100% - #{$collapsed-diffTop} - #{common.$bottom-tool-bar-height});
+  left: 0;
+  position: absolute;
+  top: $collapsed-diffTop;
+  transition: height, top 0.1s;
+  width: 100%;
+  z-index: global.$medium_z_index + 2; // 高于菜单
+
+  @include tm.themeify {
+    background-color: tm.themed('component-background');
+    border-bottom: 1px solid tm.themed('border-color');
+    border-top: 1px solid tm.themed('border-color');
+  }
+
+  .pipeline-diff-left {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    width: 100%;
+
+    &-description {
+      align-items: center;
+      display: flex;
+      height: 41px;
+      justify-content: space-between;
+      padding-left: 17px;
+      padding-right: 17px;
+      width: 100%;
+
+      @include tm.themeify {
+        border-bottom: 1px solid tm.themed('border-color');
+      }
+
+      &-title {
+        font-family: global.$global-font-family-bold;
+        font-size: 15px;
+
+        @include tm.themeify {
+          color: tm.themed('text-color');
+        }
+
+        &-highlight {
+          margin-right: 10px;
+
+          @include tm.themeify {
+            color: tm.themed('active-color');
+          }
+        }
+
+        .time-diff-period {
+          margin-left: 20px;
+        }
+      }
+
+      &-close {
+        align-items: center;
+        cursor: pointer;
+        display: flex;
+
+        .close-x {
+          border-radius: 50%;
+          font-family: global.$global-font-family-thin;
+          font-size: 12px;
+          padding: 5px;
+          padding-left: 6px;
+          transform: scale(0.8);
+
+          @include tm.themeify {
+            background-color: tm.themed('layout-background');
+            color: tm.themed('text-color_tip');
+          }
+        }
+
+        .close-hint {
+          font-family: global.$global-font-family-medium;
+          font-size: 12px;
+          margin-left: 5px;
+
+          @include tm.themeify {
+            color: tm.themed('text-color_tip');
+          }
+        }
+      }
+    }
+
+    .diff-timeline-wrapper {
+      align-items: center;
+      box-shadow: 0 -2px 5px 0 rgba(22, 83, 148, 0.1);
+      display: flex;
+      height: 50px;
+      padding: 0 20px;
+    }
+
+    #pipeline-diff {
+      flex: 1;
+      position: relative;
+      width: 100%;
+    }
+
+    .sophon-select-wrapper {
+      position: absolute;
+      right: 20px;
+      top: 51px;
+      width: 171px;
+    }
+  }
+}

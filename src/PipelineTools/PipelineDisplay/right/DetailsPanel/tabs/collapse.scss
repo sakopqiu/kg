@@ -1,0 +1,70 @@
+@use '../../../../../global.scss';
+@use '../../../../../themes/tm';
+
+.edge-collapse,
+.node-stats-collapse {
+  //overflow-x: hidden;
+  background-color: transparent !important;
+  border: none !important;
+
+  .ant-collapse-item {
+    border-bottom: none !important;
+    position: relative;
+
+    &:not(:last-child) {
+      &::after {
+        bottom: 0;
+        content: '';
+        height: 1px;
+        position: absolute;
+        width: 100%;
+
+        @include tm.themeify {
+          background-color: tm.themed('border-color');
+        }
+      }
+    }
+  }
+
+  .ant-collapse-content {
+    background-color: transparent !important;
+    border-top: none;
+
+    .ant-collapse-content-box {
+      padding: 0;
+
+      .ant-row {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .ant-collapse-header {
+    font-size: 12px;
+    letter-spacing: 0.14px;
+    padding-bottom: 10px !important;
+    padding-left: 22px !important;
+    padding-top: 10px !important;
+    word-break: break-all;
+
+    @include tm.themeify {
+      color: tm.themed('text-color_enhance');
+    }
+  }
+
+  .ant-collapse-arrow {
+    left: 0 !important;
+
+    svg {
+      transform: rotate(90deg) !important;
+    }
+  }
+
+  .ant-collapse-item-active {
+    .ant-collapse-arrow {
+      svg {
+        transform: rotate(-90deg) !important;
+      }
+    }
+  }
+}

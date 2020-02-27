@@ -1,0 +1,18 @@
+@use '../../../../../../global.scss';
+@use '../../../../../../themes/tm';
+
+.community-discovery-wrapper {
+  .community-discovery-title {
+    font-family: global.$global-font-family-medium;
+  }
+
+  .new-community {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+
+    @include tm.themeify {
+      color: tm.themed('active-color');
+    }
+  }
+}

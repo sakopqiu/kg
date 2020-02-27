@@ -1,0 +1,131 @@
+@use '../../../../global';
+@use '../../../../themes/tm';
+
+.find-neighbor-filter,
+.context-menu-common,
+.config-wrapper {
+  border-radius: 2px;
+  box-shadow: 0 5px 15px 0 rgba(42, 112, 186, 0.15);
+  font-size: 12px;
+  max-width: 400px;
+  min-width: 220px;
+  position: fixed;
+  z-index: global.$medium_z_index + 2;
+
+  @include tm.themeify {
+    background: tm.themed('component-background');
+  }
+
+  .neighbor-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+
+    span {
+      font-family: global.$global-font-family-medium;
+      font-size: 12px;
+      letter-spacing: 0.14px;
+
+      @include tm.themeify {
+        color: tm.themed('text-color_enhance');
+      }
+    }
+
+    .tool-btn {
+      cursor: pointer;
+      text-align: right;
+
+      @include tm.themeify {
+        color: tm.themed('text-color_enhance');
+      }
+    }
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 25px;
+
+    button {
+      margin-left: 10px;
+    }
+  }
+}
+
+.find-neighbor-filter,
+.context-menu-common {
+  padding: 20px 15px;
+
+  .neighbor-body {
+    font-size: 10px;
+    letter-spacing: 0.12px;
+    margin-bottom: 15px;
+
+    @include tm.themeify {
+      color: tm.themed('text-color_tip');
+    }
+
+    .hint {
+      @include tm.themeify {
+        color: tm.themed('text-color_tip');
+      }
+    }
+
+    .ant-radio-wrapper,
+    .ant-slider-mark {
+      font-size: 12px;
+      letter-spacing: 0.14px;
+
+      @include tm.themeify {
+        color: tm.themed('text-color');
+      }
+    }
+  }
+
+  .shortest-header {
+    margin-top: 40px;
+  }
+
+  .neighbor-filter-error {
+    font-size: 12px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+
+    @include tm.themeify {
+      color: tm.themed('error-color');
+    }
+  }
+
+  .ant-select {
+    width: 100%;
+  }
+}
+
+.config-wrapper {
+  .relationships-content,
+  .entities-content {
+    padding: 20px 15px;
+  }
+
+  .options {
+    font-size: 12px;
+    letter-spacing: 0.14px;
+    margin-top: 10px;
+
+    @include tm.themeify {
+      color: tm.themed('text-color_enhance');
+    }
+  }
+
+  .item-label {
+    margin-left: 10px;
+  }
+
+  .divider {
+    margin: 0;
+  }
+
+  .buttons {
+    padding: 0 15px 30px;
+  }
+}

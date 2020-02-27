@@ -1,0 +1,42 @@
+@use '../../global.scss';
+@use '../../themes/tm';
+
+.sophon-tool-box {
+  display: flex;
+  height: 39px;
+  justify-content: flex-start;
+  padding: 9.5px 15px;
+
+  @include tm.themeify {
+    background-color: tm.themed('active-color');
+    color: tm.themed('text-color_reverse');
+  }
+
+  .back-tick {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    font-size: 12px;
+
+    .less-than {
+      margin-right: 5px;
+    }
+  }
+
+  .icons {
+    align-items: center;
+    display: flex;
+
+    .sophon-icon {
+      cursor: pointer;
+      font-size: 16px;
+      margin-left: 25px;
+
+      &.disabled {
+        @include tm.themeify {
+          color: tm.themed('text-color_tip') !important;
+        }
+      }
+    }
+  }
+}

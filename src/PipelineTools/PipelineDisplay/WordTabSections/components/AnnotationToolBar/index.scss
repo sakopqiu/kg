@@ -1,0 +1,26 @@
+@use '../../../../../themes/tm';
+
+.annotation-tool-bar {
+  align-items: center;
+  display: flex;
+  height: 36px;
+  justify-content: space-between;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 194px;
+
+  .sophon-icon {
+    cursor: pointer;
+    font-size: 18px;
+
+    @include tm.themeify {
+      color: tm.themed('color-text_tip');
+    }
+
+    &:hover {
+      @include tm.themeify {
+        color: tm.themed('active-color');
+      }
+    }
+  }
+}

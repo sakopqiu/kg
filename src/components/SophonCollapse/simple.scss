@@ -1,0 +1,46 @@
+.sophon-simple-collapse {
+  &-header {
+    display: flex;
+
+    &-content {
+      flex: 1;
+    }
+
+    &-tick {
+      color: rgba(0, 0, 0, 0.85);
+      cursor: pointer;
+      font-size: 10px;
+      position: relative;
+      transition: transform 0.2s;
+
+      &.left-tick {
+        top: 8px;
+        transform: scale(0.8) rotate(0);
+
+        &.collapse {
+          left: 10px;
+          top: -1px;
+          transform: scale(0.8) rotate(-90deg);
+        }
+      }
+
+      &.right-tick {
+        left: 4px;
+        padding-left: 10px;
+        top: 8px;
+        transform: scale(0.8) rotate(0);
+
+        &.collapse {
+          left: 9px;
+          padding-top: 9px;
+          top: 4px;
+          transform: scale(0.8) rotate(-90deg);
+        }
+      }
+    }
+  }
+
+  &-body {
+    margin-left: 8px;
+  }
+}

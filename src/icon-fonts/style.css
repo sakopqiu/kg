@@ -1,0 +1,585 @@
+@font-face {
+  font-family: 'isophon-font';
+  src:  url('fonts/isophon-font.eot?jnwh0q');
+  src:  url('fonts/isophon-font.eot?jnwh0q#iefix') format('embedded-opentype'),
+    url('fonts/isophon-font.ttf?jnwh0q') format('truetype'),
+    url('fonts/isophon-font.woff?jnwh0q') format('woff'),
+    url('fonts/isophon-font.svg?jnwh0q#isophon-font') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="isophon-"], [class*=" isophon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'isophon-font' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  
+  /* Enable Ligatures ================ */
+  letter-spacing: 0;
+  -webkit-font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  font-feature-settings: "liga";
+  -webkit-font-variant-ligatures: discretionary-ligatures;
+  font-variant-ligatures: discretionary-ligatures;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.isophon-evaluate:before {
+  content: "\e9af";
+}
+.isophon-real_stream:before {
+  content: "\e9ae";
+  color: #549be7;
+}
+.isophon-name:before {
+  content: "\e9aa";
+}
+.isophon-ID:before {
+  content: "\e9ab";
+}
+.isophon-latitude:before {
+  content: "\e9ac";
+}
+.isophon-longitude:before {
+  content: "\e9ad";
+}
+.isophon-area:before {
+  content: "\e9a6";
+}
+.isophon-broom2:before {
+  content: "\e9a7";
+}
+.isophon-eye:before {
+  content: "\e9a8";
+}
+.isophon-isolate:before {
+  content: "\e9a9";
+}
+.isophon-object-file-system:before {
+  content: "\e9a5";
+}
+.isophon-broom:before {
+  content: "\e9a2";
+}
+.isophon-add-with-border:before {
+  content: "\e9a3";
+}
+.isophon-pop:before {
+  content: "\e9a1";
+}
+.isophon-font:before {
+  content: "\e99f";
+}
+.isophon-line:before {
+  content: "\e9a0";
+}
+.isophon-status_failed:before {
+  content: "\e99b";
+}
+.isophon-status_stopping:before {
+  content: "\e99c";
+}
+.isophon-status_stopped:before {
+  content: "\e99d";
+}
+.isophon-status_finished:before {
+  content: "\e99e";
+}
+.isophon-code_modeling:before {
+  content: "\e996";
+}
+.isophon-profile:before {
+  content: "\e997";
+}
+.isophon-visual_model:before {
+  content: "\e998";
+}
+.isophon-feature_engineering:before {
+  content: "\e999";
+}
+.isophon-upload_model:before {
+  content: "\e99a";
+}
+.isophon-lock:before {
+  content: "\e995";
+}
+.isophon-cancelled:before {
+  content: "\e992";
+  color: #f17272;
+}
+.isophon-skipped:before {
+  content: "\e993";
+  color: #80ceaf;
+}
+.isophon-pending:before {
+  content: "\e994";
+  color: #549be7;
+}
+.isophon-install:before {
+  content: "\e991";
+}
+.isophon-expand:before {
+  content: "\e989";
+}
+.isophon-merge1:before {
+  content: "\e988";
+}
+.isophon-running:before {
+  content: "\e98b";
+}
+.isophon-stopped:before {
+  content: "\e98a";
+}
+.isophon-circle-right-arrow:before {
+  content: "\e98c";
+}
+.isophon-filter:before {
+  content: "\e98d";
+}
+.isophon-hardware:before {
+  content: "\e98e";
+}
+.isophon-polygon:before {
+  content: "\e98f";
+}
+.isophon-reset:before {
+  content: "\e990";
+}
+.isophon-mappingicon:before {
+  content: "\e987";
+}
+.isophon-scan-search:before {
+  content: "\e986";
+}
+.isophon-notebook-icon:before {
+  content: "\e985";
+}
+.isophon-session:before {
+  content: "\e983";
+}
+.isophon-graph-task:before {
+  content: "\e984";
+}
+.isophon-time-diff:before {
+  content: "\e982";
+}
+.isophon-direction-analysis:before {
+  content: "\e981";
+}
+.isophon-double-up-arrow:before {
+  content: "\e980";
+}
+.isophon-view:before {
+  content: "\e975";
+}
+.isophon-copy-add:before {
+  content: "\e976";
+}
+.isophon-derived:before {
+  content: "\e977";
+}
+.isophon-execute-the-node:before {
+  content: "\e978";
+}
+.isophon-execute-to-here:before {
+  content: "\e979";
+}
+.isophon-function:before {
+  content: "\e97a";
+}
+.isophon-prohibit:before {
+  content: "\e97b";
+}
+.isophon-shear:before {
+  content: "\e97c";
+}
+.isophon-start-from-here:before {
+  content: "\e97d";
+}
+.isophon-start-execution:before {
+  content: "\e97e";
+}
+.isophon-View-meta-information:before {
+  content: "\e97f";
+}
+.isophon-kg:before {
+  content: "\e973";
+}
+.isophon-community1:before {
+  content: "\e974";
+}
+.isophon-non-editable:before {
+  content: "\e972";
+}
+.isophon-object:before {
+  content: "\e971";
+}
+.isophon-note:before {
+  content: "\e948";
+}
+.isophon-tag:before {
+  content: "\e949";
+}
+.isophon-path-discovery:before {
+  content: "\e94a";
+}
+.isophon-align-vertical:before {
+  content: "\e94b";
+}
+.isophon-size:before {
+  content: "\e94c";
+}
+.isophon-map:before {
+  content: "\e94d";
+}
+.isophon-inverse-select:before {
+  content: "\e94e";
+}
+.isophon-zoom-in:before {
+  content: "\e94f";
+}
+.isophon-analysis-case:before {
+  content: "\e950";
+}
+.isophon-big-share:before {
+  content: "\e951";
+}
+.isophon-summary-grid:before {
+  content: "\e952";
+}
+.isophon-relationship-style:before {
+  content: "\e953";
+}
+.isophon-merge-combine:before {
+  content: "\e954";
+}
+.isophon-visualized-analysis:before {
+  content: "\e955";
+}
+.isophon-border-style:before {
+  content: "\e956";
+}
+.isophon-name-card:before {
+  content: "\e957";
+}
+.isophon-full-screen-square:before {
+  content: "\e958";
+}
+.isophon-select-all:before {
+  content: "\e959";
+}
+.isophon-community:before {
+  content: "\e95a";
+}
+.isophon-time-filter:before {
+  content: "\e95b";
+}
+.isophon-actual-size:before {
+  content: "\e95c";
+}
+.isophon-entity-vertical-align:before {
+  content: "\e95d";
+}
+.isophon-entity-relationship:before {
+  content: "\e95e";
+}
+.isophon-entity-horizontal-align:before {
+  content: "\e95f";
+}
+.isophon-entity-style:before {
+  content: "\e960";
+}
+.isophon-screen-fit:before {
+  content: "\e961";
+}
+.isophon-manual-community-search:before {
+  content: "\e962";
+}
+.isophon-horizontal-align:before {
+  content: "\e963";
+}
+.isophon-algorithm-community-search:before {
+  content: "\e964";
+}
+.isophon-zoom-out:before {
+  content: "\e965";
+}
+.isophon-all-elements:before {
+  content: "\e966";
+}
+.isophon-graph-compute:before {
+  content: "\e967";
+}
+.isophon-image:before {
+  content: "\e968";
+}
+.isophon-connected-relationship:before {
+  content: "\e969";
+}
+.isophon-connected-entity:before {
+  content: "\e96a";
+}
+.isophon-shape:before {
+  content: "\e96b";
+}
+.isophon-leaf-entity:before {
+  content: "\e96c";
+}
+.isophon-comment:before {
+  content: "\e96d";
+}
+.isophon-customized-community:before {
+  content: "\e96e";
+}
+.isophon-combination-filter:before {
+  content: "\e96f";
+}
+.isophon-shortest-path1:before {
+  content: "\e970";
+}
+.isophon-octagon:before {
+  content: "\e947";
+}
+.isophon-minimap:before {
+  content: "\e946";
+}
+.isophon-switch:before {
+  content: "\e945";
+}
+.isophon-minus-circle:before {
+  content: "\e943";
+}
+.isophon-plus-circle:before {
+  content: "\e944";
+}
+.isophon-more:before {
+  content: "\e942";
+}
+.isophon-blueprint-bold:before {
+  content: "\e940";
+}
+.isophon-blueprint-light:before {
+  content: "\e941";
+}
+.isophon-line-chart:before {
+  content: "\e934";
+}
+.isophon-bar-chart:before {
+  content: "\e93b";
+}
+.isophon-arrow-circle-down:before {
+  content: "\e93c";
+}
+.isophon-arrow-circle-up:before {
+  content: "\e93d";
+}
+.isophon-time-series:before {
+  content: "\e93e";
+}
+.isophon-stack-chart:before {
+  content: "\e93f";
+}
+.isophon-arrow-down:before {
+  content: "\e935";
+}
+.isophon-arrow:before {
+  content: "\e936";
+}
+.isophon-circle:before {
+  content: "\e937";
+}
+.isophon-diamond:before {
+  content: "\e938";
+}
+.isophon-square:before {
+  content: "\e939";
+}
+.isophon-text:before {
+  content: "\e93a";
+  color: #a3abba;
+}
+.isophon-close2:before {
+  content: "\e933";
+}
+.isophon-edit:before {
+  content: "\e910";
+}
+.isophon-More:before {
+  content: "\e932";
+}
+.isophon-hexagon:before {
+  content: "\e903";
+}
+.isophon-merge:before {
+  content: "\e92e";
+}
+.isophon-undo:before {
+  content: "\e92f";
+}
+.isophon-setup:before {
+  content: "\e930";
+}
+.isophon-tips:before {
+  content: "\e931";
+}
+.isophon-flag:before {
+  content: "\e9cc";
+}
+.isophon-plus:before {
+  content: "\ea0a";
+}
+.isophon-minus:before {
+  content: "\ea0b";
+}
+.isophon-cross:before {
+  content: "\ea0f";
+}
+.isophon-tick:before {
+  content: "\ea10";
+}
+.isophon-new:before {
+  content: "\e926";
+}
+.isophon-save:before {
+  content: "\e927";
+}
+.isophon-saveAs:before {
+  content: "\e928";
+}
+.isophon-snapshot:before {
+  content: "\e929";
+}
+.isophon-dad:before {
+  content: "\e924";
+}
+.isophon-video_setting:before {
+  content: "\e911";
+}
+.isophon-video_back:before {
+  content: "\e912";
+}
+.isophon-video_fullscreen:before {
+  content: "\e91f";
+}
+.isophon-video_next:before {
+  content: "\e921";
+}
+.isophon-video_play:before {
+  content: "\e920";
+}
+.isophon-video_stop:before {
+  content: "\e922";
+}
+.isophon-project:before {
+  content: "\e915";
+}
+.isophon-feature:before {
+  content: "\e917";
+}
+.isophon-file:before {
+  content: "\e918";
+}
+.isophon-API:before {
+  content: "\e919";
+}
+.isophon-code:before {
+  content: "\e91a";
+}
+.isophon-setting:before {
+  content: "\e91b";
+}
+.isophon-model:before {
+  content: "\e91c";
+}
+.isophon-flow:before {
+  content: "\e91d";
+}
+.isophon-history:before {
+  content: "\e91e";
+}
+.isophon-export:before {
+  content: "\e913";
+}
+.isophon-copy:before {
+  content: "\e90a";
+}
+.isophon-add:before {
+  content: "\e900";
+}
+.isophon-delete:before {
+  content: "\e901";
+}
+.isophon-editor:before {
+  content: "\e902";
+}
+.isophon-experiment02:before {
+  content: "\e904";
+}
+.isophon-folder_dark:before {
+  content: "\e906";
+}
+.isophon-left:before {
+  content: "\e907";
+}
+.isophon-move:before {
+  content: "\e908";
+}
+.isophon-refresh:before {
+  content: "\e90b";
+}
+.isophon-right:before {
+  content: "\e90c";
+}
+.isophon-without-navi:before {
+  content: "\e90d";
+}
+.isophon-search:before {
+  content: "\e90e";
+}
+.isophon-share:before {
+  content: "\e90f";
+}
+.isophon-sorting:before {
+  content: "\e916";
+}
+.isophon-list_type_card:before {
+  content: "\e914";
+}
+.isophon-with_navi:before {
+  content: "\e905";
+}
+.isophon-list_type_list:before {
+  content: "\e909";
+}
+.isophon-checked:before {
+  content: "\e925";
+}
+.isophon-view1:before {
+  content: "\e92a";
+}
+.isophon-canvas-layout:before {
+  content: "\e92b";
+}
+.isophon-canvas-page-rank:before {
+  content: "\e92c";
+}
+.isophon-canvas-fit:before {
+  content: "\e92d";
+}
+.isophon-redo:before {
+  content: "\e923";
+}
+.isophon-right-circle-arrow:before {
+  content: "\e9a4";
+}

@@ -1,0 +1,240 @@
+@use '../../../../../global.scss';
+@use '../../../../common/menu';
+@use '../../../../../themes/tm';
+
+.attribute-tab-fields {
+  .att-attribute-row {
+    margin: 10px 0;
+  }
+
+  .attribute-panel-content {
+    user-select: text;
+  }
+
+  .field-description-row {
+    font-size: 12px;
+    margin: 20px 0;
+    width: 100%;
+
+    @include tm.themeify {
+      color: tm.themed('text-color');
+    }
+
+    .field-name {
+      font-weight: bold;
+
+      .with-setting-button {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+    .field-value {
+      user-select: text;
+    }
+
+    .field-value-inline {
+      padding-left: 8px;
+    }
+  }
+
+  .label-content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .kg-tag {
+    align-items: center;
+    border-radius: 2px;
+    display: flex;
+    font-size: 10px;
+    height: 18px;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    padding: 2px 6px;
+
+    @include tm.themeify {
+      background: tm.themed('warning-color');
+      color: tm.themed('text-color_reverse');
+    }
+  }
+
+  .degree-div {
+    margin-bottom: 20px;
+
+    @include tm.themeify {
+      color: tm.themed('text-color_enhance');
+    }
+    font: {
+      family: global.$global-font-family-medium;
+      size: 12px;
+    }
+
+    .degree {
+      font-weight: bold;
+    }
+
+    .tip-icon {
+      border-radius: 50%;
+      cursor: pointer;
+      display: inline-block;
+      height: 12px;
+      line-height: 12px;
+      margin-left: 5px;
+      position: relative;
+      top: 1px;
+      width: 12px;
+
+      @include tm.themeify {
+        color: tm.themed('active-color');
+      }
+    }
+
+    .colon {
+      margin-left: 3px;
+      margin-right: 8px;
+    }
+  }
+
+  .danger-zone {
+    position: relative;
+    text-align: center;
+
+    .element-delete-btn {
+      @include tm.themeify {
+        border-color: tm.themed('border-color');
+        color: tm.themed('error-color');
+      }
+
+      span {
+        font-family: global.$global-font-family-medium !important;
+      }
+
+      &:hover {
+        @include tm.themeify {
+          background-color: tm.themed('error-color');
+          color: tm.themed('text-color_reverse');
+        }
+      }
+    }
+
+    .ant-divider {
+      left: -15px;
+      margin-bottom: 10px;
+      margin-top: 10px;
+      width: calc(100% + 30px);
+    }
+  }
+
+  .separator {
+    height: 1px;
+    left: -15px;
+    position: relative;
+    width: calc(100% + 30px);
+
+    @include tm.themeify {
+      background-color: tm.themed('layout-background');
+    }
+  }
+
+  .summary-separator {
+    margin-bottom: 10px;
+  }
+
+  .edge-group-detail-wrapper {
+    .title {
+      font-size: 12px;
+      margin: 10px 0;
+
+      @include tm.themeify {
+        color: tm.themed('text-color_tip');
+      }
+    }
+
+    .ant-collapse-content-active {
+      position: relative;
+
+      &::after {
+        content: '';
+        height: 1px;
+        left: 0;
+        position: absolute;
+        top: 0;
+        transform: translateX(5%);
+        width: 90%;
+
+        @include tm.themeify {
+          background-color: tm.themed('layout-background');
+        }
+      }
+    }
+
+    .ant-collapse {
+      background-color: transparent;
+
+      .ant-collapse-item {
+        border-radius: 2px;
+
+        @include tm.themeify {
+          background-color: tm.themed('component-background');
+        }
+
+        &:not(:last-child) {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+
+.tip-icon-wrapper {
+  font-size: 12px;
+  max-width: 174px;
+
+  @include tm.themeify {
+    color: tm.themed('text-color');
+  }
+}
+
+.community-meta-info-popover {
+  @include menu.canvas-attribute-menu;
+}
+
+.node-type-menu {
+  @include menu.canvas-attribute-menu;
+}
+
+.edge-type-menu {
+  @include menu.canvas-attribute-menu;
+}
+
+.add-attribute {
+  font-family: global.$global-font-family-medium;
+  font-size: 12px;
+
+  @include tm.themeify {
+    color: tm.themed('active-color');
+  }
+}
+
+.info-setting-icon {
+  cursor: pointer;
+  margin-left: 8px;
+
+  @include tm.themeify {
+    color: tm.themed('active-color');
+  }
+}
+
+.stats-bar-area {
+  margin-bottom: 30px;
+
+  &-title {
+    font-family: global.$global-font-family-medium;
+    font-size: 12px;
+
+    @include tm.themeify {
+      color: tm.themed('text-color_enhance');
+    }
+  }
+}

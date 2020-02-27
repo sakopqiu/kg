@@ -1,0 +1,159 @@
+@use '../../global.scss';
+@use '../../themes/tm';
+
+.sophon-shadow {
+  background-color: rgba(0, 0, 0, 0.1);
+  bottom: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  left: 0;
+  overflow: auto;
+  right: 0;
+  top: 0;
+  z-index: global.$max_z_index;
+}
+
+.sophon-modal {
+  align-items: stretch;
+  border-radius: global.$border-radius;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-items: stretch;
+  position: relative;
+  z-index: global.$max_z_index;
+
+  @include tm.themeify {
+    background-color: tm.themed('component-background');
+    border: 1px solid tm.themed('border-color');
+    box-shadow: tm.themed('shadow1');
+  }
+
+  &-header {
+    align-items: center;
+    border-top-left-radius: global.$border-radius;
+    border-top-right-radius: global.$border-radius;
+    display: flex;
+    flex: 0 0 auto;
+    font-size: 14px;
+    font-weight: bold;
+    height: 50px;
+    padding: 18px 20px;
+    position: relative;
+    width: 100%;
+
+    @include tm.themeify {
+      background-color: tm.themed('header-background');
+      color: tm.themed('text-color_enhance');
+    }
+
+    .maximize {
+      cursor: pointer;
+      font-size: 10px;
+      position: absolute;
+      right: 50px;
+      user-select: none;
+    }
+
+    .cross {
+      cursor: pointer;
+      font-size: 10px;
+      position: absolute;
+      right: 20px;
+      user-select: none;
+    }
+  }
+
+  &-body {
+    border: 1px solid transparent;
+    flex: 1;
+    overflow: auto;
+    padding: 20px;
+  }
+
+  &-footer {
+    padding: 28px 22px;
+    padding-top: 8px;
+  }
+
+  &-buttons {
+    .sophon-modal-button {
+      border-radius: 5px;
+      cursor: pointer;
+      display: inline-block;
+      font-size: 14px;
+      height: 36px;
+      line-height: 20px;
+      padding-bottom: 8px;
+      padding-top: 8px;
+      text-align: center;
+      width: 126px;
+
+      &:not(:first-child) {
+        margin-left: 20px;
+      }
+    }
+  }
+
+  &.white-header {
+    @include tm.themeify {
+      box-shadow: tm.themed('shadow1');
+    }
+
+    &.log {
+      padding: 0;
+    }
+
+    .sophon-modal-header {
+      @include tm.themeify {
+        background-color: tm.themed('white-color');
+        box-shadow: tm.themed('shadow1');
+      }
+    }
+
+    .sophon-modal-body {
+      padding: 0;
+    }
+  }
+
+  &.small-size {
+    .sophon-modal-header {
+      font-size: 12px;
+      font-weight: normal;
+      height: 32px;
+      line-height: 32px;
+      padding: 0 15px;
+
+      @include tm.themeify {
+        background-color: tm.themed('header-background');
+      }
+
+      .cross {
+        font-size: 14px;
+      }
+    }
+
+    .sophon-modal-body {
+      font-size: 12px;
+      padding: 10px;
+    }
+
+    .sophon-modal-footer {
+      padding: 12px 15px;
+    }
+
+    .sophon-modal-buttons {
+      .sophon-modal-button {
+        border-radius: 2px;
+        font-size: 12px;
+        height: 25px;
+        line-height: 25px;
+        padding: 0;
+        width: 68px;
+
+        &:not(:first-child) {
+          margin-left: 12px;
+        }
+      }
+    }
+  }
+}

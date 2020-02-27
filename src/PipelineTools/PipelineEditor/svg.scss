@@ -1,0 +1,219 @@
+@use '../common/common.scss';
+@use '../../themes/tm';
+
+@mixin hover-effect {
+  &:hover {
+    @include tm.themeify {
+      background: tm.themed('active-color');
+      color: tm.themed('white-color');
+    }
+  }
+}
+
+.pipelinetool-canvas {
+  .widget-panel {
+    overflow-y: auto;
+    position: relative;
+    transition: width 0.1s;
+
+    @include tm.themeify {
+      background: tm.themed('component-background');
+      border-right: 1px solid tm.themed('border-color');
+    }
+
+    .widget-selector-title {
+      display: flex;
+      font-size: 16px;
+      justify-content: space-between;
+      line-height: 22px;
+      margin: 10px 15px 15px;
+    }
+
+    .ant-menu {
+      height: auto !important;
+
+      .ant-menu-item {
+        align-items: center;
+        display: flex;
+        font-size: 12px;
+        height: 50px;
+
+        margin: { // 覆盖antd中默认行为，默认是4px, 8px
+          bottom: 0;
+          top: 0;
+        }
+
+        @for $i from 0 through 5 {
+          &.item-level-#{$i} {
+            padding-left: (16 * ($i + 1)) + px !important; // 覆盖antd24px
+          }
+        }
+      }
+
+      .ant-menu-submenu {
+        &-title {
+          font-size: 14px;
+          font-weight: 400;
+          height: 50px;
+          line-height: 50px;
+
+          @include tm.themeify {
+            border-bottom: 1px solid themed('border-color');
+          }
+          margin: { // 覆盖antd中默认行为，默认是4px, 4px
+            bottom: 0;
+            top: 0;
+          }
+        }
+
+        @for $i from 0 through 5 {
+          &.item-level-#{$i} {
+            .ant-menu-submenu-title {
+              padding-left: (16 * ($i + 1)) + px !important; // 覆盖antd24px
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#edit-mode-cyto-background-wrapper {
+  height: calc(100% - 81px);
+
+  @include tm.themeify {
+    background: tm.themed('component-background');
+  }
+
+  &.hideTab {
+    height: calc(100% - 40px);
+  }
+
+  #edit-mode-cyto-background {
+    height: 100%;
+  }
+}
+
+.svg-background {
+  height: calc(100% - 81px);
+  overflow: auto;
+
+  &.readonly {
+    height: calc(100% - 40px);
+  }
+
+  &.drag {
+    overflow: hidden;
+  }
+
+  .svg {
+    cursor: grab;
+    height: 4000px;
+    width: 4000px;
+
+    @include tm.themeify {
+      background: tm.themed('pipeline-svg-background');
+    }
+
+    &.drag {
+      height: 100%;
+      width: 100%;
+      //position: relative;
+      //top: 6px; //drag模式下不知为何会差6px，hack
+    }
+
+    .multi-selection-area {
+      fill: rgba(226, 241, 253, 0.7);
+      stroke: #1A3666;
+      stroke-width: 1px;
+    }
+
+    .grid-line {
+      @include tm.themeify {
+        stroke: tm.themed('pipeline-grid-line');
+      }
+    }
+
+    marker {
+      @include tm.themeify {
+        fill: tm.themed('pipeline-canvas-common-color');
+        stroke: tm.themed('pipeline-canvas-common-color');
+      }
+
+      &#arrow-linked-thick {
+        fill: common.$line-highlight;
+        stroke: common.$line-highlight;
+      }
+
+      &#arrow-linked-thick-for-circle {
+        fill: common.$line-highlight;
+        stroke: common.$line-highlight;
+      }
+    }
+  }
+}
+
+text.pipeline-text {
+  alignment-baseline: middle;
+  font-size: 12px;
+  text-anchor: middle;
+  user-select: none;
+
+  @include tm.themeify {
+    fill: tm.themed('text-color');
+    stroke: tm.themed('text-color');
+  }
+
+  &.widget-intro {
+    font-weight: 100;
+    line-height: 18px;
+    stroke-width: 1px;
+    user-select: none;
+
+    &.selected {
+      @include tm.themeify {
+        stroke: tm.themed('white-color');
+      }
+    }
+  }
+
+  &.relationship {
+    font-size: 13px;
+    font-weight: 100;
+    letter-spacing: 0.5px;
+
+    &.selected {
+      @include tm.themeify {
+        stroke: tm.themed('active-color');
+      }
+    }
+  }
+}
+
+@keyframes candidate {
+  to {
+    stroke-dashoffset: -100px;
+  }
+}
+
+// 无论是矩形还是圆形，选中或者悬浮的状态
+.widget-common {
+  &.candidate-widget {
+    animation: candidate 5s linear forwards infinite;
+    stroke-dasharray: 5;
+  }
+
+  &.selected {
+    @include tm.themeify {
+      fill: tm.themed('pipeline-canvas-common-color');
+    }
+
+    &:hover {
+      filter: url('#hover-green');
+    }
+  }
+
+  &:hover {
+    filter: url('#hover-blue');
+  }
+}

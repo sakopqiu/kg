@@ -1,0 +1,56 @@
+@use '../../common/common.scss';
+@use '../../../themes/tm';
+
+.arc-line {
+  fill: none;
+  pointer-events: stroke;
+
+  @include tm.themeify {
+    stroke: tm.themed('pipeline-canvas-common-color');
+  }
+
+  &.error {
+    animation: candidate 5s linear backwards infinite;
+    stroke-dasharray: 5;
+    stroke-width: 3px;
+
+    @include tm.themeify {
+      stroke: tm.themed('error-color');
+    }
+  }
+
+  &.thick-invisible-line {
+    cursor: pointer;
+    stroke-width: 20px;
+    visibility: hidden;
+  }
+
+  &.thick-line {
+    animation: candidate 5s linear backwards infinite;
+    stroke: common.$line-highlight;
+    stroke-dasharray: 5;
+    stroke-width: 3px;
+  }
+}
+
+.attribute-interaction {
+  cursor: pointer;
+  position: absolute;
+
+  @include tm.themeify {
+    color: tm.themed('active-color');
+  }
+
+  &.cancel-singleton {
+    right: 0;
+    top: 0;
+  }
+}
+
+.confirm-error-msg {
+  margin-top: 3px;
+
+  @include tm.themeify {
+    color: tm.themed('error-color');
+  }
+}

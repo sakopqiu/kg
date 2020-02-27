@@ -1,0 +1,111 @@
+@use '../../../../../global';
+@use '../../../../../themes/tm';
+
+.pipeline-search-modal {
+  border-radius: 2px;
+  box-shadow: 0 2px 10px 2px hsla(0, 0%, 39%, 0.3);
+  height: 84px;
+  left: 100px;
+  padding: 20px 15px;
+  padding-bottom: 10px;
+  position: absolute;
+  top: 0;
+  width: 409px;
+  z-index: global.$max_z_index;
+
+  @include tm.themeify {
+    background-color: tm.themed('component-background');
+  }
+
+  .search-area {
+
+    $interaction-area-width: 98px;
+    $status-area-width: 70px;
+
+    height: 32px;
+    position: relative;
+    width: 100%;
+
+    @include tm.themeify {
+      color: tm.themed('text-color_tip');
+    }
+
+    .search-input {
+      font-size: 12px;
+      height: 100%;
+      line-height: 100%;
+      padding-left: 34px;
+      padding-right: $interaction-area-width + $status-area-width; //操作栏+状态栏（e.g 1/2)
+      width: 100%;
+
+      @include tm.themeify {
+        background-color: tm.themed('layout-background');
+      }
+    }
+
+    .search-icon {
+      font-size: 12px;
+      left: 12px;
+      position: absolute;
+      top: 11px;
+    }
+
+    .current-status {
+      height: 100%;
+      line-height: 32px;
+      padding-right: 8px;
+      position: absolute;
+      right: $interaction-area-width;
+      text-align: right;
+      top: 0;
+      width: $status-area-width;
+    }
+
+    .interaction-buttons {
+      align-items: center;
+      display: flex;
+      font-size: 10px;
+      height: 100%;
+      justify-content: space-between;
+      padding-left: 10px;
+      padding-right: 10px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: $interaction-area-width;
+
+      .split-bar {
+        height: 16px;
+        left: 0;
+        position: absolute;
+        top: 9px;
+        width: 1px;
+
+        @include tm.themeify {
+          background-color: tm.themed('layout-background');
+        }
+      }
+
+      .sophon-icon {
+        cursor: pointer;
+        font-size: 12px;
+        line-height: 25px;
+      }
+    }
+  }
+
+  .selection-area {
+    line-height: 12px;
+    margin-top: 10px;
+
+    span {
+      cursor: pointer;
+      font-size: 12px;
+      margin-right: 30px;
+
+      @include tm.themeify {
+        color: tm.themed('active-color');
+      }
+    }
+  }
+}

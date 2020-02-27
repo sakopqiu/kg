@@ -1,0 +1,9 @@
+@use '../../../../themes/tm';
+
+.tab-link {
+  cursor: pointer;
+
+  @include tm.themeify {
+    color: tm.themed('active-color');
+  }
+}

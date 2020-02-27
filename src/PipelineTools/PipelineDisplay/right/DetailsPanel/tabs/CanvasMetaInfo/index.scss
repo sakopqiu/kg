@@ -1,0 +1,32 @@
+@use '../../../../../../global.scss';
+@use '../../../../../../themes/tm';
+
+.community-meta-info {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  margin-top: 5px;
+
+  .community-name {
+    cursor: pointer;
+    font-size: 10px;
+  }
+
+  .community-count {
+    font-weight: bold;
+  }
+
+  .setting-icon,
+  .delete-icon {
+    cursor: pointer;
+
+    @include tm.themeify {
+      color: tm.themed('active-color');
+    }
+  }
+
+  .sophon-icon {
+    font-size: 12px;
+  }
+}

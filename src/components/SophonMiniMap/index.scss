@@ -1,0 +1,95 @@
+@use '../../global.scss';
+@use '../../themes/tm';
+
+.sophon-minimap-wrapper {
+  bottom: 42px;
+  position: absolute;
+  right: 2px;
+  z-index: global.$max_z_index + 9;
+
+  @include tm.themeify {
+    background-color: tm.themed('component-background');
+    box-shadow: 0 0 10px 0 tm.themed('border-color');
+  }
+
+  .sophon-minimap-area {
+    position: relative;
+    width: 100%;
+
+    .sophon-minimap {
+      height: 100%;
+      position: relative;
+    }
+
+    .sophon-minimap-window {
+      bottom: 0;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100%;
+
+      .minimap-active-area {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .zoom-tool {
+    align-items: center;
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    opacity: 0.7;
+    padding: 0 50px;
+
+    @include tm.themeify {
+      background-color: tm.themed('black-color');
+    }
+
+    .sophon-icon {
+      cursor: pointer;
+      font-size: 18px;
+
+      @include tm.themeify {
+        color: tm.themed('text-color_reverse');
+      }
+    }
+
+    .isophon-switch {
+      margin-left: 20px;
+    }
+
+    .ant-slider {
+      flex: 1;
+      margin: 0 20px;
+
+      .ant-slider-track {
+        @include tm.themeify {
+          background-color: tm.themed('component-background');
+        }
+      }
+
+      .ant-slider-handle {
+        border: none;
+        height: 10px;
+        margin-left: -5px;
+        margin-top: -3px;
+        width: 10px;
+
+        @include tm.themeify {
+          background-color: tm.themed('active-color');
+          box-shadow: tm.themed('box-shadow1');
+        }
+      }
+
+      .ant-slider-rail,
+      .ant-slider-track,
+      .ant-slider-step {
+        height: 2px;
+        transform: translateY(1px);
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+@use '../../themes/tm';
+
+.sophon-table {
+  height: 100%;
+  width: 100%;
+
+  @include tm.themeify {
+    border: 1px solid tm.themed('border-color');
+  }
+
+  .ReactVirtualized__Grid:focus {
+    outline: none;
+  }
+
+  .sophon-table-header {
+    .sophon-table-cell {
+      font-size: 13px;
+      font-weight: bolder;
+
+      @include tm.themeify {
+        background-color: tm.themed('item-background_even');
+        color: tm.themed('text-color_enhance');
+      }
+    }
+  }
+
+  .sophon-table-cell {
+    border-right: none;
+    box-sizing: border-box;
+    font-size: 12px;
+    overflow: hidden;
+    padding-left: 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    @include tm.themeify {
+      border-bottom: 1px solid tm.themed('border-color');
+    }
+
+    &.even {
+      @include tm.themeify {
+        background-color: tm.themed('item-background_even');
+      }
+    }
+
+    &.odd {
+      @include tm.themeify {
+        background-color: tm.themed('item-background_odd');
+      }
+    }
+  }
+}

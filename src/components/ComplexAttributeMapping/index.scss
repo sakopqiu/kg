@@ -1,0 +1,15 @@
+.complex-attribute-mapping-wrapper {
+  display: flex;
+  height: 450px;
+  justify-content: space-between;
+  width: 990px;
+
+  .sophon-tab-header {
+    justify-content: flex-start;
+    width: 45%;
+
+    &-item {
+      margin-right: 15px;
+    }
+  }
+}

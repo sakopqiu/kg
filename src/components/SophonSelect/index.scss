@@ -1,0 +1,60 @@
+@use '../../global.scss';
+@use '../../themes/tm';
+
+.sophon-select-wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  .sophon-selector {
+    border-radius: 2px;
+    cursor: pointer;
+    display: flex;
+    height: 30px;
+    width: 100%;
+
+    @include tm.themeify {
+      background-color: tm.themed('component-background');
+      border-bottom: 1px solid tm.themed('border-color');
+      border-left: 1px solid tm.themed('border-color');
+      border-top: 1px solid tm.themed('border-color');
+    }
+
+    .sophon-selected {
+      flex: 1;
+      font-size: 12px;
+      letter-spacing: 0;
+      line-height: 30px;
+      overflow: hidden;
+      padding: 0 10px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      @include tm.themeify {
+        color: tm.themed('text-color_tip');
+      }
+    }
+
+    .handler {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      width: 30px;
+
+      @include tm.themeify {
+        background-color: tm.themed('border-color');
+        border-left: 1px solid tm.themed('border-color');
+        border-right: 1px solid tm.themed('border-color');
+      }
+
+      .triangle {
+        border-style: solid;
+        border-width: 5px 5px 0;
+
+        @include tm.themeify {
+          border-color: tm.themed('border-color') transparent transparent;
+        }
+      }
+    }
+  }
+}

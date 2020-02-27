@@ -1,0 +1,104 @@
+@use '../themes/tm';
+
+.attribute-rule-group {
+  padding: 10px 15px;
+  position: relative;
+
+  .rule-group-header {
+    align-items: center;
+    display: flex;
+    font-size: 12px;
+    justify-content: space-between;
+
+    .drag-handle {
+      cursor: move;
+      margin-right: 16px;
+
+      @include tm.themeify {
+        color: tm.themed('active-color');
+      }
+    }
+
+    .right {
+      align-items: center;
+      display: flex;
+
+      button {
+        border-radius: 2px;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 12px;
+        height: 30px;
+        margin-right: 20px;
+        outline: none;
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+
+      .delete-icon {
+        cursor: pointer;
+        font-size: 16px;
+
+        @include tm.themeify {
+          color: tm.themed('active-color');
+        }
+      }
+    }
+  }
+
+  &.not-root {
+    margin-bottom: 10px;
+    margin-left: 21px;
+    margin-top: 10px;
+    position: relative;
+  }
+
+  &.with-upward-outline {
+    &::before {
+      content: '';
+      height: 30px;
+      left: -21px;
+      position: absolute;
+      top: -5px;
+      width: 21px;
+
+      @include tm.themeify {
+        border-bottom: 1px dotted tm.themed('border-color');
+        border-left: 1px dotted tm.themed('border-color');
+      }
+    }
+  }
+
+  &.with-downward-outline {
+    &::after {
+      content: '';
+      height: calc(100% - 25px + 4px);
+      left: -21px;
+      position: absolute;
+      top: 25px;
+      width: 21px;
+
+      @include tm.themeify {
+        border-bottom: 1px dotted tm.themed('border-color');
+        border-left: 1px dotted tm.themed('border-color');
+      }
+    }
+  }
+}
+
+.and-or {
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 10px;
+  height: 20px;
+  line-height: 18px;
+  position: absolute;
+  text-align: center;
+  width: 20px;
+  z-index: 99;
+
+  @include tm.themeify {
+    background: tm.themed('component-background');
+    border: 1px solid tm.themed('active-color');
+  }
+}

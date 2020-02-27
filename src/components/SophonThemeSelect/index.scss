@@ -1,0 +1,21 @@
+@use '../../themes/tm';
+
+.sophon-theme-menu {
+  &.ant-menu-horizontal {
+    @include tm.themeify {
+      border-bottom: none;
+    }
+  }
+
+  .ant-menu-submenu-title {
+    @include tm.themeify {
+      color: tm.themed('text-color');
+    }
+  }
+
+  .ant-menu-submenu.ant-menu-submenu-horizontal {
+    @include tm.themeify {
+      border-bottom: none;
+    }
+  }
+}

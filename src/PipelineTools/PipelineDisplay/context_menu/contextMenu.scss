@@ -1,0 +1,20 @@
+@use '../../../global';
+@use '../../common/menu';
+
+.canvas-context-menu-wrapper {
+  @include menu.context-menu-wrapper;
+
+  min-width: 171px;
+
+  .canvas-context-menu {
+    @include menu.sophon-context-menu;
+  }
+}
+
+.canvas-context-submenu {
+  @include menu.sophon-context-menu;
+}
+
+.customized-community-context-menu {
+  @include menu.context-menu-wrapper;
+}

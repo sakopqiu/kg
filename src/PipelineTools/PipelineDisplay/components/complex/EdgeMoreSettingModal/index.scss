@@ -1,0 +1,66 @@
+@use '../../../../../global.scss';
+@use '../../../../../themes/tm';
+
+.edge-more-setting-modal {
+  .add-filter-part {
+    cursor: pointer;
+    margin-bottom: 10px;
+
+    @include tm.themeify {
+      color: tm.themed('active-color');
+    }
+  }
+
+  .edge-setting-modal-filter {
+    .ant-divider-horizontal {
+      margin: 15px 0;
+    }
+
+    .edge-setting-part1 {
+      display: flex;
+      justify-content: space-between;
+
+      .edge-setting-modal-delete-filter {
+        @include tm.themeify {
+          color: tm.themed('active-color');
+        }
+      }
+    }
+
+    .edge-setting-modal-title {
+      font-size: 12px;
+      font-weight: 900;
+      margin-bottom: 10px;
+
+      @include tm.themeify {
+        color: tm.themed('text-color');
+      }
+    }
+
+    .edge-setting-part2-titles {
+      display: flex;
+      font-size: 12px;
+      justify-content: space-between;
+
+      @include tm.themeify {
+        color: tm.themed('text-color_tip');
+      }
+    }
+
+    .edge-setting-part2-body {
+      align-items: baseline;
+      display: flex;
+      justify-content: space-between;
+
+      .edge-setting-part2-colors {
+        display: flex;
+      }
+    }
+  }
+
+  .edge-more-setting-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+  }
+}

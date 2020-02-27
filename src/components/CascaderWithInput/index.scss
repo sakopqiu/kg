@@ -1,0 +1,20 @@
+.cascader-with-input-wrapper {
+  position: relative;
+
+  .cascader-with-input-input {
+    border-right: 0;
+    width: calc(100% - 24px);
+    z-index: 10;
+  }
+
+  .cascader-with-input-cascader {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 9;
+  }
+
+  .ant-cascader-picker-arrow {
+    color: rgba(0, 0, 0, 0.25); // sophonweb中有不明代码会覆盖这里的color
+  }
+}

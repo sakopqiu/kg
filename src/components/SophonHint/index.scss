@@ -1,0 +1,18 @@
+@use '../../themes/tm';
+
+.sophon-hint {
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  height: 16px;
+  line-height: 16px;
+  text-align: center;
+  width: 16px;
+
+  @include tm.themeify {
+    background: tm.themed('nav-bar-item-color');
+    color: tm.themed('text-color_reverse');
+  }
+}

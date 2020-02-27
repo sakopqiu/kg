@@ -1,0 +1,22 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-recommended-scss"
+  ],
+  "plugins": [
+    "stylelint-scss",
+    "stylelint-order"
+  ],
+  "rules": {
+    "max-nesting-depth": null,
+    "no-empty-source": null,
+    "no-descending-specificity": null,
+    "property-no-vendor-prefix": null,
+    "selector-max-compound-selectors": null,
+    "scss/at-import-partial-extension-blacklist": null,
+    "value-no-vendor-prefix": null,
+    "color-hex-case": "upper",
+    "order/properties-alphabetical-order": true
+  }
+}

@@ -1,0 +1,51 @@
+@use '../../../themes/tm';
+
+.readonly-attributes {
+  font-size: 12px;
+  margin: 20px 0;
+  width: 100%;
+
+  @include tm.themeify {
+    color: tm.themed('text-color_enhance');
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.widget-details-panel.readonly-panel {
+  position: relative;
+
+  @include tm.themeify {
+    background-color: tm.themed('component-background');
+    border-left: 1px solid tm.themed('border-color');
+  }
+
+  .select-sth {
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    top: 40%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 80%;
+  }
+
+  table {
+    table-layout: fixed;
+
+    tbody > tr > td {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  .ant-table-table {
+    border: none;
+
+    .ant-table-body {
+      margin: 0;
+    }
+  }
+}

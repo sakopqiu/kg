@@ -1,0 +1,58 @@
+@use '../../global';
+@use '../../themes/tm';
+
+.sophon-color-select {
+  align-items: center;
+  display: flex;
+  line-height: initial;
+
+  .color-select {
+    align-items: center;
+    border-radius: 2px;
+    display: flex;
+    font-size: 12px;
+    height: 30px;
+    padding: 0 6px 0 12px;
+    width: 95px;
+
+    @include tm.themeify {
+      background: tm.themed('layout-background');
+      border: 1px solid tm.themed('border-color');
+    }
+
+    .color-code {
+      flex: 1;
+    }
+
+    .isophon-arrow-down {
+      cursor: pointer;
+      transform: scale(0.75);
+
+      @include tm.themeify {
+        color: tm.themed('text-color_tip');
+      }
+    }
+  }
+
+  .color-indicator {
+    border-radius: 2px;
+    height: 30px;
+    margin-left: 10px;
+    width: 30px;
+  }
+
+  .color-picker {
+    height: 335px;
+    position: fixed;
+    z-index: global.$max_z_index;
+
+    .color-picker-close {
+      cursor: pointer;
+      font-size: 12px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform: translate(50%, -50%);
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@use '../themes/tm';
+
+.sophon-icon {
+  cursor: pointer;
+
+  &.disabled {
+    cursor: not-allowed !important;
+    pointer-events: none;
+
+    @include tm.themeify {
+      color: tm.themed('text-color_tip');
+    }
+  }
+}

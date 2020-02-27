@@ -1,0 +1,67 @@
+@use '../../../../common/menu';
+@use '../../../../../global.scss';
+@use '../../../../../themes/tm';
+
+.sophon-modal.find-path-result-modal {
+  position: fixed;
+  width: 640px;
+}
+
+.find-path-result-modal {
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 40px;
+    padding-right: 40px;
+    position: absolute;
+    top: 30px;
+    user-select: none;
+    width: 100%;
+    z-index: 999;
+
+    @include tm.themeify {
+      color: tm.themed('text-color_enhance');
+    }
+    font: {
+      family: global.$global-font-family;
+      size: 12px;
+    }
+
+    &-right {
+      .prev-or-next {
+        cursor: pointer;
+
+        .disabled {
+          cursor: not-allowed;
+
+          @include tm.themeify {
+            color: tm.themed('text-color');
+          }
+        }
+      }
+    }
+  }
+
+  .add-to-canvas-button {
+    border-radius: 2px;
+    bottom: 30px;
+    cursor: pointer;
+    left: 50%;
+    padding: 6px 15px;
+    position: absolute;
+    transform: translateX(-50%);
+    z-index: 999;
+
+    @include tm.themeify {
+      border: 1px solid tm.themed('active-color');
+      color: tm.themed('active-color');
+    }
+  }
+
+  #find-path-id {
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+    z-index: 0;
+  }
+}

@@ -1,0 +1,33 @@
+@use '../../common/common.scss';
+@use '../svg.scss';
+@use '../../../themes/tm';
+
+.widget-circle {
+  .circle-outer-ring {
+    cursor: move;
+    fill: transparent;
+    stroke: transparent;
+    stroke-width: 7px;
+
+    &:hover {
+      stroke: common.$canvas-common-translucent;
+    }
+  }
+
+  .inner-circle {
+    @extend .widget-common;
+
+    stroke-width: 3px;
+
+    @include tm.themeify {
+      fill: tm.themed('white-color');
+      stroke: tm.themed('pipeline-canvas-common-color');
+    }
+
+    &.error {
+      @include tm.themeify {
+        stroke: tm.themed('error-color');
+      }
+    }
+  }
+}

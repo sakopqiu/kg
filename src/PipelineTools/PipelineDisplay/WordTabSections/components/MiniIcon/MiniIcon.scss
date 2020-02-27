@@ -1,0 +1,44 @@
+@use '../../section.scss';
+@use '../../../../../themes/tm';
+
+.mini-icon-wrapper {
+  @include section.section-common;
+
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  user-select: none;
+
+  &:not(:last-child) {
+    margin-right: 26px;
+  }
+
+  .sophon-icon {
+    font-size: 16px;
+    margin-right: 4px;
+
+    @include tm.themeify {
+      color: tm.themed('active-color');
+    }
+
+    &.disabled {
+      @include section.section-disabled-common;
+    }
+  }
+
+  &.disabled {
+    @include section.section-disabled-common;
+  }
+
+  .down-triangle {
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
+    height: 0;
+    margin-left: 3px;
+    width: 0;
+
+    @include tm.themeify {
+      border-top: 2px solid tm.themed('active-color');
+    }
+  }
+}

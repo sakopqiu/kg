@@ -1,0 +1,19 @@
+@use '../../common/menu.scss';
+
+.widget-context-menu-wrapper,
+.link-context-menu-wrapper,
+.terminus-link-context-menu-wrapper,
+.terminus-context-menu-wrapper,
+.background-context-menu-wrapper {
+  @include menu.context-menu-wrapper;
+
+  .terminus-context-menu,
+  .terminus-link-context-menu,
+  .link-context-menu,
+  .widget-context-menu,
+  .background-context-menu {
+    @include menu.sophon-context-menu;
+
+    min-width: 100px;
+  }
+}

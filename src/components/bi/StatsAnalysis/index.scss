@@ -1,0 +1,13 @@
+@use '../../../themes/tm';
+
+.stats-analysis {
+  border-radius: 2px 0 0 2px;
+  display: flex;
+  height: 100%;
+  width: 100%;
+
+  @include tm.themeify {
+    background: tm.themed('component-background');
+    border: 1px solid tm.themed('border-color');
+  }
+}

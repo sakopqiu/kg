@@ -1,0 +1,114 @@
+@use './global.scss';
+@use './themes/tm';
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+#datasetListPage,
+#apiListPage,
+#historyListPage,
+#modelLayout,
+#workflow,
+#codeListPage,
+#api {
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+#sophon-body,
+.sophon-project {
+  font-family: global.$global-font-family !important;
+
+  .ant-tree,
+  .ant-modal,
+  .ant-tooltip,
+  .ant-card,
+  .ant-menu,
+  .ant-pagination-item,
+  .ant-breadcrumb,
+  .ant-tabs,
+  .ant-btn,
+  .ant-select,
+  .ant-dropdown,
+  .ant-popover,
+  .ant-checkbox-wrapper {
+    font-family: global.$global-font-family !important;
+
+    .submenu {
+      font-size: 12px;
+
+      &.root-node {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .ant-layout-sider-zero-width-trigger {
+    display: none;
+  }
+
+  .ant-btn {
+    border-radius: 2px;
+  }
+
+  .ant-btn-primary {
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .ant-modal-header {
+    border-bottom: none;
+    border-radius: 2px 2px 0 0;
+  }
+
+  .ant-table-wrapper:not(.lab-table) {
+    .ant-table {
+      font-family: global.$global-font-family !important;
+
+      .ant-table-thead > tr {
+        & > th {
+          font-size: 12px;
+          font-weight: bold;
+          padding: 8px 8px 8px 30px;
+        }
+      }
+
+      .ant-table-tbody > tr:last-child {
+        & > td {
+          border-bottom-width: 0;
+        }
+      }
+    }
+  }
+
+  .ant-input:focus,
+  .ant-input:hover {
+    box-shadow: none;
+  }
+
+  .ant-modal {
+    font-family: global.$global-font-family !important;
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 24px;
+  }
+
+  .ant-message {
+    z-index: 9999;
+  }
+
+  button[disabled] {
+    cursor: not-allowed !important;
+  }
+}
+
+svg.interaction {
+  cursor: pointer;
+}

@@ -1,0 +1,23 @@
+@use '../../global';
+@use '../../themes/tm';
+
+.sophon-search-tree {
+  display: flex;
+  flex-direction: column;
+
+  .search-input {
+    margin-bottom: 8px;
+  }
+
+  .tree-container {
+    border-radius: global.$border-radius;
+    flex: 1;
+    min-height: 0;
+    overflow: auto;
+
+    @include tm.themeify {
+      background-color: tm.themed('component-background');
+      border: 1px solid tm.themed('border-color');
+    }
+  }
+}

@@ -1,0 +1,27 @@
+@use '../../../../../../themes/tm';
+
+.operation-menu {
+  border-radius: 1px !important;
+  box-shadow: 0 1px 12px 0 rgba(14, 34, 68, 0.06) !important;
+  padding: 11px 4px !important;
+
+  .ant-menu-item {
+    cursor: pointer;
+    font-size: 12px !important;
+    height: 16px !important;
+    letter-spacing: 0;
+    line-height: 16px !important;
+
+    @include tm.themeify {
+      color: tm.themed('text-color_enhance');
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 16px !important;
+    }
+
+    &.ant-menu-item-disabled {
+      cursor: not-allowed;
+    }
+  }
+}

@@ -1,0 +1,129 @@
+@use '../../global';
+@use '../../themes/tm';
+
+$word-tabs-height: 35px;
+$word-tab-content-height: 50px;
+$word-tabs-total-height: $word-tabs-height + $word-tab-content-height;
+
+.sophon-word-tab-container {
+  height: $word-tabs-total-height;
+  transition: height 0.1s;
+  user-select: none;
+
+  &.collapsed {
+    height: $word-tabs-height;
+  }
+
+  .sophon-word-tabs-wrapper {
+    display: flex;
+    height: $word-tabs-height;
+    width: 100%;
+
+    @include tm.themeify {
+      border-bottom: 1px solid tm.themed('border-color');
+    }
+
+    .sophon-word-tabs {
+      display: flex;
+      flex: 1;
+      font-size: 14px;
+      position: relative;
+
+      @include tm.themeify {
+        background-color: tm.themed('component-background');
+        color: tm.themed('text-color_tip');
+      }
+
+      .sophon-word-tab {
+        align-items: center;
+        cursor: pointer;
+        display: inline-block;
+        font-family: global.$global-font-family-medium;
+        line-height: $word-tabs-height;
+        margin-left: 25px;
+        margin-right: 25px;
+        text-align: center;
+
+        &.disabled {
+          @extend .disabled;
+        }
+
+        &.active {
+          border-radius: 3px 3px 0 0;
+
+          @include tm.themeify {
+            background-color: tm.themed('component-background');
+            border-bottom: 2px solid tm.themed('active-color');
+            color: tm.themed('active-color');
+          }
+        }
+      }
+
+      .size-toggler-wrapper {
+        border-radius: 3px;
+        cursor: pointer;
+        display: inline-block;
+        height: 20px;
+        line-height: 10px;
+        padding: 5px;
+        position: absolute;
+        right: 17px;
+        top: 7px;
+        width: 20px;
+
+        @include tm.themeify {
+          background: tm.themed('layout-background');
+        }
+
+        .size-toggler {
+          display: inline-block;
+          font-size: 10px;
+          left: -4px;
+          position: relative;
+          text-align: center;
+          top: -1px;
+          transform: rotate(180deg) scale(0.6);
+          transition: transform 0.1s;
+
+          @include tm.themeify {
+            color: tm.themed('text-color_tip');
+          }
+
+          &.collapsed {
+            transform: rotate(0deg) scale(0.8);
+          }
+        }
+      }
+    }
+  }
+
+  .sophon-word-tab-content {
+    align-items: center;
+    display: flex;
+    height: $word-tab-content-height;
+
+    @include tm.themeify {
+      background-color: tm.themed('component-background');
+      box-shadow: 0 2px 4px 0 tm.themed('border-color');
+    }
+
+    .sophon-word-tab-section {
+      align-items: center;
+      display: flex;
+      height: 100%;
+      padding: 2px 6px;
+      padding-left: 12px;
+
+      .ant-divider {
+        height: calc(100% - 6px);
+        left: 8px;
+        position: relative;
+        transform: translateY(2px);
+
+        @include tm.themeify {
+          background: tm.themed('layout-background');
+        }
+      }
+    }
+  }
+}

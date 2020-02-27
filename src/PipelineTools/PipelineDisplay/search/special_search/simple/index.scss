@@ -1,0 +1,13 @@
+.simple-toolbox-area {
+  left: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: absolute;
+  top: 70px;
+  width: 100%;
+  z-index: 999;
+
+  &.hideToolBox {
+    height: 0;
+  }
+}

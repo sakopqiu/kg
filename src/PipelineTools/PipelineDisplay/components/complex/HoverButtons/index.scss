@@ -1,0 +1,252 @@
+@use '../../../../common/common';
+@use '../../../../../global';
+@use '../../../../../themes/tm';
+
+@mixin hover-buttons-common {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  left: 30px;
+  position: absolute;
+  z-index: global.$medium_z_index + 1;
+}
+
+@mixin tool-icon-style {
+  @include tm.themeify {
+    background: tm.themed('placeholder-background');
+    border: 1px solid tm.themed('border-color');
+    color: tm.themed('text-color_tip');
+  }
+}
+
+@mixin hover-button-mixin {
+  @include tool-icon-style;
+
+  align-items: center;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  font-size: 18px;
+  height: 40px;
+  justify-content: center;
+  transition: width 0.2s;
+  width: 40px;
+
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  span {
+    display: none;
+    font-size: 12px;
+    left: 10px;
+    padding-right: 10px;
+    position: relative;
+  }
+
+  &:hover {
+    border-radius: 20px;
+    transition: width 0.2s;
+    width: 110px;
+
+    @include tm.themeify {
+      background: tm.themed('active-color');
+      color: tm.themed('white-color');
+    }
+
+    span {
+      display: inline-block;
+    }
+  }
+}
+
+.kg-hover-buttons-lower {
+  bottom: 52px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  left: 21px;
+  position: absolute;
+  width: 58px;
+  z-index: global.$medium_z_index + 1;
+
+  .kg-hover-button-lower {
+    @include tool-icon-style;
+
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    font-size: 12px;
+    height: 25px;
+    justify-content: center;
+    margin-bottom: 8px;
+    position: relative;
+    width: 25px;
+  }
+}
+
+.kg-hover-buttons {
+  @include hover-buttons-common;
+
+  top: 71px;
+
+  .kg-hover-button {
+    @include hover-button-mixin;
+  }
+}
+
+.community-panel {
+  box-shadow: -2px 2px 20px 0 rgba(146, 155, 166, 0.7);
+  margin: 0;
+  z-index: global.$medium_z_index + 2;
+
+  &.hide {
+    display: none;
+  }
+
+  .divider {
+    height: 1px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    overflow: hidden;
+
+    @include tm.themeify {
+      background-color: tm.themed('border-color');
+    }
+  }
+
+  // 改写antd默认样式
+  .sophon-modal-body {
+    .ant-tabs-bar {
+      border-bottom: 0;
+    }
+  }
+
+  .ant-tabs-nav .ant-tabs-tab {
+    font-family: global.$global-font-family-medium;
+
+    @include tm.themeify {
+      color: tm.themed('text-color_tip');
+    }
+  }
+
+  .ant-tabs-nav .ant-tabs-tab-active {
+    font-size: 14px;
+
+    @include tm.themeify {
+      color: tm.themed('text-color_enhance');
+    }
+  }
+
+  .manual-discovery {
+    font-size: 12px;
+
+    @include tm.themeify {
+      color: tm.themed('text-color_enhance');
+    }
+
+    &-title {
+      padding-top: 0;
+    }
+
+    &-body {
+      min-height: 120px;
+      padding-bottom: 16px;
+
+      div.fieldDesc {
+        margin-bottom: 8px;
+        margin-top: 8px;
+
+        &.switch {
+          position: relative;
+          top: -2px;
+        }
+      }
+
+      .ant-form-item-label {
+        line-height: 24px;
+        margin-top: 8px;
+
+        label {
+          font-size: 12px;
+
+          @include tm.themeify {
+            color: tm.themed('text-color_enhance');
+          }
+        }
+      }
+
+      .ant-select {
+        @include tm.themeify {
+          color: tm.themed('text-color_enhance');
+        }
+
+        .ant-select-selection {
+          @include tm.themeify {
+            border-color: tm.themed('border-color');
+          }
+        }
+      }
+
+      .ant-input-number {
+        @include tm.themeify {
+          border-color: tm.themed('border-color');
+        }
+      }
+
+      .ant-form-item {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .footer.operation-panel {
+    align-items: center;
+    display: flex;
+    height: 60px;
+    justify-content: flex-end;
+    min-width: auto;
+    padding-right: 8px;
+    width: 100%;
+
+    @include tm.themeify {
+      background: tm.themed('component-background');
+    }
+
+    button {
+      align-items: center;
+      border-radius: 2px;
+      cursor: pointer;
+      font-size: 14px;
+      height: 36px;
+      line-height: 20px;
+      margin-right: 10px;
+      min-width: 80px;
+      padding-bottom: 8px;
+      padding-top: 8px;
+      text-align: center;
+    }
+  }
+}
+
+.setting-panel {
+  .sophon-modal-body {
+    .ant-form-item * {
+      font-size: 12px;
+
+      @include tm.themeify {
+        color: tm.themed('text-coloe_enhance');
+      }
+    }
+
+    .quantity-header {
+      label {
+        @include tm.themeify {
+          color: tm.themed('text-color_tip');
+        }
+      }
+    }
+  }
+}

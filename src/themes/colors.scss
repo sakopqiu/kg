@@ -1,0 +1,45 @@
+/*
+  该文件定义了所有用到颜色，所有组件所用颜色必须来源于本文件中
+ */
+$white: #FFF;
+$blue: #549BE7;                // default-selected色
+$blue1: #F8FBFF;               // default-列表单数行背景色
+$blue2: #DEEEFF;               // default-active色，联级菜单hover背景色
+$blue3: #E5F1FF;               // default-Modal标题背景色
+$blue4: #24467F;               // default-突出组件的背景，例如导航条，以及首页footer
+$blue5: #82A6E0;               // default-text反色
+$blue6: #365FA1;               // default-list-item的背景色
+$black: #000;
+$black1: #EDEDED;              // default-disabled背景色
+$black2: #BAC2D0;              // default-disabled文本色
+$black3: #2D323E;              // dark-大部分组件的背景色
+$black4: #171C22;              // dark-layout的背景色
+$black5: #242933;              // dark-突出组件的背景，例如导航条，以及首页footer
+$gray: #F2F4F7;                // default-大背景色，placeholder 背景色
+$gray1: #DCE3EE;               // default-外框border色
+$gray2: #4B5668;               // default-文本字体色
+$gray3: #28374F;               // default-标题字体色、重要文字
+$gray4: #949DAD;               // default-input、select等组件的icon颜色、提示文字颜色、placeholder文字颜色
+$gray5: #EFF3F8;               // default-内部border色
+$gray6: #BFBFBF;               // default-scroll条色
+$gray7: #8A9AB1;               // dark-文本字体色
+$gray8: #5E697C;               // dark-input、select等组件的icon颜色、提示文字颜色、placeholder文字颜色
+$gray9: #3C4157;               // dark-Modal标题背景色、滚动滑块背景色
+$gray10: #323A4E;              // dark-active色，联级菜单hover背景色
+$gray11: #1D212A;              // dark-列表单数行背景色
+$gray12: #313D49;              // dark-disabled背景色
+$gray13: #495561;              // dark-disabled字体色
+$gray14: #2C3340;              // dark-list-item的背景色
+$gray15: #22272D;              // dark-pipeline grid-line色
+$green: #80CEAF;               // default-成功色
+$green1: #848BAF;              // default-pipeline TerminusWidget 背景色
+$green2: rgba(226, 241, 253, 0.7); // default-pipeline grid-line色
+$green3: #2E485C;              // dark-外框border色
+$green4: #223543;              // dark-内框border色
+$green5: #80CBD4;              // default-pipeline canvas-common-color
+$green6: #227783;              // dark-pipeline canvas-common-color
+$green7: #ECFCFE;              // default-pipeline widget-rectangle-background
+$green8: #3A4963;              // dark-pipeline widget-rectangle-background
+$red: #EF7070;                 // default-错误色
+$orange: #FFBA46;              // default-警示色
+$orange1: #CBBA49;              // dark-警示色

@@ -1,0 +1,15 @@
+$width: 250px;
+
+.simple-canvas-details-panel {
+  height: calc(100% - 40px);
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: width 0.1s;
+  width: 0;
+  z-index: 999;
+
+  &.show {
+    width: $width;
+  }
+}

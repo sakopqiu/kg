@@ -1,0 +1,95 @@
+@use '../../../../../global';
+@use '../../../../../themes/tm';
+
+@mixin filter-common {
+  bottom: 0;
+  box-shadow: 0 -2px 8px 2px rgba(22, 83, 148, 0.1), 0 3px 8px 2px rgba(22, 83, 148, 0.1);
+  left: 0;
+  position: absolute;
+  width: 100%;
+
+  @include tm.themeify {
+    background-color: tm.themed('component-background');
+  }
+}
+
+#display-mode-time-filter-wrapper {
+  bottom: 40px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  z-index: global.$medium_z_index + 1; // snapshot用了1000，所以这个要大一点
+
+  .no-time-attributes {
+    @include filter-common;
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 226px;
+    justify-content: center;
+    margin-bottom: 0;
+
+    .notime-attr-closeicon {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+    }
+
+    p {
+      @include tm.themeify {
+        color: tm.themed('text-color_enhance');
+      }
+    }
+  }
+
+  .display-mode-time-filter {
+    @include filter-common;
+
+    height: 276px;
+  }
+
+  .time-filter-arrow {
+    bottom: 13px;
+    cursor: pointer;
+    font-size: 18px;
+    position: absolute;
+    right: 21px;
+    z-index: 10;
+
+    @include tm.themeify {
+      color: tm.themed('text-color_tip');
+    }
+  }
+
+  .time-filter-buttons {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    right: 20px;
+    top: -266px;
+
+    .sophon-icon {
+      cursor: pointer;
+      font-size: 16px;
+      margin-left: 30px;
+
+      @include tm.themeify {
+        color: tm.themed('text-color_tip');
+      }
+
+      &:hover {
+        @include tm.themeify {
+          color: tm.themed('active-color');
+        }
+      }
+
+      &.active {
+        @include tm.themeify {
+          color: tm.themed('active-color');
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@use '../../../../../../global.scss';
+@use '../../../../../../themes/tm';
+
+.stats-title {
+  font-family: global.$global-font-family-medium;
+  font-size: 14px;
+  margin-top: 20px;
+
+  @include tm.themeify {
+    color: tm.themed('text-color_tip');
+  }
+}

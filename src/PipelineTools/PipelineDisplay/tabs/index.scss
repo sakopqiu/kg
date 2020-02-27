@@ -1,0 +1,16 @@
+@use '../../../themes/tm';
+
+.display-mode-tabs {
+  padding-left: 0 !important;
+  user-select: none;
+
+  @include tm.themeify {
+    background-color: tm.themed('layout-background') !important;
+  }
+
+  .display-mode-tab:not(.selected) {
+    @include tm.themeify {
+      background-color: tm.themed('component-background') !important;
+    }
+  }
+}

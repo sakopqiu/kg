@@ -1,0 +1,60 @@
+@use '../../global.scss';
+@use '../../themes/tm';
+
+.time-range-table {
+  border-radius: 1px;
+  box-shadow: 0 1px 12px 0 rgba(14, 34, 68, 0.1);
+  height: 244px;
+  padding: 20px;
+  width: 305px;
+  z-index: 999;
+
+  @include tm.themeify {
+    background: tm.themed('text-color_reverse');
+  }
+
+  &-title {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-top: -12px;
+
+    &-left {
+      font-family: global.$global-font-family-bold;
+      font-size: 14px;
+
+      @include tm.themeify {
+        color: tm.themed('text-color_enhance');
+      }
+    }
+
+    &-right {
+      cursor: pointer;
+      font-size: 24px;
+      transform: rotate(45deg);
+
+      @include tm.themeify {
+        color: tm.themed('text-color_tip');
+      }
+    }
+  }
+
+  &-content {
+    justify-content: center;
+    margin-top: 20px;
+
+    .ant-row {
+      align-items: center;
+      display: flex;
+      margin-bottom: 20px;
+    }
+  }
+
+  &-confirm {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    width: 150px;
+  }
+}

@@ -1,0 +1,23 @@
+@use './index.scss' as more;
+
+.sophon-more-tools-hook-wrapper {
+  overflow: hidden;
+  position: relative;
+
+  .more-btn {
+    align-items: center;
+    cursor: pointer;
+    //border-left: 1px solid #DCE3EE;
+    display: flex;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 20px;
+  }
+}
+
+.more-btn-menu {
+  @include more.morebtnmenu;
+}

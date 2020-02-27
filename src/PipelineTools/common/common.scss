@@ -1,0 +1,286 @@
+@use '../../global';
+@use '../../themes/tm';
+
+$canvas-common-translucent: rgba(128, 203, 212, 0.5); /* canvas 中很多地方使用了这个配色 */
+$line-highlight: rgb(24, 180, 255);
+$bottom-tool-bar-height: 40px;
+$pipeline-tab-height: 41px;
+
+.value-render {
+  margin: 10px;
+  position: relative;
+  user-select: text;
+
+  .parameter-value {
+    overflow-wrap: break-word;
+  }
+}
+
+.pipelinetool-canvas {
+  display: flex;
+  font-family: global.$global-font-family;
+  height: 100%;
+  min-height: 0;
+  position: relative;
+
+  @include tm.themeify {
+    border-bottom: 1px solid tm.themed('border-color_light');
+    border-left: 1px solid tm.themed('border-color_light');
+    border-top: 1px solid tm.themed('border-color');
+  }
+
+  .drawing-context-wrapper {
+    position: relative;
+    transition: width 0.1s;
+
+    .canvas-tabs {
+      height: $pipeline-tab-height;
+      padding-left: 10px;
+      width: 100%;
+
+      @include tm.themeify {
+        background-color: tm.themed('component-background');
+        border-bottom: 1px solid tm.themed('border-color');
+      }
+
+      .canvas-tab {
+        bottom: 1px;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 14px;
+        height: 36px;
+        line-height: 24px;
+        margin-right: 5px;
+        margin-top: 5px;
+        padding: 6px 22px 6px 16px;
+        position: relative;
+        text-align: center;
+
+        @include tm.themeify {
+          background: tm.themed('disabled-background');
+          color: tm.themed('text-color_tip');
+        }
+
+        &-solo {
+          padding-right: 10px;
+        }
+
+        &.selected {
+          @include tm.themeify {
+            background: tm.themed('active-color');
+            color: tm.themed('white-color');
+          }
+        }
+
+        .cross {
+          position: absolute;
+          right: 5px;
+          top: -2px;
+          transform: rotate(45deg);
+
+          &:hover {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+
+    @mixin tool-bar-minin {
+      align-items: center;
+      display: flex;
+      font-size: 14px;
+      height: $bottom-tool-bar-height;
+      justify-content: space-between;
+      line-height: 40px;
+      padding-right: 20px;
+      width: 100%;
+
+      @include tm.themeify {
+        background: tm.themed('component-background');
+      }
+
+      .ant-select-selection--single {
+        height: auto;
+      }
+
+      .zoom {
+        align-items: center;
+        display: flex;
+        padding-right: 15px;
+
+        div {
+          cursor: pointer;
+        }
+      }
+
+      &-left {
+        align-items: center;
+        display: flex;
+        flex: 1;
+        justify-content: flex-start;
+      }
+
+      &-right {
+        align-items: center;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .canvas-tool-icons {
+        cursor: pointer;
+        font-size: 20px;
+        margin-right: 8px;
+
+        @include tm.themeify {
+          color: tm.themed('text-color_tip');
+        }
+
+        &.cyto-tools {
+          margin-right: 12px;
+
+          @include tm.themeify {
+            color: tm.themed('active-color');
+          }
+        }
+      }
+
+      .canvas-tool-items {
+        align-items: center;
+        display: flex;
+        margin-right: 30px;
+
+        .ant-select {
+          margin-right: 0 !important;
+        }
+      }
+
+      .layout-select {
+        margin-left: 8px;
+      }
+
+      .canvas-tool-label {
+        font-family: global.$global-font-family-medium;
+        font-size: 10px;
+        user-select: none;
+      }
+    }
+
+    .top-tool-bar {
+      @include tool-bar-minin;
+
+      @include tm.themeify {
+        border-bottom: 1px solid tm.themed('border-color_light');
+      }
+    }
+
+    .bottom-tool-bar {
+      @include tool-bar-minin;
+
+      @include tm.themeify {
+        border-top: 1px solid tm.themed('border-color_light');
+      }
+    }
+  }
+}
+
+@mixin panelStyle {
+  height: 100%;
+  overflow-x: visible;
+  overflow-y: visible;
+  position: relative;
+  transition: width 0.05s;
+
+  @include tm.themeify {
+    background: tm.themed('layout-background');
+    border-left: 1px solid tm.themed('border-color');
+    border-right: 1px solid tm.themed('border-color');
+  }
+
+  .collapse-handle {
+    align-items: center;
+    border-radius: 2px;
+    border-right: 0;
+    cursor: pointer;
+    display: flex;
+    height: 100px;
+    justify-content: center;
+    left: -18px;
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    width: 18px;
+
+    @include tm.themeify {
+      background: tm.themed('layout-background');
+      border: 1px solid tm.themed('border-color');
+    }
+
+    &::after {
+      content: '>';
+      font-size: 12px;
+      transform: scaleX(0.8) scaleY(1.8);
+    }
+  }
+
+  &.collapsed {
+    transition: width 0.05s;
+    width: 43px;
+
+    .collapse-handle {
+      &::after {
+        content: '<';
+      }
+    }
+  }
+
+  .details-title {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    font-family: global.$global-font-family-medium;
+    font-size: 16px;
+    height: $pipeline-tab-height;
+    justify-content: space-between;
+    padding-left: 14px;
+    padding-right: 14px;
+    position: relative;
+    user-select: none;
+
+    @include tm.themeify {
+      background-color: tm.themed('placeholder-component');
+      border-bottom: 1px solid tm.themed('border-color_light');
+      border-top: 1px solid tm.themed('border-color_light');
+    }
+  }
+
+  .attributes {
+    height: calc(100% - 41px);
+    overflow-x: auto;
+    overflow-y: auto;
+  }
+
+  .ant-tabs-bar {
+    margin-bottom: 0;
+  }
+}
+
+.canvas-details-panel {
+  @include panelStyle;
+
+  overflow-y: auto;
+  width: 300px;
+}
+
+.widget-details-panel {
+  @include panelStyle;
+
+  .fields {
+    height: calc(100% - 41px);
+    overflow: auto;
+    padding: 10px;
+
+    @include tm.themeify {
+      background: tm.themed('layout-background');
+    }
+  }
+}

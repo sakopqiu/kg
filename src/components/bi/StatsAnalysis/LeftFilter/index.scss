@@ -1,0 +1,98 @@
+@use '../../../../global.scss';
+@use '../../../../themes/tm';
+
+.stats-analysis-left-filter {
+  height: 100%;
+  overflow-y: auto;
+  width: pt2px(80);
+
+  @include tm.themeify {
+    background: tm.themed('component-background');
+    border-right: 1px solid tm.themed('border-color');
+  }
+
+  .classification-wrapper {
+    position: relative;
+
+    .switch-group-by {
+      border-radius: 3px;
+      cursor: pointer;
+      padding: 3px;
+      position: absolute;
+      right: -5px;
+      top: 50%;
+
+      @include tm.themeify {
+        border: 1px solid tm.themed('border-color_light');
+      }
+    }
+  }
+
+  .caption-title {
+    font-family: global.$global-font-family-bold;
+    font-size: 14px;
+    letter-spacing: 0.17px;
+    margin-bottom: 15px;
+
+    @include tm.themeify {
+      color: tm.themed('title-color_enhance');
+    }
+  }
+
+  .left-select-area {
+    padding: pt2px(3);
+    padding-bottom: 10px;
+
+    .left-filter-select {
+      width: 100%;
+    }
+  }
+
+  .stats-field-wrapper {
+    .stats-fields-search {
+      margin-bottom: 15px;
+    }
+
+    .stats-field-checkboxes {
+      font-family: global.$global-font-family-medium;
+
+      .stats-field-name {
+        font-size: 14px;
+        font-weight: 900;
+        letter-spacing: 0.14px;
+
+        @include tm.themeify {
+          color: tm.themed('text-color_enhance');
+        }
+      }
+
+      .stats-field-type {
+        font-size: 10px;
+        letter-spacing: 0.14px;
+        line-height: 17px;
+        margin-left: 5px;
+      }
+
+      .stats-field-group {
+        margin-left: 10px;
+        margin-top: 10px;
+
+        .ant-checkbox-wrapper {
+          display: block;
+          margin-bottom: 8px;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  .stats-analysis-left-filter-buttons {
+    cursor: pointer;
+    display: flex;
+    margin-top: 20px;
+
+    .ant-btn {
+      flex: 1;
+    }
+  }
+}

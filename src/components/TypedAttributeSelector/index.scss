@@ -1,0 +1,95 @@
+@use '../../themes/tm';
+
+.dataset-attribute-selector {
+  border-radius: 2px;
+  height: 450px;
+  padding: 20px;
+  padding-top: 15px;
+  width: 627px;
+
+  @include tm.themeify {
+    background-color: tm.themed('component-background');
+    border: 1px solid tm.themed('border-color');
+  }
+
+  &-header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    .dataset-cascader {
+      height: 30px;
+      margin-left: 10px;
+      width: 220px;
+    }
+
+    .auto-mapping-button {
+      cursor: pointer;
+      font-size: 12px;
+
+      @include tm.themeify {
+        color: tm.themed('active-color');
+      }
+    }
+  }
+
+  &-body {
+    height: calc(100% - 50px);
+    overflow: auto;
+
+    .sophon-tab {
+      padding: 0;
+
+      .sophon-tab-header {
+        justify-content: flex-start;
+        padding-left: 0;
+        padding-right: 0;
+
+        .sophon-tab-header-item {
+          margin-right: 30px;
+        }
+      }
+    }
+  }
+}
+
+.dataset-attributes-wrapper {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-top: 20px;
+
+  .dataset-attribute-oval {
+    align-items: center;
+    border-radius: 10px;
+    cursor: move;
+    display: flex;
+    font-size: 12px;
+    height: 30px;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    @include tm.themeify {
+      border: 1px dotted tm.themed('border-color');
+      color: tm.themed('text-color');
+    }
+
+    &.isBeingDragged {
+      border-width: 3px;
+    }
+
+    &.disabled {
+      cursor: not-allowed;
+      pointer-events: none;
+
+      @include tm.themeify {
+        color: tm.themed('text-color_tip');
+      }
+    }
+  }
+}

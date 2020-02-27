@@ -1,0 +1,131 @@
+@use '../../global.scss';
+@use '../../themes/tm';
+
+.timeline-wrapper {
+  width: 100%;
+
+  .spot-label {
+    font-size: 10px;
+    user-select: none;
+
+    @include tm.themeify {
+      color: tm.themed('text-color_tip');
+    }
+  }
+
+  li {
+    background-image: none !important;
+
+    span {
+      height: 8px !important;
+      transform: translate(2px, -2px);
+      width: 8px !important;
+    }
+  }
+
+  .buttons {
+    .disabled {
+      display: none;
+    }
+
+    li {
+      @include tm.themeify {
+        border: 2px solid tm.themed('border-color') !important;
+      }
+
+      svg {
+        @include tm.themeify {
+          fill: tm.themed('active-color') !important;
+        }
+      }
+    }
+  }
+
+  .dot-label {
+    padding-bottom: 0 !important;
+  }
+
+  .present {
+    span {
+      box-shadow: 0 0 0 3px rgba(75, 136, 209, 0.1);
+
+      @include tm.themeify {
+        background-color: tm.themed('active-color') !important;
+        border: 2px solid tm.themed('active-color') !important;
+      }
+    }
+  }
+}
+
+.plain-mode {
+  .present,
+  .past,
+  .future {
+    span {
+      box-shadow: none;
+
+      @include tm.themeify {
+        background-color: tm.themed('layout-background') !important;
+        border: 2px solid tm.themed('border-color') !important;
+      }
+
+      &:hover {
+        box-shadow: 0 0 0 3px rgba(75, 136, 209, 0.1);
+
+        @include tm.themeify {
+          background-color: tm.themed('active-color') !important;
+          border: 2px solid tm.themed('active-color') !important;
+        }
+      }
+    }
+  }
+
+  .timeline-eventline {
+    @include tm.themeify {
+      background-color: tm.themed('layout-background') !important;
+    }
+  }
+}
+
+.timeline-label-bottom {
+  .spot-label {
+    left: 50%;
+    padding-top: 12px;
+    position: absolute;
+    width: 100%;
+  }
+
+  .events-wrapper {
+    .events {
+      top: 6px !important;
+    }
+  }
+
+  .buttons {
+    li {
+      top: 0 !important;
+      transform: none !important;
+    }
+  }
+}
+
+.timeline-label-top {
+  .spot-label {
+    padding-bottom: 12px;
+  }
+
+  .events-wrapper {
+    .events {
+      bottom: 6px !important;
+      top: auto !important;
+    }
+  }
+
+  .buttons {
+    li {
+      bottom: 0 !important;
+      top: auto !important;
+      transform: none !important;
+    }
+  }
+}

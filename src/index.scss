@@ -1,0 +1,67 @@
+@use 'themes/tm';
+@use "themes/global";
+
+@include tm.themeify {
+  background-color: tm.themed('layout-background');
+  color: tm.themed('text-color');
+
+  & {
+    @include tm.themeify {
+      background-color: tm.themed('layout-background');
+      color: tm.themed('text-color');
+    }
+  }
+}
+
+@include global.every((h1, h2, h3, h4, h5, h6)) {
+  @include tm.themeify {
+    color: tm.themed('text-color_enhance');
+  }
+}
+
+button[disabled] {
+  @include tm.themeify {
+    color: tm.themed('disabled-color');
+  }
+}
+
+textarea[disabled] {
+  @include tm.themeify {
+    background: tm.themed('disabled-background');
+  }
+}
+
+a.disabled-link {
+  @include tm.themeify {
+    color: tm.themed('disabled-color');
+  }
+}
+
+::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+
+  @include tm.themeify {
+    background: tm.themed('component-background');
+  }
+}
+
+::-webkit-scrollbar-track {       // 滚动条轨道样式
+  @include tm.themeify {
+    background-color: tm.themed('scroll-background');
+  }
+}
+
+::-webkit-scrollbar-thumb {       // 滚动条滑块样式
+  border-radius: 5px;
+
+  @include tm.themeify {
+    background-color: tm.themed('scroll-bar-background');
+  }
+}
+
+a {
+  @include tm.themeify {
+    color: tm.themed('active-color');
+  }
+}

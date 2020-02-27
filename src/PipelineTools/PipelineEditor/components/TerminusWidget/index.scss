@@ -1,0 +1,32 @@
+@use '../../../../themes/tm';
+
+.pipeline-terminus {
+  @include tm.themeify {
+    fill: tm.themed('pipeline-terminus-widget-background');
+  }
+
+  @keyframes terminus-candidate {
+    to {
+      stroke-dashoffset: -100px;
+    }
+  }
+
+  &.isCandidate {
+    animation: terminus-candidate 5s linear forwards infinite;
+    fill: transparent;
+    stroke-dasharray: 5;
+    stroke-width: 2px;
+
+    @include tm.themeify {
+      stroke: tm.themed('pipeline-terminus-widget-background');
+    }
+  }
+
+  &.isHovered {
+    cursor: pointer;
+  }
+
+  &.notAllowed {
+    cursor: not-allowed;
+  }
+}

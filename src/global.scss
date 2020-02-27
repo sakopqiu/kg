@@ -1,0 +1,127 @@
+@use './themes/tm';
+
+$border-radius: 2px;
+// 每个使用sophon-utils的项目，如果要用sophon的字体，需要自己定义sophone-font，不然会显示Yahei
+$global-font-family: sophone-font, Microsoft YaHei, SimSun, arial;
+$global-font-family-light: sophone-font-light, Microsoft YaHei, SimSun, arial;
+$global-font-family-thin: sophone-font-thin, Microsoft YaHei, SimSun, arial;
+$global-font-family-medium: sophone-font-medium, Microsoft YaHei, SimSun, arial;
+$global-font-family-bold: sophone-font-bold, Microsoft YaHei, SimSun, arial;
+
+.disabled {
+  cursor: not-allowed;
+}
+
+.force-fullscreen {
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+@mixin disabled {
+  cursor: not-allowed;
+}
+
+$medium_z_index: 1000;
+// antd的select控件的zindex为1050，并且脱离于任何父级dom存在，
+// 如果我们的代码zindex大于这个值会导致下拉框看不见
+$max_z_index: 1040;
+
+// antd modal z-index比Sophon modal高1
+$common_layout_modal_z_index: 1041;
+
+@mixin common-box-shadow {
+  @include tm.themeify {
+    box-shadow: tm.themed('box-shadow1');
+  }
+}
+
+// 淡入淡出动画效果样式
+.sophon-fade-enter {
+  opacity: 0.01;
+}
+
+.sophon-fade-enter.sophon-fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+.sophon-fade-appear {
+  opacity: 0.01;
+}
+
+.sophon-fade-appear.sophon-fade-appear-active {
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+}
+
+.sophon-fade-leave {
+  opacity: 1;
+}
+
+.sophon-fade-leave.sophon-fade-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+
+.ant-tabs .ant-tabs-top-content > .ant-tabs-tabpane,
+.ant-tabs .ant-tabs-bottom-content > .ant-tabs-tabpane {
+  transition: none;
+}
+
+.sophon-interaction {
+  cursor: pointer;
+
+  @include tm.themeify {
+    color: tm.themed('active-color');
+  }
+}
+
+@function pt2px($pt) {
+  @return ($pt /0.375)+px;
+}
+
+@mixin sophon-status-colors {
+  .sophon-icon {
+    cursor: default;
+  }
+
+  .isophon-status_finished {
+    @include tm.themeify {
+      color: tm.themed('success-color');
+    }
+  }
+
+  .isophon-status_failed {
+    @include tm.themeify {
+      color: tm.themed('error-color');
+    }
+  }
+
+  .isophon-status_stopped {
+    @include tm.themeify {
+      color: tm.themed('active-color');
+    }
+  }
+
+  .isophon-status_stopping {
+    @include tm.themeify {
+      color: tm.themed('active-color');
+    }
+  }
+
+  .isophon-running {
+    @include tm.themeify {
+      color: tm.themed('active-color');
+    }
+  }
+
+  .anticon-loading {
+    @include tm.themeify {
+      color: tm.themed('active-color');
+    }
+  }
+}

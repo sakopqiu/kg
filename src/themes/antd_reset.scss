@@ -1,0 +1,1535 @@
+/*
+  该文件重置了antd的相关组件颜色
+ */
+@use 'tm.scss';
+@use 'global.scss';
+
+.ant-form {
+  &-item {
+    @include tm.themeify {
+      color: tm.themed('text-color');
+    }
+
+    &-label {
+      > label {
+        @include tm.themeify {
+          color: tm.themed('text-color');
+        }
+      }
+    }
+  }
+
+  //&-item-control-wrapper {
+  //  *:not([class^="ace_"]):not(.ace-tm):not(i):not(svg):not(path):not(.ant-form-explain) {
+  //    @include tm.themeify {
+  //    color: tm.themed('ant-form-item-control-color');
+  //  }
+  //
+  //    &.ant-btn.ant-btn-primary {
+  //      @include tm.themeify {
+  //      color: #FFF ;
+  //    }
+  //
+  //      *:not(i):not(svg):not(path) {
+  //        @include tm.themeify {
+  //        color: #FFF;
+  //      }
+  //      }
+  //    }
+  //  }
+  //}
+}
+
+.ant-layout {
+  @include tm.themeify {
+    background-color: tm.themed('layout-background_dark_reverse');
+  }
+
+  .ant-layout-sider {
+    @include tm.themeify {
+      background-color: tm.themed('layout-background_dark_reverse');
+    }
+  }
+
+  .ant-layout-content {
+    @include tm.themeify {
+      background-color: tm.themed('layout-background_dark_reverse');
+    }
+  }
+}
+
+.ant-menu {
+  @include tm.themeify {
+    background-color: tm.themed('component-background');
+    color: tm.themed('text-color');
+    transition: none;
+  }
+
+  * {
+    @include tm.themeify {
+      transition: none;
+    }
+  }
+
+  .ant-menu-submenu-title:active {
+    @include tm.themeify {
+      background-color: transparent;
+    }
+  }
+
+  .ant-menu-item {
+    &:active {
+      @include tm.themeify {
+        background-color: tm.themed('item-background_active');
+      }
+    }
+
+    &.ant-menu-item-selected {
+      @include tm.themeify {
+        background-color: tm.themed('item-background_selected');
+        color: tm.themed('white-color');
+      }
+
+      * {
+        @include tm.themeify {
+          color: tm.themed('white-color');
+        }
+      }
+    }
+
+    > a {
+      @include tm.themeify {
+        color: tm.themed('text-color');
+      }
+    }
+  }
+
+  .ant-menu-item-disabled {
+    @include tm.themeify {
+      color: tm.themed('disabled-color');
+    }
+  }
+
+  .ant-menu-submenu-disabled {
+    @include tm.themeify {
+      color: tm.themed('disabled-color');
+    }
+  }
+
+  .ant-menu-item-divider {
+    @include tm.themeify {
+      background-color: tm.themed('border-color_light');
+    }
+  }
+}
+
+.ant-menu-submenu-popup {
+  @include tm.themeify {
+    background-color: tm.themed('component-background');
+    transition: none;
+  }
+}
+
+.ant-menu-inline,
+.ant-menu-vertical,
+.ant-menu-vertical-left {
+  border-right: 1px solid transparent;
+}
+
+.ant-select {
+  &-selection {
+    @include tm.themeify {
+      background-color: tm.themed('component-background');
+      border-color: tm.themed('border-color');
+    }
+
+    .ant-select-selection__placeholder {
+      @include tm.themeify {
+        color: tm.themed('text-color_tip');
+      }
+    }
+
+    .ant-select-selection-selected-value {
+      @include tm.themeify {
+        color: tm.themed('text-color');
+      }
+    }
+
+    .ant-select-arrow {
+      @include tm.themeify {
+        color: tm.themed('text-color_tip');
+      }
+    }
+
+    //.ant-select-selection__choice {
+    //  @include tm.themeify {
+    //    background-color: tm.themed('ant-select-selection-choice-background-color');
+    //    border-color: tm.themed('ant-select-selection-choice-border-color');
+    //  }
+    //
+    //  i svg path {
+    //    @include tm.themeify {
+    //      color: tm.themed('text-color_tip');
+    //    }
+    //  }
+    //}
+
+    .ant-select-selection__clear {
+      @include tm.themeify {
+        background-color: tm.themed('component-background');
+      }
+    }
+  }
+
+  &.ant-select-disabled {
+    .ant-select-selection {
+      @include tm.themeify {
+        background-color: tm.themed('disabled-background');
+        border-color: tm.themed('disabled-background');
+        color: tm.themed('disabled-color');
+      }
+
+      * {
+        @include tm.themeify {
+          color: tm.themed('disabled-color');
+        }
+      }
+    }
+  }
+}
+
+@include global.every(('.ant-tag', '.ant-tag a', '.ant-tag a:hover')) {
+  @include tm.themeify {
+    color: tm.themed('text-color');
+  }
+}
+
+.ant-tag {
+  @include tm.themeify {
+    border: 1px solid tm.themed('border-color');
+  }
+}
+
+@mixin tableItemHover {
+  &:not(.ant-table-expanded-row):hover {
+    > td {
+      @include tm.themeify {
+        background-color: tm.themed('item-background_selected');
+        color: tm.themed('white-color');
+      }
+
+      span:not(.ant-select-arrow) {
+        @include tm.themeify {
+          color: tm.themed('white-color');
+        }
+      }
+
+      div.ant-select-selection-selected-value {
+        span {
+          @include tm.themeify {
+            color: tm.themed('text-color');
+          }
+        }
+      }
+
+      a:not(.disabled):not(.disabled-link):not(:disabled) {
+        @include tm.themeify {
+          color: tm.themed('white-color');
+        }
+      }
+
+      .ant-checkbox {
+        .ant-checkbox-inner {
+          @include tm.themeify {
+            border-color: tm.themed('border-color');
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin tableStyle {
+  &-small {
+    @include tm.themeify {
+      border-color: tm.themed('border-color');
+    }
+  }
+
+  table {
+    @include tm.themeify {
+      border: 1px solid tm.themed('border-color');
+    }
+  }
+
+  .ant-table-thead > tr > th {
+    padding: 8px 8px 8px 30px;
+
+    @include tm.themeify {
+      background-color: tm.themed('item-background_even');
+      border-bottom-color: tm.themed('border-color_light');
+      color: tm.themed('text-color_enhance');
+    }
+
+    * {
+      @include tm.themeify {
+        color: tm.themed('text-color_enhance');
+      }
+    }
+
+    &.ant-table-column-has-actions.ant-table-column-has-sorters:hover {
+      @include tm.themeify {
+        background-color: tm.themed('item-background_even');
+      }
+    }
+
+    .ant-table-column-sorter .ant-table-column-sorter-inner .on {
+      @include tm.themeify {
+        color: tm.themed('active-color');
+      }
+
+      * {
+        @include tm.themeify {
+          color: tm.themed('active-color');
+        }
+      }
+    }
+  }
+
+  .ant-table-tbody {
+    .ant-table-row {
+      > td {
+        padding: 8px 8px 8px 30px;
+
+        @include tm.themeify {
+          border-bottom-color: tm.themed('border-color_light');
+          color: tm.themed('text-color');
+        }
+      }
+    }
+
+    tr {
+      > td {
+        padding: 8px 8px 8px 30px;
+
+        @include tm.themeify {
+          border-bottom-color: tm.themed('border-color_light');
+          color: tm.themed('text-color');
+        }
+      }
+    }
+
+    > tr:nth-of-type(odd) {
+      @include tableItemHover;
+
+      > td {
+        @include tm.themeify {
+          background-color: tm.themed('item-background_odd');
+        }
+      }
+    }
+
+    > .ant-table-row:nth-of-type(odd) {
+      @include tableItemHover;
+
+      > td {
+        @include tm.themeify {
+          background-color: tm.themed('item-background_odd');
+        }
+      }
+    }
+
+    tr.ant-table-row.table-row-odd {
+      @include tableItemHover;
+
+      > td {
+        @include tm.themeify {
+          background-color: tm.themed('item-background_odd');
+        }
+      }
+    }
+
+    > tr:nth-of-type(even) {
+      @include tableItemHover;
+
+      > td {
+        @include tm.themeify {
+          background-color: tm.themed('item-background_even');
+        }
+      }
+    }
+
+    > .ant-table-row:nth-of-type(even) {
+      @include tableItemHover;
+
+      > td {
+        @include tm.themeify {
+          background-color: tm.themed('item-background_even');
+        }
+      }
+    }
+
+    tr.ant-table-row.table-row-even {
+      @include tableItemHover;
+
+      > td {
+        @include tm.themeify {
+          background-color: tm.themed('item-background_even');
+        }
+      }
+    }
+  }
+
+  .ant-table-placeholder {
+    @include tm.themeify {
+      background: tm.themed('component-background');
+      border-bottom-color: tm.themed('border-color_light');
+      border-top-color: tm.themed('border-color_light');
+    }
+
+    .ant-empty-image {
+      display: none;
+    }
+  }
+
+  .ant-table-row-expand-icon {
+    @include tm.themeify {
+      background: tm.themed('component-background');
+      border-color: tm.themed('border-color');
+    }
+  }
+
+  tr.ant-table-expanded-row {
+    @include tm.themeify {
+      background: tm.themed('component-background');
+    }
+  }
+
+  tr.ant-table-expanded-row:hover {
+    @include tm.themeify {
+      background: tm.themed('component-background');
+    }
+  }
+
+  th {
+    @include tm.themeify {
+      border-color: tm.themed('border-color');
+    }
+  }
+
+  td {
+    @include tm.themeify {
+      border-color: tm.themed('border-color');
+    }
+  }
+}
+
+@include global.every(('.ant-table', 'table')) {
+  @include tableStyle;
+}
+
+.ant-checkbox-wrapper {
+  @include tm.themeify {
+    color: tm.themed('text-color');
+  }
+}
+
+.ant-checkbox {
+  &.ant-checkbox-checked {
+    .ant-checkbox-inner {
+      @include tm.themeify {
+        background: tm.themed('active-color');
+        border-color: tm.themed('active-color');
+      }
+    }
+  }
+
+  &.ant-checkbox-checked .ant-checkbox-inner::after {
+    @include tm.themeify {
+      border-color: tm.themed('white-color');
+    }
+  }
+
+  &.ant-checkbox-disabled {
+    .ant-checkbox-inner {
+      @include tm.themeify {
+        background: tm.themed('disabled-background');
+        border-color: tm.themed('disabled-color');
+      }
+
+      &::after {
+        @include tm.themeify {
+          border-color: tm.themed('disabled-color');
+        }
+      }
+    }
+  }
+}
+
+@include global.every(('.ant-checkbox-inner', '.ant-tree-checkbox-inner')) {
+  @include tm.themeify {
+    background: transparent;
+    border-color: tm.themed('border-color');
+  }
+
+  &:hover {
+    @include tm.themeify {
+      border-color: tm.themed('active-color') !important;
+    }
+  }
+}
+
+.ant-tree-checkbox-checked {
+  @include global.every(('.ant-checkbox-inner', '.ant-tree-checkbox-inner')) {
+    @include tm.themeify {
+      background: tm.themed('active-color');
+    }
+  }
+}
+
+.ant-tree-checkbox .ant-tree li span.ant-tree-switcher:empty {
+  display: inline-block;
+}
+
+@include global.every(('.ant-tree', '.ant-tree li .ant-tree-node-content-wrapper')) {
+  @include tm.themeify {
+    color: tm.themed('text-color');
+  }
+}
+
+.ant-tree li .ant-tree-node-content-wrapper {
+  &:hover {
+    @include tm.themeify {
+      background: tm.themed('item-background_active');
+    }
+  }
+
+  &.ant-tree-node-selected {
+    @include tm.themeify {
+      background: tm.themed('item-background_selected');
+      color: tm.themed('white-color');
+    }
+  }
+}
+
+.ant-tree.ant-tree-show-line li span.ant-tree-switcher {
+  @include tm.themeify {
+    background: tm.themed('component-background');
+    color: tm.themed('text-color_tip');
+  }
+}
+
+.ant-tree.ant-tree-show-line li:not(:last-child)::before {
+  @include tm.themeify {
+    border-color: tm.themed('border-color');
+  }
+}
+
+.ant-radio {
+  .ant-radio-inner {
+    @include tm.themeify {
+      background: tm.themed('component-background');
+      border-color: tm.themed('border-color');
+    }
+  }
+
+  &-group {
+    .ant-radio-button-wrapper-checked {
+      span {
+        @include tm.themeify {
+          color: tm.themed('white-color');
+        }
+      }
+    }
+  }
+}
+
+.ant-dropdown-menu {
+  @include tm.themeify {
+    background-color: tm.themed('component-background');
+    color: tm.themed('text-color');
+  }
+
+  .ant-dropdown-menu-item {
+    align-items: center;
+    display: flex;
+
+    @include tm.themeify {
+      color: tm.themed('text-color');
+    }
+  }
+
+  .ant-dropdown-menu-item-selected {
+    @include tm.themeify {
+      background-color: tm.themed('item-background_selected');
+      color: tm.themed('white-color');
+    }
+  }
+
+  .ant-dropdown-menu-item-active {
+    @include tm.themeify {
+      background-color: tm.themed('item-background_active');
+      color: tm.themed('active-color');
+    }
+
+    * {
+      @include tm.themeify {
+        color: tm.themed('active-color');
+      }
+    }
+  }
+
+  .ant-dropdown-menu-submenu {
+    * {
+      @include tm.themeify {
+        color: tm.themed('text-color');
+      }
+    }
+
+    &-title:hover {
+      @include tm.themeify {
+        background: transparent;
+      }
+    }
+
+    &-active {
+      @include tm.themeify {
+        background-color: tm.themed('item-background_active');
+        color: tm.themed('active-color');
+      }
+
+      * {
+        @include tm.themeify {
+          color: tm.themed('active-color');
+        }
+      }
+    }
+  }
+}
+
+.ant-cascader-picker {
+  @include tm.themeify {
+    background-color: tm.themed('component-background');
+    color: tm.themed('text-color');
+  }
+
+  svg {
+    @include tm.themeify {
+      color: tm.themed('text-color_tip');
+    }
+  }
+
+  i {
+    @include tm.themeify {
+      color: tm.themed('text-color_tip');
+    }
+  }
+
+  .ant-cascader-picker-arrow {
+    @include tm.themeify {
+      color: tm.themed('text-color_tip');
+    }
+  }
+}
+
+.ant-cascader-menu {
+  @include tm.themeify {
+    background-color: tm.themed('component-background');
+    color: tm.themed('text-color');
+  }
+
+  .ant-cascader-menu-item {
+    &:hover {
+      @include tm.themeify {
+        background-color: tm.themed('item-background_active');
+        color: tm.themed('active-color');
+      }
+
+      * {
+        @include tm.themeify {
+          color: tm.themed('active');
+        }
+      }
+    }
+
+    &.ant-cascader-menu-item-active {
+      @include tm.themeify {
+        background-color: tm.themed('item-background_active');
+        color: tm.themed('active-color');
+      }
+
+      * {
+        @include tm.themeify {
+          color: tm.themed('active-color');
+        }
+      }
+    }
+  }
+}
+
+.ant-calendar-range .ant-calendar-body {
+  @include tm.themeify {
+    border-top-color: tm.themed('border-color_light');
+  }
+}
+
+@mixin selectDropdownSelected {
+  &.ant-select-dropdown-menu-item-selected {
+    @include tm.themeify {
+      background-color: tm.themed('item-background_selected');
+      color: tm.themed('white-color');
+    }
+  }
+}
+
+.ant-select-dropdown {
+  @include tm.themeify {
+    background-color: tm.themed('component-background');
+    color: tm.themed('text-color');
+  }
+
+  .ant-select-dropdown-menu-item {
+    @include selectDropdownSelected;
+
+    @include tm.themeify {
+      color: tm.themed('text-color');
+    }
+
+    &.ant-select-dropdown-menu-item-active {
+      @include selectDropdownSelected;
+
+      @include tm.themeify {
+        background-color: tm.themed('component-background_active');
+        color: tm.themed('active-color');
+      }
+
+      *:not(i):not(svg):not(path):not(span) {
+        @include tm.themeify {
+          color: tm.themed('active-color');
+        }
+      }
+    }
+
+    &.ant-select-dropdown-menu-item-disabled {
+      @include tm.themeify {
+        color: tm.themed('disabled-color');
+      }
+    }
+  }
+}
+
+.ant-modal {
+  @include tm.themeify {
+    color: tm.themed('text-color');
+  }
+
+  .ant-modal-content {
+    @include tm.themeify {
+      background-color: tm.themed('component-background');
+    }
+
+    i[class^='isophon'] {
+      @include tm.themeify {
+        color: tm.themed('white-color');
+      }
+    }
+  }
+
+  .ant-modal-header {
+    @include tm.themeify {
+      background-color: tm.themed('header-background');
+      color: tm.themed('text-color_enhance');
+    }
+
+    .ant-modal-title {
+      @include tm.themeify {
+        color: tm.themed('text-color_enhance');
+      }
+    }
+  }
+
+  .ant-modal-body {
+    @include tm.themeify {
+      background-color: tm.themed('component-background');
+    }
+  }
+
+  .ant-modal-footer {
+    @include tm.themeify {
+      background-color: tm.themed('component-background');
+      border-color: tm.themed('border-color');
+    }
+  }
+
+  .ant-modal-close-x * {
+    @include tm.themeify {
+      color: tm.themed('text-color_enhance');
+    }
+  }
+
+  .ant-tabs-tab-active {
+    background-color: transparent;
+  }
+}
+
+.ant-pagination {
+  .ant-pagination-item {
+    @include tm.themeify {
+      background-color: tm.themed('component-background');
+      border-color: tm.themed('border-color');
+      color: tm.themed('text-color');
+    }
+
+    * {
+      @include tm.themeify {
+        color: tm.themed('text-color');
+      }
+    }
+
+    &.ant-pagination-item-active {
+      @include tm.themeify {
+        border-color: tm.themed('active-color');
+        color: tm.themed('active-color');
+      }
+
+      * {
+        @include tm.themeify {
+          color: tm.themed('active-color');
+        }
+      }
+    }
+  }
+
+  .ant-pagination-item-link {
+    @include tm.themeify {
+      background-color: tm.themed('component-background');
+      border-color: tm.themed('border-color');
+      color: tm.themed('text-color');
+    }
+
+    * {
+      @include tm.themeify {
+        color: tm.themed('text-color');
+      }
+    }
+
+    &.ant-pagination-item-active {
+      @include tm.themeify {
+        border-color: tm.themed('active-color');
+        color: tm.themed('active-color');
+      }
+
+      * {
+        @include tm.themeify {
+          color: tm.themed('active-color');
+        }
+      }
+    }
+  }
+
+  .ant-pagination-disabled {
+    .ant-pagination-item-link {
+      @include tm.themeify {
+        border-color: tm.themed('disabled-color');
+        color: tm.themed('disabled-color');
+      }
+
+      * {
+        @include tm.themeify {
+          color: tm.themed('disabled-color');
+        }
+      }
+    }
+  }
+
+  input {
+    @include tm.themeify {
+      background: tm.themed('component-background');
+      border-color: tm.themed('border-color');
+    }
+  }
+}
+
+.ant-timeline-item-head {
+  @include tm.themeify {
+    background: transparent;
+  }
+}
+
+.ant-btn {
+  @include tm.themeify {
+    background-color: tm.themed('component-background');
+    border-color: tm.themed('border-color');
+    color: tm.themed('text-color');
+  }
+
+  &:hover {
+    @include tm.themeify {
+      border-color: tm.themed('active-color');
+    }
+  }
+
+  &.ant-btn-primary {
+    @include tm.themeify {
+      background-color: tm.themed('active-color');
+      border-color: tm.themed('active-color');
+      color: tm.themed('white-color');
+    }
+  }
+
+  &.ant-btn-danger {
+    @include tm.themeify {
+      background-color: tm.themed('error-color');
+      border-color: tm.themed('error-color');
+      color: tm.themed('white-color');
+    }
+  }
+
+  &.ant-btn-warning {
+    @include tm.themeify {
+      background-color: tm.themed('warning-color');
+      border-color: tm.themed('warning-color');
+      color: tm.themed('white-color');
+    }
+  }
+
+  &.ant-btn-success {
+    @include tm.themeify {
+      background-color: tm.themed('success-color');
+      border-color: tm.themed('success-color');
+      color: tm.themed('white-color');
+    }
+  }
+
+  &.ant-btn-link {
+    @include tm.themeify {
+      background-color: transparent;
+      border-color: transparent;
+      color: tm.themed('active-color');
+    }
+
+    &.ant-btn-loading {
+      @include tm.themeify {
+        opacity: 0.35;
+      }
+
+      &::before {
+        @include tm.themeify {
+          background: inherit;
+        }
+      }
+    }
+  }
+}
+
+.ant-radio-wrapper {
+  @include tm.themeify {
+    color: tm.themed('text-color');
+  }
+}
+
+.ant-notification {
+  .ant-notification-notice {
+    @include tm.themeify {
+      background-color: tm.themed('component-background');
+      box-shadow: tm.themed('box-shadow1');
+    }
+
+    .ant-notification-notice-message {
+      @include tm.themeify {
+        color: tm.themed('text-color');
+      }
+    }
+
+    .ant-notification-notice-description {
+      @include tm.themeify {
+        color: tm.themed('text-color_tip');
+      }
+    }
+  }
+}
+
+.ant-message-notice-content {
+  @include tm.themeify {
+    background-color: tm.themed('component-background');
+  }
+
+  *:not(i):not(svg):not(path):not(a) {
+    @include tm.themeify {
+      color: tm.themed('text-color');
+    }
+  }
+
+  .ant-message-error {
+    i * {
+      @include tm.themeify {
+        color: tm.themed('error-color');
+      }
+    }
+  }
+
+  .ant-message-success {
+    i * {
+      @include tm.themeify {
+        color: tm.themed('success-color');
+      }
+    }
+  }
+}
+
+.ant-popover {
+  .ant-popover-arrow {
+    @include tm.themeify {
+      background-color: tm.themed('component-background');
+      border-bottom-color: tm.themed('component-background');
+      border-left-color: tm.themed('component-background');
+    }
+  }
+
+  .ant-popover-inner {
+    @include tm.themeify {
+      background-color: tm.themed('component-background');
+      color: tm.themed('text-color');
+    }
+
+    .ant-popover-title {
+      @include tm.themeify {
+        border: 1px solid tm.themed('border-color');
+      }
+    }
+
+    .ant-popover-inner-content {
+      @include tm.themeify {
+        border: 1px solid tm.themed('border-color');
+      }
+    }
+  }
+}
+
+.ant-divider {
+  @include tm.themeify {
+    background-color: tm.themed('border-color');
+  }
+}
+
+.ant-divider-dashed {
+  @include tm.themeify {
+    border-color: tm.themed('border-color');
+  }
+}
+
+.ant-upload {
+  @include tm.themeify {
+    background-color: tm.themed('component-background');
+    border-color: tm.themed('border-color');
+  }
+}
+
+.ant-calendar {
+  @include tm.themeify {
+    background-color: tm.themed('component-background');
+    border-color: tm.themed('border-color');
+  }
+
+  &-picker-container {
+    @include tm.themeify {
+      color: tm.themed('text-color');
+    }
+  }
+
+  &-date {
+    @include tm.themeify {
+      color: tm.themed('text-color');
+    }
+
+    &:hover {
+      @include tm.themeify {
+        background-color: tm.themed('item-background_active');
+      }
+    }
+  }
+
+  .ant-calendar-range-middle {
+    @include tm.themeify {
+      color: tm.themed('text-color');
+      transform: translateX(0);
+    }
+  }
+
+  .ant-calendar-today .ant-calendar-date {
+    @include tm.themeify {
+      background-color: tm.themed('item-background_selected');
+      color: tm.themed('white-color');
+    }
+  }
+
+  .ant-calendar-in-range-cell .ant-calendar-date {
+    @include tm.themeify {
+      background-color: tm.themed('item-background_active');
+    }
+  }
+
+  .ant-calendar-selected-day .ant-calendar-date {
+    @include tm.themeify {
+      background-color: tm.themed('item-background_selected');
+      color: tm.themed('white-color');
+    }
+  }
+
+  .ant-calendar-last-month-cell .ant-calendar-date {
+    @include tm.themeify {
+      color: tm.themed('text-color_tip');
+    }
+  }
+
+  .ant-calendar-next-month-btn-day .ant-calendar-date {
+    @include tm.themeify {
+      color: tm.themed('text-color_tip');
+    }
+  }
+
+  .ant-calendar-disabled-cell .ant-calendar-date {
+    @include tm.themeify {
+      background: tm.themed('disabled-background');
+      color: tm.themed('disabled-color');
+    }
+  }
+
+  .ant-calendar-disabled-cell.ant-calendar-today .ant-calendar-date::before {
+    border: none;
+  }
+
+  .ant-calendar-input-wrap {
+    @include tm.themeify {
+      border-color: tm.themed('border-color');
+    }
+
+    .ant-calendar-input {
+      text-align: center;
+    }
+  }
+
+  .ant-calendar-header {
+    @include tm.themeify {
+      border-color: tm.themed('border-color');
+    }
+
+    *:not(i):not(svg):not(path) {
+      @include tm.themeify {
+        color: tm.themed('text-color');
+      }
+    }
+  }
+
+  .ant-calendar-footer {
+    @include tm.themeify {
+      border-color: tm.themed('border-color');
+    }
+  }
+
+  .ant-calendar-picker-clear {
+    @include tm.themeify {
+      background: transparent;
+    }
+  }
+}
+
+.ant-calendar-range .ant-calendar-in-range-cell::before {
+  @include tm.themeify {
+    background-color: tm.themed('item-background_active');
+    bottom: 3px;
+    top: 3px;
+  }
+}
+
+.ant-calendar-range-picker-separator {
+  @include tm.themeify {
+    color: tm.themed('text-color');
+  }
+}
+
+.ant-calendar-picker {
+  .ant-calendar-range-picker-input {
+    border: none;
+  }
+
+  .anticon {
+    background: transparent;
+  }
+
+  i {
+    @include tm.themeify {
+      color: tm.themed('text-color');
+    }
+  }
+
+  svg {
+    @include tm.themeify {
+      color: tm.themed('text-color');
+    }
+  }
+
+  path {
+    @include tm.themeify {
+      color: tm.themed('text-color');
+    }
+  }
+}
+
+.ant-tooltip {
+  &-inner {
+    @include tm.themeify {
+      color: tm.themed('white-color');
+    }
+
+    *:not(i):not(svg):not(path) {
+      @include tm.themeify {
+        color: tm.themed('white-color');
+      }
+    }
+  }
+
+  &-content {
+    max-height: 95vh;
+    max-width: 95vw;
+    overflow: auto;
+  }
+}
+
+.ant-time-picker-panel {
+  @include tm.themeify {
+    color: tm.themed('text-color');
+  }
+
+  .ant-time-picker-panel-inner {
+    @include tm.themeify {
+      background-color: tm.themed('component-background');
+    }
+
+    .ant-time-picker-panel-input-wrap {
+      @include tm.themeify {
+        border-color: tm.themed('border-color');
+      }
+    }
+
+    .ant-time-picker-panel-select {
+      @include tm.themeify {
+        border-color: tm.themed('border-color');
+      }
+    }
+
+    .ant-time-picker-panel-select-option-selected {
+      @include tm.themeify {
+        background: tm.themed('component-background');
+      }
+    }
+  }
+}
+
+.ant-tabs {
+  @include tm.themeify {
+    color: tm.themed('text-color');
+  }
+
+  .ant-tabs-nav {
+    @include tm.themeify {
+      border-bottom: 1px solid tm.themed('border-color');
+      transition: none;
+    }
+  }
+
+  .ant-tabs-nav-container {
+    @include tm.themeify {
+      border-bottom: 1px solid tm.themed('border-color');
+    }
+  }
+
+  .ant-tabs-ink-bar {
+    bottom: 0;
+
+    @include tm.themeify {
+      background-color: tm.themed('active-color');
+    }
+  }
+
+  .ant-tabs-bar {
+    border-right: none;
+
+    @include tm.themeify {
+      background-color: tm.themed('component-background');
+      border-bottom-color: tm.themed('border-color');
+      box-shadow: tm.themed('box-shadow1');
+    }
+
+    .ant-tabs-nav-wrap {
+      @include tm.themeify {
+        background-color: tm.themed('component-background');
+      }
+    }
+
+    .ant-tabs-tab {
+      border: none;
+      font-size: 16px;
+      transition: none;
+
+      @include tm.themeify {
+        background-color: transparent;
+        color: tm.themed('text-color_tip');
+      }
+
+      &.ant-tabs-tab-active {
+        @include tm.themeify {
+          background-color: tm.themed('item-background_active');
+          color: tm.themed('active-color');
+          font-weight: bolder;
+        }
+      }
+    }
+  }
+
+  .ant-tabs-content {
+    @include tm.themeify {
+      background-color: tm.themed('component-background_dark_reverse');
+    }
+  }
+
+  &.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab {
+    @include tm.themeify {
+      border: none;
+    }
+  }
+
+  &.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab-active {
+    @include tm.themeify {
+      border: none;
+    }
+  }
+}
+
+@include global.every(('.ant-menu-item:hover', '.ant-menu-item-active', '.ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open', '.ant-menu-submenu-active', '.ant-menu-submenu-title:hover')) {
+  @include tm.themeify {
+    color: tm.themed('active-color');
+  }
+}
+
+@include global.every(('.ant-menu-item-disabled > .ant-menu-submenu-title', '.ant-menu-submenu-disabled > .ant-menu-submenu-title')) {
+  @include tm.themeify {
+    color: tm.themed('disabled-color') !important;
+  }
+}
+
+.ant-card {
+  @include tm.themeify {
+    color: tm.themed('text-color');
+  }
+
+  .ant-card-head {
+    @include tm.themeify {
+      border-bottom: 1px solid tm.themed('border-color');
+    }
+
+    *:not(i):not(svg):not(path) {
+      @include tm.themeify {
+        color: tm.themed('text-color');
+      }
+    }
+  }
+}
+
+.ant-breadcrumb {
+  @include tm.themeify {
+    color: tm.themed('text-color_tip');
+  }
+
+  a {
+    @include tm.themeify {
+      color: tm.themed('text-color_tip');
+    }
+  }
+
+  .ant-breadcrumb-separator {
+    @include tm.themeify {
+      color: tm.themed('text-color_tip');
+    }
+  }
+
+  > span:last-child {
+    @include tm.themeify {
+      color: tm.themed('text-color_enhance');
+    }
+
+    a {
+      @include tm.themeify {
+        color: tm.themed('text-color_enhance');
+      }
+    }
+  }
+}
+
+.ant-input[disabled] {
+  @include tm.themeify {
+    background: tm.themed('disabled-background');
+    border-color: tm.themed('disabled-background');
+    color: tm.themed('disabled-color');
+  }
+
+  &:hover {
+    @include tm.themeify {
+      border-color: tm.themed('disabled-color');
+    }
+  }
+}
+
+.ant-calendar-decade-panel-body {
+  @include tm.themeify {
+    border-top: 1px solid tm.themed('border-color');
+  }
+}
+
+.ant-empty-image {
+  display: none;
+}
+
+.ant-collapse {
+  @include tm.themeify {
+    background-color: tm.themed('layout-background');
+  }
+
+  .ant-collapse-header {
+    @include tm.themeify {
+      color: tm.themed('text-color');
+    }
+  }
+
+  .ant-collapse-content {
+    @include tm.themeify {
+      background-color: tm.themed('component-background');
+    }
+  }
+
+  *:not(i):not(svg):not(path) {
+    @include tm.themeify {
+      color: tm.themed('text-color');
+    }
+  }
+}
+
+.ant-empty-description {
+  @include tm.themeify {
+    color: tm.themed('text-color_tip');
+  }
+}
+
+.ant-alert-message {
+  @include tm.themeify {
+    color: tm.themed('text-color_enhance');
+  }
+}
+
+button.ant-btn[disabled] {
+  @include tm.themeify {
+    background-color: tm.themed('disabled-background');
+    border-color: tm.themed('disabled-background');
+    color: tm.themed('disabled-color');
+  }
+
+  * {
+    @include tm.themeify {
+      color: tm.themed('disabled-color');
+    }
+  }
+}
+
+@include global.every(('input:not(:disabled)', '.ant-input:not(:disabled)', '.ant-input-number:not(:disabled)', '.ant-calendar-input:not(:disabled)', 'textarea:not(:disabled)')) {
+  @include tm.themeify {
+    background-color: tm.themed('component-background');
+    border-color: tm.themed('border-color');
+    color: tm.themed('text-color');
+  }
+
+  &::-webkit-input-placeholder {
+    @include tm.themeify {
+      color: tm.themed('text-color_tip');
+    }
+  }
+}
+
+.ant-input-number {
+  input {
+    @include tm.themeify {
+      border: none;
+    }
+  }
+
+  .ant-input-number-handler-wrap {
+    @include tm.themeify {
+      background-color: tm.themed('component-background');
+      border-color: tm.themed('border-color');
+    }
+
+    .ant-input-number-handler-down {
+      border-color: tm.themed('border-color');
+    }
+  }
+}
+
+.ant-input-search-icon {
+  @include tm.themeify {
+    color: tm.themed('text-color');
+  }
+}
+
+.ant-input-prefix {
+  i {
+    @include tm.themeify {
+      color: tm.themed('text-color');
+    }
+  }
+
+  svg {
+    @include tm.themeify {
+      color: tm.themed('text-color');
+    }
+  }
+}
+
+.ant-input-suffix {
+  i {
+    @include tm.themeify {
+      color: tm.themed('text-color');
+    }
+  }
+
+  svg {
+    @include tm.themeify {
+      color: tm.themed('text-color');
+    }
+  }
+}
+
+.has-error {
+  .ant-input {
+    @include tm.themeify {
+      background-color: tm.themed('component-background');
+      border: 1px solid tm.themed('error-color');
+    }
+  }
+
+  .ant-input:hover {
+    @include tm.themeify {
+      background-color: tm.themed('component-background');
+    }
+  }
+
+  .ant-select-selection {
+    @include tm.themeify {
+      border: 1px solid tm.themed('error-color');
+    }
+  }
+}
+
+@include global.every(('.ant-menu-item-disabled > .ant-menu-submenu-title > .ant-menu-submenu-arrow::before', '.ant-menu-submenu-disabled > .ant-menu-submenu-title > .ant-menu-submenu-arrow::before', '.ant-menu-item-disabled > .ant-menu-submenu-title > .ant-menu-submenu-arrow::after', '.ant-menu-submenu-disabled > .ant-menu-submenu-title > .ant-menu-submenu-arrow::after')) {
+  @include tm.themeify {
+    background: tm.themed('disabled-color') !important;
+  }
+}

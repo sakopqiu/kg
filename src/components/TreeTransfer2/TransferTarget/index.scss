@@ -1,0 +1,22 @@
+@use '../../../themes/tm';
+
+.entity-transfer-target {
+  height: 100%;
+  overflow-y: auto;
+  padding: 10px;
+  position: relative;
+
+  @include tm.themeify {
+    background: tm.themed('component-background');
+    border: 1px solid tm.themed('border-color');
+  }
+
+  .select-all-checkbox {
+    margin-top: 17px;
+    position: relative;
+
+    .ant-checkbox {
+      margin-right: 8px;
+    }
+  }
+}

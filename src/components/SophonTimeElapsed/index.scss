@@ -1,0 +1,7 @@
+.sophon-time-elapsed {
+  .time-item {
+    &:not(:first-child) {
+      margin-left: 5px;
+    }
+  }
+}

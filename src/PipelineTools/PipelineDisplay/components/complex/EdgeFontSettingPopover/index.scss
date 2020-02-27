@@ -1,0 +1,18 @@
+@use '../../../../../themes/tm';
+
+.edge-font-setting-popover {
+  width: 240px;
+
+  @include tm.themeify {
+    background: tm.themed('component-background');
+  }
+
+  &-title {
+    font-size: 12px;
+    margin-bottom: 5px;
+
+    @include tm.themeify {
+      color: tm.themed('text-color_tip');
+    }
+  }
+}

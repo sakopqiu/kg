@@ -1,0 +1,57 @@
+@use '../../themes/tm';
+
+.sophon-collapse {
+  border: none !important;
+  font-family: sophone-font, serif !important;
+  overflow-x: hidden;
+
+  > .ant-collapse-item {
+    border-bottom: none !important;
+
+    .sophon-icon {
+      @include tm.themeify {
+        color: tm.themed('text-color_tip');
+      }
+    }
+
+    > .ant-collapse-header > .ant-collapse-arrow {
+      left: auto !important;
+      right: 15px;
+
+      svg {
+        transform: rotate(90deg) !important;
+      }
+    }
+  }
+
+  > .ant-collapse-item-active {
+    font-family: sophone-font-medium, serif !important;
+
+    > .ant-collapse-header > .ant-collapse-arrow {
+      svg {
+        transform: rotate(-90deg) !important;
+      }
+    }
+  }
+
+  .ant-collapse-content {
+    border-top: none;
+
+    .ant-collapse-content-box {
+      padding: 0;
+
+      .ant-row {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .ant-collapse-header {
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: 16px !important;
+    padding-left: 15px !important;
+    padding-right: 40px !important;
+    word-break: break-all;
+  }
+}

@@ -1,0 +1,52 @@
+@use '../../../../global';
+@use '../../../../themes/tm';
+
+.theme-icons {
+  align-items: center;
+  display: flex;
+  padding: 0;
+  position: relative;
+  top: -2px;
+
+  .theme-icon-wrapper {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 100%;
+    margin-right: 21px;
+    position: relative;
+    top: 4px;
+    width: 50px;
+
+    img.theme-icon {
+      border-radius: 2px;
+      display: block;
+      height: 24px;
+      width: 39px;
+
+      &.selected {
+        background-image: linear-gradient(-180deg, #F4FCFF 0%, #DBEDF4 100%);
+        border: 0 solid #CEE4EB;
+        height: 26px;
+        padding: 2px;
+      }
+    }
+
+    .theme-icon-title {
+      font-family: global.$global-font-family;
+      font-size: 12px;
+      transform: scale(0.875);
+
+      @include tm.themeify {
+        color: tm.themed('text-color_tip');
+      }
+
+      &.selected {
+        position: relative;
+        top: -2px;
+      }
+    }
+  }
+}

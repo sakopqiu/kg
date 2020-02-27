@@ -1,0 +1,23 @@
+@use '../../../../../../global.scss';
+@use '../../../../../../themes/tm';
+
+.map-detail-view {
+  bottom: 0;
+  overflow: auto;
+  padding: 20px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 300px;
+  z-index: global.$max_z_index;
+
+  @include tm.themeify {
+    background-color: tm.themed('layout-background');
+  }
+
+  .attribute-panel {
+    @include tm.themeify {
+      background-color: tm.themed('component-background');
+    }
+  }
+}

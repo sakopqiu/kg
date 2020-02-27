@@ -1,0 +1,123 @@
+@use '../../../../../../global';
+@use '../../../../../../themes/tm';
+
+$color: #BBC1CB;
+
+.relation-filter {
+  align-items: center;
+  display: flex;
+
+  .left-part {
+    align-items: center;
+    display: flex;
+    position: relative;
+
+    .select-relation {
+      height: 30px;
+      margin-left: 10px;
+      width: 101px;
+    }
+
+    .select-attribute {
+      height: 30px;
+      margin-left: 20px;
+      width: 151px;
+    }
+
+    .filter-title {
+      font-family: global.$global-font-family-medium;
+      font-size: 12px;
+      width: 80px;
+
+      @include tm.themeify {
+        color: tm.themed('text-color_enhance');
+      }
+    }
+
+    .relation-time-range-table {
+      position: absolute;
+      right: 0;
+      top: 32px;
+    }
+  }
+
+  .ant-divider,
+  .ant-divider-vertical {
+    height: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .right-part {
+    position: relative;
+    width: calc(100% - 380px - 41px);
+
+    .current-selection-list {
+      margin-right: 10px;
+      width: calc(100% - 20px - 30px - 10px);
+    }
+
+    .clear-list {
+      cursor: pointer;
+      font-size: 12px;
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+
+      @include tm.themeify {
+        color: tm.themed('active-color');
+      }
+    }
+  }
+}
+
+.current-selection-entry {
+  border-radius: 2px;
+  font-size: 12px;
+  height: 30px;
+  line-height: 30px;
+  margin-right: 10px;
+  padding: 6px 10px;
+  position: relative;
+  white-space: nowrap;
+
+  @include tm.themeify {
+    background: tm.themed('layout-background');
+  }
+
+  .delete-entry {
+    color: $color;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 12px;
+    left: 2px;
+    margin-left: 5px;
+    position: relative;
+    transform: scale(1.1) rotate(45deg);
+  }
+}
+
+.current-selection-list-more-btn-menu {
+  .ant-menu-item {
+    height: 30px;
+
+    .current-selection-entry {
+      @include tm.themeify {
+        background: tm.themed('component-background');
+      }
+    }
+
+    &.ant-menu-item-selected {
+      color: inherit;
+
+      @include tm.themeify {
+        background: tm.themed('component-background');
+      }
+    }
+
+    &.ant-menu-item-active {
+      color: inherit;
+    }
+  }
+}

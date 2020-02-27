@@ -1,0 +1,21 @@
+@use '../../themes/tm';
+
+.sophon-tag-wrapper {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  height: 30px;
+
+  .new-tag-btn {
+    cursor: pointer;
+
+    @include tm.themeify {
+      background-color: tm.themed('component-background');
+      border-style: dashed;
+    }
+  }
+
+  .ant-input {
+    font-size: 12px;
+  }
+}

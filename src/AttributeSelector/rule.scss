@@ -1,0 +1,73 @@
+@use '../themes/tm';
+
+.rule-wrapper {
+  align-items: flex-start;
+  display: flex;
+  font-size: 12px;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  margin-left: 21px;
+  margin-top: 12px;
+  min-height: 30px;
+  position: relative;
+
+  .drag-handle {
+    cursor: move;
+    margin-right: 16px;
+    position: relative;
+    top: 5px;
+
+    @include tm.themeify {
+      color: tm.themed('active-color');
+    }
+  }
+
+  .right {
+    flex: 1;
+    position: relative;
+
+    .delete-icon {
+      cursor: pointer;
+      font-size: 16px;
+      position: absolute;
+      right: 0;
+      top: 5px;
+
+      @include tm.themeify {
+        color: tm.themed('active-color');
+      }
+    }
+  }
+
+  &.with-upward-outline {
+    &::before {
+      content: '';
+      height: calc(6px + 13px);
+      left: -21px;
+      position: absolute;
+      top: -6px;
+      width: 21px;
+
+      @include tm.themeify {
+        border-bottom: 1px dotted tm.themed('border-color');
+        border-left: 1px dotted tm.themed('border-color');
+      }
+    }
+  }
+
+  &.with-downward-outline {
+    &::after {
+      content: '';
+      height: calc(100% - 13px + 6px);
+      left: -21px;
+      position: absolute;
+      top: 13px;
+      width: 21px;
+
+      @include tm.themeify {
+        border-bottom: 1px dotted tm.themed('border-color');
+        border-left: 1px dotted tm.themed('border-color');
+      }
+    }
+  }
+}

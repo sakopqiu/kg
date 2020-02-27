@@ -1,0 +1,25 @@
+@use '../../themes/tm';
+
+.sophon-menu-collapse {
+  .menu-panel {
+    .menu-panel-item {
+      cursor: pointer;
+      font-family: sophone-font-medium, serif;
+      font-size: 12px;
+      height: 40px;
+      line-height: 40px;
+      padding: 0 40px;
+
+      @include tm.themeify {
+        background-color: tm.themed('component-background');
+      }
+    }
+
+    .item-active {
+      @include tm.themeify {
+        background-color: tm.themed('item-background_selected');
+        color: tm.themed('white-color');
+      }
+    }
+  }
+}

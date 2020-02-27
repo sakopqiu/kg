@@ -1,0 +1,60 @@
+@use '../../../../../global.scss';
+@use '../../../../../themes/tm';
+
+.node-more-setting-modal {
+  .add-filter-part {
+    cursor: pointer;
+    margin-bottom: 10px;
+
+    @include tm.themeify {
+      color: tm.themed('active-color');
+    }
+  }
+
+  .node-setting-modal-filter {
+    .ant-divider-horizontal {
+      margin: 15px 0;
+    }
+
+    .node-setting-part1 {
+      display: flex;
+      justify-content: space-between;
+
+      .node-setting-modal-delete-filter {
+        @include tm.themeify {
+          color: tm.themed('active-color');
+        }
+      }
+    }
+
+    .node-setting-modal-title {
+      font-size: 12px;
+      font-weight: 900;
+      margin-bottom: 10px;
+
+      @include tm.themeify {
+        color: tm.themed('text-color');
+      }
+    }
+
+    .node-setting-part2 {
+      &-title {
+        margin-bottom: 5px;
+      }
+
+      display: flex;
+      font-size: 12px;
+      justify-content: space-between;
+
+      @include tm.themeify {
+        color: tm.themed('text-color_tip');
+      }
+    }
+  }
+
+  .node-more-setting-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+  }
+}

@@ -1,0 +1,81 @@
+@use '../../../../../global.scss';
+@use '../../../../../themes/tm';
+
+.merge-entities-wrapper {
+  .merge-entities {
+    max-height: 365px;
+    overflow-y: auto;
+    padding: 10px 15px;
+    width: 100%;
+
+    & > div {
+      line-height: 30px;
+    }
+
+    .attr-row {
+      line-height: 26px;
+    }
+
+    .attr-value,
+    .attr-label {
+      font-size: 12px;
+      overflow-wrap: break-word;
+    }
+
+    .attr-label {
+      letter-spacing: 0.12px;
+
+      @include tm.themeify {
+        color: tm.themed('text-color');
+      }
+    }
+
+    .attr-value {
+      font-family: global.$global-font-family-medium;
+      font-size: 12px;
+      letter-spacing: 0.14px;
+
+      @include tm.themeify {
+        color: tm.themed('text-color_enhance');
+      }
+    }
+
+    .ant-radio-wrapper {
+      font-family: global.$global-font-family-medium;
+      font-size: 12px;
+      letter-spacing: 0.14px;
+
+      @include tm.themeify {
+        color: tm.themed('text-color_enhance');
+      }
+    }
+  }
+
+  .context-modal-footer {
+    padding-top: 0;
+  }
+
+  .context-modal-content {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+
+    .ant-form-item {
+      margin-bottom: 0;
+    }
+
+    .ant-divider {
+      margin-top: 0;
+    }
+  }
+
+  .merge-entities-header {
+    font-family: global.$global-font-family-medium;
+    font-size: 12px;
+    letter-spacing: 0.14px;
+
+    @include tm.themeify {
+      color: tm.themed('text-color_enhance');
+    }
+  }
+}

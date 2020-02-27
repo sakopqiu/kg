@@ -1,0 +1,25 @@
+@use '../../../../../themes/tm';
+
+.tags-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  .tag-label {
+    background-color: rgba(84, 155, 231, 0.2);
+    border-radius: 1px;
+    font-size: 10px;
+    height: 19px;
+    letter-spacing: 0.12px;
+    line-height: 19px;
+    margin-bottom: 5px;
+    padding: 0 7px;
+
+    @include tm.themeify {
+      color: tm.themed('active-color');
+    }
+
+    &:not(:last-child) {
+      margin-right: 5px;
+    }
+  }
+}

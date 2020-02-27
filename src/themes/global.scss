@@ -1,0 +1,11 @@
+/*
+  该文件定义了所有公共的样式，例如font、常用的mixin、function
+ */
+// 重复使用样式
+@mixin every($arr) {
+  @each $item in $arr {
+    #{$item} {
+      @content;
+    }
+  }
+}

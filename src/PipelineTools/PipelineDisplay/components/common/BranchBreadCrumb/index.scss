@@ -1,0 +1,31 @@
+@use '../../../../../global';
+@use '../../../../../themes/tm';
+
+.pipelinetool-display-breadcrumb {
+  align-items: center;
+  display: flex;
+  font-family: global.$global-font-family-medium;
+  font-size: 12px;
+  height: 100%;
+  line-height: 100%;
+  user-select: none;
+
+  @include tm.themeify {
+    background-color: tm.themed('component-background');
+  }
+
+  &-highlight {
+    cursor: pointer;
+
+    @include tm.themeify {
+      color: tm.themed('active-color');
+    }
+  }
+
+  .ant-divider-vertical {
+    height: calc(100% - 20px);
+    left: 27px;
+    position: relative;
+    top: 3px;
+  }
+}

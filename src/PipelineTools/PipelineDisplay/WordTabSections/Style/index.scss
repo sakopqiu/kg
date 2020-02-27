@@ -1,0 +1,32 @@
+@use '../section.scss';
+
+.line-relation-adjustment,
+.time-series-adjustment {
+  @include section.section-common;
+
+  align-items: center;
+  display: flex;
+
+  div {
+    align-items: center;
+    display: flex;
+    margin-right: 20px;
+
+    .ant-checkbox-wrapper,
+    .ant-radio-wrapper {
+      .ant-checkbox,
+      .ant-radio {
+        position: relative;
+        top: 0;
+      }
+
+      span {
+        @include section.section-common;
+      }
+
+      //&-disabled span {
+      //  @include section.section-disabled-common;
+      //}
+    }
+  }
+}

@@ -1,0 +1,29 @@
+@use '../../themes/tm';
+
+.sophon-confirm-modal {
+  .confirm-message-wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    justify-content: center;
+    margin-top: 35px;
+
+    @include tm.themeify {
+      color: tm.themed('text-color_enhance');
+    }
+
+    .confirm-message {
+      font-weight: bold;
+    }
+  }
+
+  .confirm-icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+
+    @include tm.themeify {
+      color: tm.themed('warning-color');
+    }
+  }
+}

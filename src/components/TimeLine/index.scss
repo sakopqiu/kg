@@ -1,0 +1,34 @@
+@use '../../themes/tm';
+
+.timeline-wrapper {
+  position: relative;
+
+  .timeline-node {
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+
+    @include tm.themeify {
+      background: tm.themed('component-background');
+      border: 1px solid tm.themed('active-color');
+    }
+  }
+
+  .timeline-node-desc {
+    position: absolute;
+    transform: rotate(-50deg);
+  }
+
+  .timeline-axis {
+    height: 1px;
+    left: 0;
+    position: absolute;
+    z-index: 1;
+
+    @include tm.themeify {
+      background: tm.themed('active-color');
+    }
+  }
+}

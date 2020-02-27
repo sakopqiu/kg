@@ -1,0 +1,28 @@
+@use '../../../../../../themes/tm';
+
+.field-description-row {
+  font-size: 12px;
+  margin: 20px 0;
+  width: 100%;
+
+  @include tm.themeify {
+    color: tm.themed('text-color');
+  }
+
+  .field-name {
+    font-weight: bold;
+
+    .with-setting-button {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .field-value {
+    user-select: text;
+  }
+
+  .field-value-inline {
+    padding-left: 8px;
+  }
+}

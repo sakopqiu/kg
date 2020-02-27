@@ -1,0 +1,54 @@
+@use '../../../../../../themes/tm';
+
+.attribute-editor-popover {
+  .ant-popover-inner-content {
+    padding: 20px;
+  }
+
+  .attribute-editor {
+    .editor-title {
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 0;
+      line-height: 12px;
+      margin-bottom: 20px;
+
+      @include tm.themeify {
+        color: tm.themed('text-color_enhance');
+      }
+    }
+
+    .attribute-editor-footer {
+      display: flex;
+      justify-content: space-between;
+
+      button {
+        flex: 1;
+        font-size: 12px !important;
+      }
+
+      .cancel {
+        margin-right: 15px;
+      }
+    }
+
+    .ant-form-item {
+      margin-bottom: 16px;
+
+      .ant-form-item-label {
+        font-size: 12px;
+        letter-spacing: 0;
+        line-height: 12px;
+
+        @include tm.themeify {
+          color: tm.themed('text-color_enhance');
+        }
+      }
+
+      .ant-input,
+      .ant-input-number {
+        font-size: 12px;
+      }
+    }
+  }
+}

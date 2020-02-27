@@ -1,0 +1,23 @@
+.sql-rule-select {
+  height: 35px;
+  margin-right: 11px !important;
+  width: 80px !important;
+
+  &.attribute {
+    width: 160px !important;
+  }
+
+  &.condition,
+  &.value {
+    width: 100px !important;
+  }
+
+  &.control,
+  &.date {
+    width: 140px !important;
+  }
+
+  &.timestamp {
+    width: 190px !important;
+  }
+}

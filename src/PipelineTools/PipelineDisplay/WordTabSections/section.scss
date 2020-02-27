@@ -1,0 +1,19 @@
+@use '../../../global.scss';
+@use '../../../themes/tm';
+
+@mixin section-common {
+  font-family: global.$global-font-family-light;
+  font-size: 10px;
+
+  @include tm.themeify {
+    color: tm.themed('text-color_tip');
+  }
+}
+
+@mixin section-disabled-common {
+  cursor: not-allowed;
+
+  @include tm.themeify {
+    color: tm.themed('text-color_tip') !important;
+  }
+}

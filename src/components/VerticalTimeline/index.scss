@@ -1,0 +1,33 @@
+@use '../../themes/tm';
+
+.show-datetime {
+  .datetime-label {
+    padding-right: 8px;
+    position: absolute;
+
+    .datetime-wrapper {
+      display: table;
+      text-align: right;
+    }
+  }
+
+  .ant-timeline-item-tail {
+    opacity: 0.2;
+
+    @include tm.themeify {
+      border-color: tm.themed('active-color');
+    }
+  }
+
+  .ant-timeline-item-head {
+    height: 14px;
+    left: -2px;
+    top: -2px;
+    width: 14px;
+
+    @include tm.themeify {
+      border: 4px solid tm.themed('active-color');
+      color: tm.themed('active-color');
+    }
+  }
+}

@@ -1,0 +1,136 @@
+@use '../../global';
+@use '../../themes/tm';
+
+$largeHeight: 40px;
+$normalHeight: 32px;
+$smallHeight: 24px;
+$largeFontSize: 20px;
+$normalFontSize: 14px;
+$smallFontSize: 12px;
+
+@mixin smallPadding {
+  padding-left: 11px;
+  padding-right: 11px;
+}
+
+.sophon-text-editor {
+  .text-input {
+    &.default {
+      font-size: $normalFontSize;
+      line-height: $normalHeight !important;
+
+      input {
+        color: inherit !important;
+        font-size: $normalFontSize !important;
+      }
+    }
+
+    &.large {
+      font-size: $largeFontSize;
+      line-height: $largeHeight !important;
+
+      input {
+        color: inherit !important;
+        font-size: $largeFontSize !important;
+      }
+    }
+
+    &.small {
+      font-size: $smallFontSize;
+      line-height: $smallHeight !important;
+
+      input {
+        color: inherit !important;
+        font-size: $smallFontSize !important;
+      }
+    }
+
+    &.ant-input-sm {
+      @include smallPadding;
+    }
+
+    .ant-input-sm {
+      @include smallPadding;
+    }
+  }
+
+  .text-label {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 12px;
+    vertical-align: bottom;
+
+    &.default {
+      font-size: $normalFontSize;
+      line-height: $normalHeight;
+      min-height: $normalHeight;
+    }
+
+    &.large {
+      font-size: $largeFontSize;
+      line-height: $largeHeight;
+      min-height: $largeHeight;
+    }
+
+    &.small {
+      font-size: $smallFontSize;
+      line-height: $smallHeight;
+      min-height: $smallHeight;
+    }
+
+    .sophon-icon {
+      display: none;
+      margin-left: 10px;
+
+      @include tm.themeify {
+        color: tm.themed('active-color');
+      }
+    }
+
+    &.one-line {
+      max-width: 100%;
+      overflow: hidden;
+      position: relative;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      .sophon-icon {
+        position: absolute;
+        right: 0;
+      }
+
+      &.large {
+        height: $largeHeight;
+        padding-right: $largeHeight;
+
+        .sophon-icon {
+          line-height: $largeHeight;
+        }
+      }
+
+      &.default {
+        height: $normalHeight;
+        padding-right: $normalHeight;
+
+        .sophon-icon {
+          line-height: $normalHeight;
+        }
+      }
+
+      &.small {
+        height: $smallHeight;
+        padding-right: $smallHeight;
+
+        .sophon-icon {
+          line-height: $smallHeight;
+        }
+      }
+    }
+
+    &:hover {
+      .sophon-icon {
+        display: initial;
+      }
+    }
+  }
+}
