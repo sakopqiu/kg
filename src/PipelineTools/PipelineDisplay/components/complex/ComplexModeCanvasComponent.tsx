@@ -5,7 +5,6 @@ import {CanvasDrawService} from '../../service/CanvasDrawService';
 import {IDisplayModeContext} from '../../interfaces';
 import {CyState} from '../../model/CyState';
 import {StatusService} from '../../service/StatusService';
-import {DiffService} from '../../service/DiffService';
 import {TimeFilterService} from '../../service/TimeFilterService';
 import {StateService} from '../../service/StateService';
 import {AlgorithmService} from '../../service/AlgorithmService';
@@ -58,10 +57,6 @@ export class ComplexModeCanvasComponent<T extends ComplexModeCanvasComponentProp
 
     get timeFilterService(): TimeFilterService {
         return this.service.timeFilterService;
-    }
-
-    get diffService(): DiffService {
-        return this.service.diffService;
     }
 
     get statusService(): StatusService {

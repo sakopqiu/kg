@@ -3,6 +3,7 @@ import {CYTO_FIT_PADDING, DEFAULT_NEW_ELEMENT_LAYOUT_CONFIG} from '../../../util
 import {layoutElements} from '../../PipelineEditor/cyto/cyto-utils';
 import {AddNormalNodeEdgeConfig} from '../model/CyState';
 import {CyElementDefaultClass} from '../interfaces';
+import _get from 'lodash/get';
 
 export class AddNormalElementsService extends CommonService {
     async exec() {
@@ -15,8 +16,10 @@ export class AddNormalElementsService extends CommonService {
 
         let elementsToBeLayouted = null;
         let nodeCount = 0;
+        const layoutAll = _get(config.extraLayoutConfig, 'layoutAll');
+
         // 在路径的预览框里，只有路径相关的几个元素，因此layout设计的是整个cy.elements()
-        if (config.pathResultHack) {
+        if (config.pathResultHack || layoutAll) {
             elementsToBeLayouted = this.cy.elements();
             nodeCount = this.cy.nodes(`node.${CyElementDefaultClass.NORMAL_NODE}`).length;
         } else {
@@ -29,7 +32,7 @@ export class AddNormalElementsService extends CommonService {
 
         const extraLayoutConfig = config.extraLayoutConfig || {};
 
-        const layoutConfig = {
+        const layoutConfig: any = {
             ...DEFAULT_NEW_ELEMENT_LAYOUT_CONFIG,
             ...extraLayoutConfig,
         };
@@ -41,7 +44,7 @@ export class AddNormalElementsService extends CommonService {
 
         await layoutElements(elementsToBeLayouted, layoutConfig);
 
-        if (!config.pathResultHack) {
+        if (!config.pathResultHack && !layoutAll) {
             this.cy.batch(() => {
                 this.cy.zoom(oldZooming);
                 this.cy.pan(oldPanning);

@@ -1,13 +1,19 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import {SuperSimpleDisplayCanvas} from './PipelineTools/PipelineDisplay/components/common/SuperSimpleDisplayCanvas/SuperSimpleDisplayCanvas';
 import {EdgeSchema, NodeSchema} from './PipelineTools/PipelineDisplay/interfaces';
 import {CyNode} from './PipelineTools/PipelineDisplay/model/CyNode';
 import {AddMixtureType, CyState} from './PipelineTools/PipelineDisplay/model/CyState';
 import uuidv1 from 'uuid/v1';
 import {DisplayModeCanvasStore} from './PipelineTools/PipelineDisplay/stores/DisplayModeCanvasStore';
 import {CyEdge} from './PipelineTools/PipelineDisplay/model/CyEdge';
+import {SimplePipelineDisplay} from './PipelineTools/PipelineDisplay/search/special_search/simple/SimplePipelineDisplay';
+import {changeTheme, Locales, requireCss} from './utils';
+import {SophonTheme} from './components/SophonThemeSelect/interface';
 
+requireCss();
+changeTheme(SophonTheme.DEFAULT);
+
+const store = new DisplayModeCanvasStore();
 const relation: EdgeSchema = {
     labelName: '关系',
     fields: [],
@@ -63,7 +69,7 @@ const schema = {
 
 function createCyNode(cyState: CyState, type: string, label: string) {
     const node = new CyNode(cyState);
-    node.data.id = uuidv1();
+    node.data.id = 'node' + uuidv1();
     node.data.name = label;
     node.data.nodeType = type;
     node.data.note = '';
@@ -73,7 +79,7 @@ function createCyNode(cyState: CyState, type: string, label: string) {
 
 function createCyEdge(cyState: CyState, type: string, src: string, target: string) {
     const edge = new CyEdge(cyState);
-    edge.data.id = uuidv1();
+    edge.data.id = 'edge' + uuidv1();
     edge.data.name = type;
     edge.data.source = src;
     edge.data.target = target;
@@ -121,6 +127,7 @@ function afterRendering(mainStore: DisplayModeCanvasStore, isFirstName: boolean)
             沈孟辉,
             白凤龙,
             姚辉,
+            历史法人,
             张绍萍,
             沈金浩,
         ];
@@ -154,19 +161,24 @@ function afterRendering(mainStore: DisplayModeCanvasStore, isFirstName: boolean)
             nodes: testNodeData,
             edges: testEdgeData,
             paths: [],
+            extraLayoutConfig: {
+                name: 'dagre',
+                fit: true,
+                layoutAll: true,
+            },
         });
     }
 }
 
-const style = {height: '100%', width: '100%'};
+// const style = {height: '100%', width: '100%'};
 
 function App() {
     return (
-        <SuperSimpleDisplayCanvas
-            style={style}
-            useCaseName={'123'}
+        <SimplePipelineDisplay
             afterRendering={afterRendering}
-            schema={schema}/>
+            mainStore={store}
+            locale={Locales.zh}
+            pipelineSchema={schema}/>
     );
 }
 

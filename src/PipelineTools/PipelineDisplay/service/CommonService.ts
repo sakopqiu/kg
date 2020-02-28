@@ -68,10 +68,6 @@ export class CommonService {
         return this.drawService.miniMapService;
     }
 
-    get diffService() {
-        return this.drawService.diffService;
-    }
-
     get timeFilterService() {
         return this.drawService.timeFilterService;
     }

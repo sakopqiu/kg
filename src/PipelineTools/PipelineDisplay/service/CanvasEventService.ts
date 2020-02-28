@@ -301,14 +301,9 @@ export class CanvasEventService extends CommonService {
     public mouseMove = (e: any) => {
         this.elementService.drawTempLine(e);
     }
-
     @action
     public keyDown = (e: any) => {
         if (document.activeElement instanceof HTMLBodyElement) {
-            if (this.diffService.isInDiffMode) {
-                e.preventDefault();
-                return;
-            }
             if (shortcut(e, 'ctrl+shift+z')) {
                 this.historyService.forward();
             } else if (shortcut(e, 'ctrl+z')) {

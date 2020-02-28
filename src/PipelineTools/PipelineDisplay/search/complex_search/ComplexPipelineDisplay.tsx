@@ -15,7 +15,6 @@ import {allSectionsConfig} from '../../WordTabSections/AllSections';
 import {deepClone, getTranslation, identityFunc} from '../../../../utils';
 import {ComplexCanvasConfigProvider} from '../../DisplayCanvasUtils';
 import {SophonWordTabContainer} from '../../../../components/SophonWordTabContainer/SophonWordTab';
-import {PipelineDiff} from '../../components/complex/PipelineDiff/PipelineDiff';
 import {ComplexCanvasTabs} from '../../tabs/ComplexCanvasTabs';
 import {CanvasBackground} from './CanvasBackground';
 import DisplayModeBottomToolBar from '../../components/complex/DisplayModeBottomToolBar';
@@ -164,7 +163,6 @@ export class ComplexPipelineDisplay extends React.Component<IDisplayModeContext>
         }
         const service = currentActiveStore.canvasDrawService;
         const stateService = service.stateService;
-        const showDiff = this.props.showDiff;
         return (
             <ComplexCanvasConfigProvider value={{
                 ...this.props,
@@ -184,15 +182,11 @@ export class ComplexPipelineDisplay extends React.Component<IDisplayModeContext>
                     <SophonWordTabContainer
                         tabs={this.tabs}
                         tabsLeft={this.breadCrumb()}
-                        disabled={service.diffService.isInDiffMode}
+                        disabled={false}
                         collapseTab={stateService.collapseWordTab}
                         onTabsToggled={stateService.setCollapseWordTab.bind(stateService)}
                         currentActiveTabKey={stateService.activeWordTabKey}
                         onTabClicked={this.updateActiveWordTab}/>
-
-                    {showDiff && <PipelineDiff
-                        onClose={this.props.closeDiff!}
-                        diffResult={this.props.diff!}/>}
 
                     <div className='pipelinetool-canvas' style={{flex: 1}}>
                         <div className='drawing-context-wrapper'

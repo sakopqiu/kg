@@ -6,7 +6,7 @@ import 'antd/es/icon/style';
 import {cacheUtils} from '../../cacheUtils';
 import _set from 'lodash/set';
 import _get from 'lodash/get';
-import {getTranslation} from '../../utils';
+import {changeTheme, getTranslation} from '../../utils';
 import {globalStore} from '../../business-related/stores/GlobalStore';
 import {SophonTheme} from './interface';
 import {baseInjectHook, BaseInjectHookProps} from '../../business-related/utils';
@@ -16,18 +16,6 @@ const { SubMenu } = Menu;
 
 export interface SophonThemeSelectProps extends BaseInjectHookProps {
     onChange?: (theme: SophonTheme) => void;
-}
-
-/**
- * 切换主题
- * @param {SophonTheme} 需切换的主题
- * @param {(t: SophonTheme) => void} 切换主题后的回调
- */
-export function changeTheme(t: SophonTheme, cb?: (t: SophonTheme) => void) {
-    globalStore.setTheme(t);
-    cb && cb(t);
-    const body = document.getElementsByTagName('body')[0];
-    body.setAttribute('data-theme', t);
 }
 
 const SophonThemeSelect = baseInjectHook((props: SophonThemeSelectProps) => {

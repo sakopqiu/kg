@@ -36,7 +36,7 @@ export class SimplePipelineDisplay extends SpecialDisplay<ISimpleDisplayModeCont
         const cyState = this.cyState;
         return (
             <SimpleDisplayModeCanvasConfigProvider value={this.props}>
-                <div className={`pipelinetool-display-wrapper ${this.props.className || ''}`}
+                <div className={`simple-pipelinetool-display-wrapper ${this.props.className || ''}`}
                      style={{...(this.props.style || {}), flexDirection: 'row'}}>
                     <div className='pipelinetool-canvas'
                          style={{width: this.mainStore.canvasWidth}}
@@ -49,20 +49,20 @@ export class SimplePipelineDisplay extends SpecialDisplay<ISimpleDisplayModeCont
                             <div
                                 className={classNames('simple-toolbox-area', {hideToolBox: !this.mainStore.showToolbox})}>
                                 {this.props.extraContent || null}
-                                {this.mainStore.showToolbox && <RelationFilter
-                                    edgeFilterConditions={cyState.edgeFilterConditions}
-                                    onSelectedAttributesChanged={(attrs) => {
-                                        // 选择某些时间属性也许不会触发重绘，因为那条边不一定在图上
-                                        // 但是为了历史记录中不出现奇怪的感觉，强制重绘并产生一条历史
-                                        runInAction(() => {
-                                            cyState.setEdgeFilterConditions(attrs);
-                                            cyState.forceReRender();
-                                        });
-                                    }}
-                                    locale={this.locale}
-                                    schema={this.mainStore.displayModePipelineSchema}
-                                />
-                                }
+                                {/*{this.mainStore.showToolbox && <RelationFilter*/}
+                                {/*    edgeFilterConditions={cyState.edgeFilterConditions}*/}
+                                {/*    onSelectedAttributesChanged={(attrs) => {*/}
+                                {/*        // 选择某些时间属性也许不会触发重绘，因为那条边不一定在图上*/}
+                                {/*        // 但是为了历史记录中不出现奇怪的感觉，强制重绘并产生一条历史*/}
+                                {/*        runInAction(() => {*/}
+                                {/*            cyState.setEdgeFilterConditions(attrs);*/}
+                                {/*            cyState.forceReRender();*/}
+                                {/*        });*/}
+                                {/*    }}*/}
+                                {/*    locale={this.locale}*/}
+                                {/*    schema={this.mainStore.displayModePipelineSchema}*/}
+                                {/*/>*/}
+                                {/*}*/}
                             </div>
                             }
                         </div>

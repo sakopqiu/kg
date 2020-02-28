@@ -4,20 +4,10 @@ import {CyNode} from './model/CyNode';
 import {CyEdge} from './model/CyEdge';
 import {CascaderOptionType} from 'antd/es/cascader';
 
-export type FieldMutationType = 'AddElementField' | 'EditElementField' | 'DeleteElementField';
-
-export interface DiffMutation {
-    prev?: {
-        fieldValue: any;
-    };
-    name: FieldMutationType;
-}
-
 export interface FieldDataJson {
     fieldName: string;
     fieldValue: string;
     fieldType: string;
-    mutation?: DiffMutation;
 }
 
 export type MutationNameType = null | 'null'
@@ -62,11 +52,6 @@ export interface SimpleGraphDataJson {
     edges: EdgeDataJson[];
 }
 
-export interface VersionDiffResult {
-    inner: SimpleGraphDataJson;
-    outer: SimpleGraphDataJson;
-}
-
 export type Period = 'years' | 'months' | 'weeks';
 
 export interface ITimeDiffConfig {
@@ -74,13 +59,6 @@ export interface ITimeDiffConfig {
     earliestDateTime?: Moment;
     defaultPeriod?: Period;
     initialCurrentDateTime?: Moment;
-}
-
-export interface VersionDiff {
-    obj1: string;
-    obj2: string;
-    result: VersionDiffResult;
-    timeDiff?: ITimeDiffConfig;
 }
 
 export interface GraphFieldMeta {

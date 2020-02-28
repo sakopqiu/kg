@@ -5,7 +5,8 @@ import {
     CYTO_MIN_ZOOM,
     debug,
     DEFAULT_NEW_ELEMENT_LAYOUT_CONFIG,
-    filterCommonId, FunctionVariadic,
+    filterCommonId,
+    FunctionVariadic,
     getLayoutSpecificConfigs,
     getTranslation,
     nextEventLoop,
@@ -37,7 +38,6 @@ import {CyElementDefaultClass, OnSimpleFindPathFunc, PERFORMANCE_THRESHOLD, SELE
 import {MiniMapService} from './MiniMapService';
 import {StatusService} from './StatusService';
 import {TEMP_HIDDEN_CLASS} from '../../common/cytoscapeCommonStyle';
-import {DiffService} from './DiffService';
 import {TimeFilterService} from './TimeFilterService';
 import {StateService} from './StateService';
 import {AddFindPathEntryService} from './AddFindPathEntryService';
@@ -106,8 +106,7 @@ export class CanvasDrawService {
     public statusService: StatusService;
     // 时间序列
     public timeFilterService: TimeFilterService;
-    // 版本对比
-    public diffService: DiffService;
+
     // 用于控制社群，节点或者边的是否可见
     public visibilityService: VisibilityService;
     // 所有全局的状态机
@@ -139,7 +138,6 @@ export class CanvasDrawService {
         this.visibilityService = new VisibilityService(this);
         this.statusService = new StatusService(this);
         this.timeFilterService = new TimeFilterService(this);
-        this.diffService = new DiffService(this);
         this.stateService = new StateService(this);
         this.statsAnalysisStore = new StatsAnalysisStore();
         this.cyState = this.serializationService.deserialize(cyStateStr, this.canvasStore.displayModePipelineSchema);

@@ -21,6 +21,7 @@ import _startsWith from 'lodash/startsWith';
 import {toJS} from 'mobx';
 import {TreeNodeNormal} from 'antd/es/tree/Tree';
 import {SophonTheme} from './components/SophonThemeSelect/interface';
+import {globalStore} from './business-related/stores/GlobalStore';
 
 (window as any).toJS = toJS;
 
@@ -1214,7 +1215,7 @@ export function SophonDefaultSorter<KeyType>(ele1: KeyType, ele2: KeyType, order
     }
 }
 
-export function sortMapByKey<Key= any, Value= any>(map: Map<Key, Value>, sorter: (key1: Key, key2: Key) => number = SophonDefaultSorter) {
+export function sortMapByKey<Key = any, Value = any>(map: Map<Key, Value>, sorter: (key1: Key, key2: Key) => number = SophonDefaultSorter) {
     const keys = sortArr(Array.from(map.keys()));
     const result = new Map<Key, Value>();
     for (const key of keys) {
@@ -1223,7 +1224,7 @@ export function sortMapByKey<Key= any, Value= any>(map: Map<Key, Value>, sorter:
     return result;
 }
 
-export function sortArr<Key= any>(arr: Key[], sorter: (key1: Key, key2: Key) => number = SophonDefaultSorter) {
+export function sortArr<Key = any>(arr: Key[], sorter: (key1: Key, key2: Key) => number = SophonDefaultSorter) {
     return arr.sort(sorter);
 }
 
@@ -1351,6 +1352,7 @@ export function export2csv(data: string | CSVFormatArray, name: string, formatDa
             return `,="${str.slice(1, -1)}",`;
         });
     }
+
     if (dataType === 'string') {                    // data 列以,分割，行以\n分割
         newData = transformData(data as string, formatData);
     } else if (dataType === 'object') {             // data 为 [][]格式
@@ -1482,8 +1484,8 @@ export const searchInTree = (sk: string, path: string, nodes: TreeNodeNormal[], 
             cNode = {...rest} as TreeNodeNormal;
             tMap.set(currentPath, cNode);
         }
-        if (typeof node.title === 'string' && !searchByKey ? node.title!.indexOf(sk) < 0 : (node.title!['key'] ? node.title!['key']!.indexOf(sk) < 0 : node.key.indexOf(sk) < 0) ) {
-          // 没有找到
+        if (typeof node.title === 'string' && !searchByKey ? node.title!.indexOf(sk) < 0 : (node.title!['key'] ? node.title!['key']!.indexOf(sk) < 0 : node.key.indexOf(sk) < 0)) {
+            // 没有找到
             if (!node.isLeaf) {
                 if (searchInTree(sk, currentPath, children || [], tMap)) {
                     // 当前节点的所有子节点中，只需有一个节点匹配到就返回true, 表示当前点节要挂载到父节点
@@ -1492,7 +1494,7 @@ export const searchInTree = (sk: string, path: string, nodes: TreeNodeNormal[], 
                 }
             }
         } else {
-          // 找到
+            // 找到
             searchInTree(sk, currentPath, children || [], tMap);
             found = true;
             parentNode.children ? parentNode.children.push(cNode) : parentNode.children = [cNode];
@@ -1608,4 +1610,16 @@ export function pathToHierachy(path: string): string[] {
             return pre.concat(`${pre[index - 1]}/${cur}`);
         }
     }, []);
+}
+
+/**
+ * 切换主题
+ * @param {SophonTheme} 需切换的主题
+ * @param {(t: SophonTheme) => void} 切换主题后的回调
+ */
+export function changeTheme(t: SophonTheme, cb?: (t: SophonTheme) => void) {
+    globalStore.setTheme(t);
+    cb && cb(t);
+    const body = document.getElementsByTagName('body')[0];
+    body.setAttribute('data-theme', t);
 }

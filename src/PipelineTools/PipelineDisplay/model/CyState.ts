@@ -42,6 +42,7 @@ export interface NewElementLayoutConfig {
     animation: boolean;
     animationDuration: number;
     animationEasing: string | undefined;
+    layoutAll: boolean;
 }
 
 export enum AddMixtureType {
@@ -66,7 +67,7 @@ interface ReplaceOption {
 export interface AddNormalNodeEdgeConfig extends NodeEdgeAdditionBase, ReplaceOption {
     type: AddMixtureType.NORMAL;
     paths: AddSinglePath[];
-    extraLayoutConfig?: any;
+    extraLayoutConfig?: Partial<NewElementLayoutConfig>;
     // 加入path entry时的特殊逻辑,这块以后需要修改
     pathResultHack?: boolean;
 }

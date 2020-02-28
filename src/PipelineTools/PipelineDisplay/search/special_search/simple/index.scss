@@ -11,3 +11,11 @@
     height: 0;
   }
 }
+
+.simple-pipelinetool-display-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  width: 100%;
+}

@@ -112,10 +112,10 @@ module.exports = {
     },
     plugins: [
         new CheckerPlugin(),
-        new StylelintPlugin({
-            configFile: path.resolve(__dirname, './.stylelintrc'),
-            files: './{src,test_cases}/**/*.scss'
-        }),
+        // new StylelintPlugin({
+        //     configFile: path.resolve(__dirname, './.stylelintrc'),
+        //     files: './{src,test_cases}/**/*.scss'
+        // }),
         new SophonLintPlugin(['./src', './test_cases'], {
             'load-on-demand': ['antd', 'antv', 'lodash', 'echarts'],
             'use-react-hook': true

@@ -6,7 +6,6 @@ import {DisplayModeCanvasTabStore} from './stores/DisplayModeCanvasTabStore';
 import {DisplayModePipelineModel} from '../../models/DisplayModePipelineModel';
 import {SophonIconProps} from '../../icons/SophonIcon';
 import * as React from 'react';
-import {VersionDiff} from './kg-interface';
 import {CyType} from './model/CyElement';
 import {DisplayModeCanvasStore} from './stores/DisplayModeCanvasStore';
 import {Locales} from '../../utils';
@@ -148,9 +147,6 @@ export interface IDisplayModeContext extends ICanvasContextCommon {
     onBackClicked?: () => any;
     displayModeConfig: DisplayModeConfig;
     mainStore: DisplayModeCanvasTabStore;
-    showDiff?: boolean;
-    closeDiff?: () => any;
-    diff?: VersionDiff;
     onTabSwitched?: (oldPipeline: DisplayModePipelineModel, newPipeline: DisplayModePipelineModel) => void;
     style?: React.CSSProperties;
     className?: string;
@@ -303,13 +299,6 @@ export interface SectionChild {
     icon?: React.ComponentClass<SophonIconProps>;
     onClick?: (e: any) => any;
     render?: () => React.ReactNode;
-}
-
-export interface SelectedElementDiffInfo {
-    eleId: string;
-    eleType: 'vertex' | 'edge';
-    x: number;
-    y: number;
 }
 
 export type EdgeDirection = 'in' | 'out' | 'both';
