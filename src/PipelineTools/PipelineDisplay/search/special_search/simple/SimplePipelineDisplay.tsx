@@ -6,9 +6,7 @@ import {SimpleCanvasBackground} from './SimpleCanvasBackground';
 import '../../../../common/common.scss';
 import '../../canvas.scss';
 import './index.scss';
-import {runInAction} from 'mobx';
 import SimpleDisplayModeTopToolBar from './SimpleDisplayModeTopToolBar';
-import {RelationFilter} from './RelationFilter/RelationFilter';
 import {SpecialDisplay} from '../SpecialDisplay';
 import DetailsPanel from '../../../right/DetailsPanel/DetailsPanel';
 import classNames from 'classnames';
@@ -33,7 +31,6 @@ export class SimplePipelineDisplay extends SpecialDisplay<ISimpleDisplayModeCont
     }
 
     public render() {
-        const cyState = this.cyState;
         return (
             <SimpleDisplayModeCanvasConfigProvider value={this.props}>
                 <div className={`simple-pipelinetool-display-wrapper ${this.props.className || ''}`}

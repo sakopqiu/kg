@@ -150,9 +150,9 @@ function convertVertexOrEdge(locale: Locales, isNodeSchema: boolean, schema: Edg
     const rows = data
         .filter(e => {
             if (e instanceof CyNode) {
-                return e.data.nodeType === schema.labelName;
+                return e.data.nodeType === schema.type;
             } else if (e instanceof CyEdge) {
-                return e.data.name === schema.labelName;
+                return e.data.name === schema.type;
             }
             return false;
         })
@@ -169,7 +169,7 @@ function convertVertexOrEdge(locale: Locales, isNodeSchema: boolean, schema: Edg
         });
 
     return {
-        name: schema.labelName,
+        name: schema.type,
         type: getTranslation(locale, isNodeSchema ? 'Entity Type' : 'Relation Type'),
         rows,
         columnDefinitions,

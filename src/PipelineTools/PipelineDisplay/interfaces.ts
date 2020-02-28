@@ -45,7 +45,7 @@ export interface FieldSchema {
 }
 
 export interface CommonSchema {
-    labelName: string;
+    type: string;
     fields: FieldSchema[];
 }
 

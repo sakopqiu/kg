@@ -127,14 +127,14 @@ export class CanvasInfoComponent extends ComplexModeCanvasComponent<CanvasInfoCo
         const items: StatsBarItem[] = [];
 
         for (const schema of widgetSchemas) {
-            const nodeTypeConfig = this.cyState.nodeTypeConfigs.get(schema.labelName)!;
+            const nodeTypeConfig = this.cyState.nodeTypeConfigs.get(schema.type)!;
 
             // 初始化时可能还不存在
             if (nodeTypeConfig) {
-                const nodes = this.cyState.cyNodes.filter((n) => n.data.nodeType === schema.labelName);
+                const nodes = this.cyState.cyNodes.filter((n) => n.data.nodeType === schema.type);
                 const item = {
-                    name: schema.labelName,
-                    title: schema.labelName,
+                    name: schema.type,
+                    title: schema.type,
                     size: nodes.length,
                     elements: nodes,
                     noTooltip: true,
@@ -148,9 +148,9 @@ export class CanvasInfoComponent extends ComplexModeCanvasComponent<CanvasInfoCo
                         </Popover>
                     ),
                     statsBarItemOnclick: () => {
-                        const nodes = this.cyState.cyNodes.filter((n) => n.data.nodeType === schema.labelName);
+                        const nodes = this.cyState.cyNodes.filter((n) => n.data.nodeType === schema.type);
                         if (nodes.length > 0 && nodeTypeConfig.show) {
-                            this.selectionService.selectNodeType(schema.labelName);
+                            this.selectionService.selectNodeType(schema.type);
                         }
                     },
                 };
@@ -176,13 +176,13 @@ export class CanvasInfoComponent extends ComplexModeCanvasComponent<CanvasInfoCo
         const edgeSchemas = this.service.canvasStore.displayModePipelineSchema.edges;
 
         for (const schema of edgeSchemas) {
-            const edgeConfig = this.cyState.edgeConfigs.get(schema.labelName)!;
+            const edgeConfig = this.cyState.edgeConfigs.get(schema.type)!;
             // 初始化时可能还不存在
             if (edgeConfig) {
-                const edges = this.cyState.cyEdges.filter((e) => e.data.name === schema.labelName);
+                const edges = this.cyState.cyEdges.filter((e) => e.data.name === schema.type);
                 items.push({
-                    name: schema.labelName,
-                    title: schema.labelName,
+                    name: schema.type,
+                    title: schema.type,
                     size: edges.length,
                     translucent: !edgeConfig.show,
                     rightNode: (
@@ -194,7 +194,7 @@ export class CanvasInfoComponent extends ComplexModeCanvasComponent<CanvasInfoCo
                         </Popover>
                     ),
                     statsBarItemOnclick: () => {
-                        this.selectionService.selectEdgesByLabel(schema.labelName);
+                        this.selectionService.selectEdgesByLabel(schema.type);
                     },
                 });
             }

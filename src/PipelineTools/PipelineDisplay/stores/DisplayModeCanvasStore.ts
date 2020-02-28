@@ -64,12 +64,12 @@ export class DisplayModeCanvasStore extends CanvasStore {
 
     @computed
     get schemaNodeNames() {
-        return this.displayModePipelineSchema.vertices.map(v => v.labelName);
+        return this.displayModePipelineSchema.vertices.map(v => v.type);
     }
 
     @computed
     get schemaEdgeNames() {
-        return this.displayModePipelineSchema.edges.map(e => e.labelName);
+        return this.displayModePipelineSchema.edges.map(e => e.type);
     }
 
     @computed
@@ -96,7 +96,7 @@ export class DisplayModeCanvasStore extends CanvasStore {
 
     public getEdgeSchema(label: string): EdgeSchema {
         return _find(this.displayModePipelineSchema.edges, ((s: EdgeSchema) => {
-            return s.labelName === label;
+            return s.type === label;
         }))!;
     }
 
@@ -110,7 +110,7 @@ export class DisplayModeCanvasStore extends CanvasStore {
 
     public getNodeSchema(label: string): NodeSchema {
         return _find(this.displayModePipelineSchema.vertices, ((s: NodeSchema) => {
-            return s.labelName === label;
+            return s.type === label;
         }))!;
     }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import {EdgeSchema, NodeSchema} from './PipelineTools/PipelineDisplay/interfaces';
-import {CyNode} from './PipelineTools/PipelineDisplay/model/CyNode';
+import {CyNode, CyNodeData} from './PipelineTools/PipelineDisplay/model/CyNode';
 import {AddMixtureType, CyState} from './PipelineTools/PipelineDisplay/model/CyState';
 import uuidv1 from 'uuid/v1';
 import {DisplayModeCanvasStore} from './PipelineTools/PipelineDisplay/stores/DisplayModeCanvasStore';
@@ -14,43 +14,79 @@ requireCss();
 changeTheme(SophonTheme.DEFAULT);
 
 const store = new DisplayModeCanvasStore();
+
+function getShapeByType(type: string) {
+    if (type === '公司') {
+        return 'ellipse';
+    } else {
+        return CyNodeData.DEFAULT_SHAPE;
+    }
+}
+
+function getBackgroundColorByType(type: string) {
+    const category1 = ['公司', '管理层类型', '历史法人类型'];
+    const category2 = ['管理层'];
+    const category3 = ['分支机构类型'];
+    const category4 = ['分支机构'];
+    if (category1.includes(type)) {
+        return '#41b2e8';
+    } else if (category2.includes(type)) {
+        return '#3de4ae';
+    } else if (category3.includes(type)) {
+        return '#f79b7a';
+    } else if (category4.includes(type)) {
+        return 'white';
+    }
+    return 'white';
+}
+
+function getFontColorByType(type: string) {
+    const category1 = ['公司', '管理层类型', '历史法人类型'];
+    const category2 = ['管理层'];
+    const category3 = ['分支机构类型'];
+    if (category1.includes(type) || category2.includes(type) || category3.includes(type)) {
+        return 'white';
+    }
+    return 'black';
+}
+
 const relation: EdgeSchema = {
-    labelName: '关系',
+    type: '关系',
     fields: [],
 };
 
 const company: NodeSchema = {
-    labelName: '公司',
+    type: '公司',
     fields: [],
 };
 
 const managerType: NodeSchema = {
-    labelName: '管理层类型',
+    type: '管理层类型',
     fields: [],
 };
 
 const manager: NodeSchema = {
-    labelName: '管理层',
+    type: '管理层',
     fields: [],
 };
 
 const branchType: NodeSchema = {
-    labelName: '分支机构类型',
+    type: '分支机构类型',
     fields: [],
 };
 
 const branch: NodeSchema = {
-    labelName: '分支机构',
+    type: '分支机构',
     fields: [],
 };
 
 const juridicalType: NodeSchema = {
-    labelName: '历史法人类型',
+    type: '历史法人类型',
     fields: [],
 };
 
 const juridical: NodeSchema = {
-    labelName: '历史法人',
+    type: '历史法人',
     fields: [],
 };
 
@@ -72,8 +108,20 @@ function createCyNode(cyState: CyState, type: string, label: string) {
     node.data.id = 'node' + uuidv1();
     node.data.name = label;
     node.data.nodeType = type;
+    node.data.shape = getShapeByType(type);
+    node.data.backgroundColor = getBackgroundColorByType(type);
+    node.data.fontColor = getFontColorByType(type);
     node.data.note = '';
     node.data.tags = [];
+    const isCompany = type === '公司';
+    node.data.width = isCompany ? '150px' : 'label';
+    node.data.height = isCompany ? '150px' : 'label';
+    node.data.textWrap = isCompany ? 'wrap' : 'none';
+    node.data.textOverflowWrap = isCompany ? 'anywhere' : 'none';
+    node.data.textMaxWidth = isCompany ? '140px' : '200px';
+    node.data.fontSize = isCompany ? '24px' : '16px';
+    node.data.padding = '25px';
+    node.data.borderColor = 'black';
     return node;
 }
 
@@ -89,7 +137,7 @@ function createCyEdge(cyState: CyState, type: string, src: string, target: strin
 function afterRendering(mainStore: DisplayModeCanvasStore, isFirstName: boolean) {
     const cyState = mainStore.canvasDrawService.cyState;
     if (isFirstName) {
-        const 南方中金 = createCyNode(cyState, '公司', '南方中金');
+        const 南方中金 = createCyNode(cyState, '公司', '南方中金环境股份有限公司');
         const 分支机构 = createCyNode(cyState, '分支机构类型', '分支机构');
         const 历史法人 = createCyNode(cyState, '历史法人类型', '历史法人');
 
@@ -161,6 +209,7 @@ function afterRendering(mainStore: DisplayModeCanvasStore, isFirstName: boolean)
             nodes: testNodeData,
             edges: testEdgeData,
             paths: [],
+            notSelectNewElements: true,
             extraLayoutConfig: {
                 name: 'dagre',
                 fit: true,

@@ -2833,10 +2833,10 @@ cytoscape-springy@^1.4.2:
   dependencies:
     springy "^2.7.1"
 
-cytoscape@^3.10.0:
-  version "3.10.0"
-  resolved "http://172.16.1.161:30033/repository/npm-group/cytoscape/-/cytoscape-3.10.0.tgz#3b462e0d35121ecd2d2702f470915fd6dae01777"
-  integrity sha1-O0YuDTUSHs0tJwL0cJFf1trgF3c=
+cytoscape@^3.14.0:
+  version "3.14.0"
+  resolved "http://172.16.1.161:30033/repository/npm-group/cytoscape/-/cytoscape-3.14.0.tgz#fa23e38209bebb759415dbbd88f8320b37e9ae56"
+  integrity sha1-+iPjggm+u3WUFdu9iPgyCzfprlY=
   dependencies:
     heap "^0.2.6"
     lodash.debounce "^4.0.8"

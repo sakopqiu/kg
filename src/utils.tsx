@@ -86,7 +86,7 @@ export enum CopyMoveType {
 export const MAX_NAME_LENGTH = 56;    // 名称的最大长度
 export const MAX_DESC_LENGTH = 256;   // 描述的最大长度
 
-export function trimStr(str: string, maxLength = 8) {
+export function trimStr(str: string, maxLength = 18) {
     if (!str) {
         return '';
     }
@@ -898,13 +898,14 @@ export const CYTO_MIN_ZOOM = 0.05;
 export const DEFAULT_NEW_ELEMENT_LAYOUT_CONFIG: NewElementLayoutConfig = {
     name: 'grid',
     padding: CYTO_FIT_PADDING,
-    avoidOverlapPadding: LAYOUT_ELEMENT_PADDING,
+    avoidOverlapPadding: 50,
     fit: false,
     nodeDimensionsIncludeLabels: true,
     spacingFactor: 1,
     animation: false,
     animationDuration: 200,
     animationEasing: 'ease-in-out',
+    layoutAll: false,
 };
 
 export function parseMoment(value: string, truncateTime = false): moment.Moment | null {

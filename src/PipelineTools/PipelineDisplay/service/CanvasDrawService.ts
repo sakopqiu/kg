@@ -8,7 +8,7 @@ import {
     filterCommonId,
     FunctionVariadic,
     getLayoutSpecificConfigs,
-    getTranslation,
+    getTranslation, isDebugMode,
     nextEventLoop,
     showError,
     sideEffect,
@@ -313,8 +313,10 @@ export class CanvasDrawService {
             }
             this.destroyOldCy();
             this.setCytoInstance(cy);
-            // (window as any).c = cy;
-            // (window as any).cs = this.cyState;
+            if (isDebugMode()) {
+                (window as any).c = cy;
+                (window as any).cs = this.cyState;
+            }
             this.registerEvents();
         } else {
             this.cy.off('viewport');

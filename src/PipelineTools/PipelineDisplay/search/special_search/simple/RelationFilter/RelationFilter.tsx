@@ -104,8 +104,8 @@ export function RelationFilter(props: RelationFilterProps) {
             })
             .map((es) => {
                 return {
-                    value: es.labelName,
-                    title: es.labelName,
+                    value: es.type,
+                    title: es.type,
                 };
             });
     }, [edgeSchemas]);
@@ -114,7 +114,7 @@ export function RelationFilter(props: RelationFilterProps) {
         if (relationType === '') {
             return [];
         }
-        const edgeSchema = edgeSchemas.find((s) => s.labelName === relationType)!;
+        const edgeSchema = edgeSchemas.find((s) => s.type === relationType)!;
         // 只选取时间属性，并且该属性还没有被选择过
         const timeAttributes = edgeSchema.fields.filter((f) =>
             isTimeRelatedType(f.fieldType));

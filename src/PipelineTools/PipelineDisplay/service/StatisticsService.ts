@@ -108,7 +108,7 @@ export class StatisticsService extends CommonService {
         for (const ns of nodeSchemas) {
             for (const f of ns.fields) {
                 if (isTimeRelatedType(f.fieldType)) {
-                    const tp = new TimePropertyCacheItem('vertex', ns.labelName, f.fieldName);
+                    const tp = new TimePropertyCacheItem('vertex', ns.type, f.fieldName);
                     cache.addItem(tp.canonicalName, tp);
                 }
             }
@@ -116,7 +116,7 @@ export class StatisticsService extends CommonService {
         for (const es of edgeSchemas) {
             for (const f of es.fields) {
                 if (isTimeRelatedType(f.fieldType)) {
-                    const tp = new TimePropertyCacheItem('edge', es.labelName, f.fieldName);
+                    const tp = new TimePropertyCacheItem('edge', es.type, f.fieldName);
                     cache.addItem(tp.canonicalName, tp);
                 }
             }

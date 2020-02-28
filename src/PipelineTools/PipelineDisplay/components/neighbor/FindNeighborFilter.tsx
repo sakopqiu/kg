@@ -283,12 +283,12 @@ export class FindNeighborFilter extends PositionHandler<FindNeighborFilterProps,
 
     get allEntitySchemaNames() {
         const entitySchemas = this.service.canvasStore.displayModePipelineSchema.vertices;
-        return entitySchemas.map((s: NodeSchema) => s.labelName);
+        return entitySchemas.map((s: NodeSchema) => s.type);
     }
 
     get allEdgeSchemaNames() {
         const edgeSchemas = this.service.canvasStore.displayModePipelineSchema.edges;
-        return edgeSchemas.map((s: EdgeSchema) => s.labelName);
+        return edgeSchemas.map((s: EdgeSchema) => s.type);
     }
 
     // private onOnlyShortestChange = (event: RadioChangeEvent) => {

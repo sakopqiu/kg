@@ -28,14 +28,14 @@ export class WeightConfig extends ComplexModeCanvasComponent<IWeightConfigProps>
                 <div className='weight-config-header'><span>{getTranslation(this.locale, 'Configure Weight')}</span>
                 </div>
                 {edgeSchemas.map((edge) => (
-                    <div className='weight-config-wrapper' key={edge.labelName}>
+                    <div className='weight-config-wrapper' key={edge.type}>
                         <Checkbox
-                            checked={this.props.values.has(edge.labelName)}
-                            onChange={(event: RadioChangeEvent) => this.onCheckboxChange(event, edge.labelName)}>{edge.labelName}
+                            checked={this.props.values.has(edge.type)}
+                            onChange={(event: RadioChangeEvent) => this.onCheckboxChange(event, edge.type)}>{edge.type}
                         </Checkbox>
-                        {this.props.values.has(edge.labelName) &&
-                        <RadioGroup onChange={(event: RadioChangeEvent) => this.onChange(event, edge.labelName)}
-                                    value={this.props.values.get(edge.labelName)}>
+                        {this.props.values.has(edge.type) &&
+                        <RadioGroup onChange={(event: RadioChangeEvent) => this.onChange(event, edge.type)}
+                                    value={this.props.values.get(edge.type)}>
                             {edge.fields.map((field) => (
                                 <Radio className='field-option' value={field.fieldName}
                                        key={field.fieldName}>{field.fieldName}</Radio>

@@ -44,6 +44,16 @@ export class CyNodeData extends NodeWithPositionData implements HasParent {
     @observable public tags: string[] = [];
     @observable public manualSize: number = CyNodeData.AUTO_SIZE; // 手动设置的大小，-1代表没有手动设置过,使用PageRank算法设置大小
     @observable public borderColor: string = CyNodeData.DEFAULT_BORDER_COLOR;
+    @observable public padding: string = '0px';
+    @observable public backgroundColor = 'white';
+    @observable public fontColor = 'white';
+    @observable public width = '80px';
+    @observable public height = '80px';
+    @observable public textWrap = 'wrap';
+    @observable public textOverflowWrap = 'wrap';
+    // 配合textOverflowWrap使用
+    @observable public textMaxWidth = '200px';
+    @observable public fontSize = '12px';
 
     get showLabel() {
         return !this.cyState!.canvasSetting.hideNodeLabel;
@@ -98,10 +108,11 @@ export class CyNodeData extends NodeWithPositionData implements HasParent {
     }
 
     get borderWidth() {
-        if (this.borderColor !== CyNodeData.DEFAULT_BORDER_COLOR) {
-            return 4;
-        }
-        return 0;
+        // if (this.borderColor !== CyNodeData.DEFAULT_BORDER_COLOR) {
+        //     return 4;
+        // }
+        // return 0;
+        return 1;
     }
 
     get size() {
@@ -115,12 +126,12 @@ export class CyNodeData extends NodeWithPositionData implements HasParent {
         return Number(finalSize.toFixed(NUMBER_PRECISION));
     }
 
-    get fontSize() {
-        if (this.size < CyNodeData.SIZE_SMALL) {
-            return 22;
-        }
-        return this.size / CyNodeData.SIZE_SMALL * 22;
-    }
+    // get fontSize() {
+    //     if (this.size < CyNodeData.SIZE_SMALL) {
+    //         return 22;
+    //     }
+    //     return this.size / CyNodeData.SIZE_SMALL * 22;
+    // }
 
     @action
     public setValue(key: string, value: any) {
@@ -138,8 +149,53 @@ export class CyNodeData extends NodeWithPositionData implements HasParent {
     }
 
     @action
+    public setFontSize(size: string) {
+        this.fontSize = size;
+    }
+
+    @action
+    public setTextWrap(wrap: string) {
+        this.textWrap = wrap;
+    }
+
+    @action
+    public setTextOverflowWrap(textOverflowWrap: string) {
+        this.textOverflowWrap = textOverflowWrap;
+    }
+
+    @action
+    public setTextMaxWidth(width: string) {
+        this.textMaxWidth = width;
+    }
+
+    @action
+    public setPadding(padding: string) {
+        this.padding = padding;
+    }
+
+    @action
+    public setWidth(width: string) {
+        this.width = width;
+    }
+
+    @action
+    public setHeight(height: string) {
+        this.height = height;
+    }
+
+    @action
     public removeNote() {
         this.note = undefined;
+    }
+
+    @action
+    public setBackgroundColor(val: string) {
+        this.backgroundColor = val;
+    }
+
+    @action
+    public setFontColor(val: string) {
+        this.fontColor = val;
     }
 
     @action

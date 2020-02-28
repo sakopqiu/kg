@@ -42,7 +42,7 @@ export interface NewElementLayoutConfig {
     animation: boolean;
     animationDuration: number;
     animationEasing: string | undefined;
-    layoutAll: boolean;
+    layoutAll: boolean; // 强制layout整个界面，而不是选中的元素
 }
 
 export enum AddMixtureType {
@@ -57,6 +57,8 @@ interface NodeEdgeAdditionBase {
     nodes: CyNode[];
     edges: CyEdge[];
     expandEdges?: boolean; // 默认加入的边都为合并模式
+    // 默认情况下新元素会被选中，可以取消这个行为
+    notSelectNewElements?: boolean;
 }
 
 interface ReplaceOption {
@@ -264,13 +266,13 @@ export class CyState {
 
     initTypesFromSchema(schema: DisplayModePipelineSchema) {
         for (const widgetSchema of schema.vertices) {
-            const schemaName = widgetSchema.labelName;
+            const schemaName = widgetSchema.type;
             // 类型的设置，比如说Person类型，node的颜色是什么，根据什么分组
             const config: NodeTypeConfig = NodeTypeConfig.newConfig(schemaName);
             this.nodeTypeConfigs.set(schemaName, config);
         }
         for (const edge of schema.edges) {
-            const schemaName = edge.labelName;
+            const schemaName = edge.type;
             const config = new EdgeConfig(schemaName);
             this.edgeConfigs.set(schemaName, config);
         }
@@ -580,6 +582,7 @@ export class CyState {
             }
         }
 
+        const selectNewElement = !config.notSelectNewElements;
         for (const n of nodes) {
             // 如果用户数据用重复的节点，不处理，并给出警告
             if (processedNodeIds.has(n.data.id)) {
@@ -595,7 +598,9 @@ export class CyState {
             newNodeStats.set(filterCommonId(n.data.id), this.cyNodesMap.has(n.data.id));
             if (!this.cyNodesMap.has(n.data.id)) {
                 this.cyNodesMap.set(n.data.id, n);
-                n.setSelected(true);
+                if (selectNewElement) {
+                    n.setSelected(true);
+                }
                 n.becomeTempInvisible(); // 新元素第一次添加进来时先隐藏，之后代码会删除隐藏类
                 anyNodeAdded = true;
             }
@@ -666,6 +671,7 @@ export class CyState {
 
         let anyEdgesAdded = false;
 
+        const selectNewElement = !config.notSelectNewElements;
         for (const e of config.edges) {
 
             if (!this.cyNodesMap.has(e.data.source) || !this.cyNodesMap.has(e.data.target)) {
@@ -691,7 +697,9 @@ export class CyState {
             newEdgeStats.set(filterCommonId(e.data.id), this.cyEdgesMap.has(e.data.id));
             if (!this.cyEdgesMap.has(e.data.id)) {
                 anyEdgesAdded = true;
-                e.setSelected(true);
+                if (selectNewElement) {
+                    e.setSelected(true);
+                }
                 e.becomeTempInvisible(); // 新元素第一次添加进来时先隐藏，之后代码会删除隐藏类
                 this.cyEdgesMap.set(e.data.id, e);
             }
