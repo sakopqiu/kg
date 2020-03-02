@@ -1,4 +1,5 @@
 @use './themes/tm';
+@use './reset.css';
 
 $border-radius: 2px;
 // 每个使用sophon-utils的项目，如果要用sophon的字体，需要自己定义sophone-font，不然会显示Yahei

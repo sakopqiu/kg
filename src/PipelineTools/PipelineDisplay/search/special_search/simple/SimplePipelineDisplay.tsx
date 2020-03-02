@@ -40,8 +40,8 @@ export class SimplePipelineDisplay extends SpecialDisplay<ISimpleDisplayModeCont
                     >
                         <div className='drawing-context-wrapper' style={{width: '100%'}}>
                             {this.props.extraLoading || ''}
-                            {this.mounted && <SimpleDisplayModeTopToolBar/>}
                             {this.mounted && <SimpleCanvasBackground/>}
+                            {this.mounted && <SimpleDisplayModeTopToolBar/>}
                             {this.mounted &&
                             <div
                                 className={classNames('simple-toolbox-area', {hideToolBox: !this.mainStore.showToolbox})}>

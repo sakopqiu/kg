@@ -1,13 +1,13 @@
 import React from 'react';
-import {EdgeSchema, NodeSchema} from './PipelineTools/PipelineDisplay/interfaces';
-import {CyNode, CyNodeData} from './PipelineTools/PipelineDisplay/model/CyNode';
-import {AddMixtureType, CyState} from './PipelineTools/PipelineDisplay/model/CyState';
+import {EdgeSchema, NodeSchema} from '../../PipelineTools/PipelineDisplay/interfaces';
+import {CyNode, CyNodeData} from '../../PipelineTools/PipelineDisplay/model/CyNode';
+import {AddMixtureType, CyState} from '../../PipelineTools/PipelineDisplay/model/CyState';
 import uuidv1 from 'uuid/v1';
-import {DisplayModeCanvasStore} from './PipelineTools/PipelineDisplay/stores/DisplayModeCanvasStore';
-import {CyEdge} from './PipelineTools/PipelineDisplay/model/CyEdge';
-import {SimplePipelineDisplay} from './PipelineTools/PipelineDisplay/search/special_search/simple/SimplePipelineDisplay';
-import {changeTheme, Locales, requireCss} from './utils';
-import {SophonTheme} from './components/SophonThemeSelect/interface';
+import {DisplayModeCanvasStore} from '../../PipelineTools/PipelineDisplay/stores/DisplayModeCanvasStore';
+import {CyEdge} from '../../PipelineTools/PipelineDisplay/model/CyEdge';
+import {SimplePipelineDisplay} from '../../PipelineTools/PipelineDisplay/search/special_search/simple/SimplePipelineDisplay';
+import {changeTheme, Locales, requireCss} from '../../utils';
+import {SophonTheme} from '../../components/SophonThemeSelect/interface';
 
 requireCss();
 changeTheme(SophonTheme.DEFAULT);
@@ -203,17 +203,21 @@ function afterRendering(mainStore: DisplayModeCanvasStore, isFirstName: boolean)
             createCyEdge(cyState, '关系', 历史法人.data.id, 沈琴伟.data.id),
 
         ];
-        cyState.addNormalNodesEdges({
-            type: AddMixtureType.NORMAL,
-            nodes: testNodeData,
-            edges: testEdgeData,
-            paths: [],
-            notSelectNewElements: true,
-            extraLayoutConfig: {
-                name: 'dagre',
-                fit: true,
-                layoutAll: true,
-            },
+        cyState.transaction(() => {
+            cyState.addNormalNodesEdges({
+                type: AddMixtureType.NORMAL,
+                nodes: testNodeData,
+                edges: testEdgeData,
+                paths: [],
+                notSelectNewElements: true,
+                extraLayoutConfig: {
+                    name: 'dagre',
+                    fit: true,
+                    padding: 100,
+                    layoutAll: true,
+                },
+            });
+            cyState.canvasSetting.globalEdgeConfig.hideEdgeLabel = true;
         });
     }
 }
@@ -221,6 +225,7 @@ function afterRendering(mainStore: DisplayModeCanvasStore, isFirstName: boolean)
 // const style = {height: '100%', width: '100%'};
 
 export default <SimplePipelineDisplay
+    style={{height: 600, marginTop: 20}}
     afterRendering={afterRendering}
     mainStore={store}
     locale={Locales.zh}

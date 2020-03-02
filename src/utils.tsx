@@ -1624,3 +1624,6 @@ export function changeTheme(t: SophonTheme, cb?: (t: SophonTheme) => void) {
     const body = document.getElementsByTagName('body')[0];
     body.setAttribute('data-theme', t);
 }
+
+import createHistory from 'history/createBrowserHistory';
+export const HISTORY = createHistory();

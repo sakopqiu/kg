@@ -1,0 +1,6 @@
+.example {
+    display: flex;
+    transition: all 1s;
+    user-select: auto;
+    background: linear-gradient(to bottom, white, black);
+}

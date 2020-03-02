@@ -1,6 +1,6 @@
 import {CyNode, CyNodeData} from './CyNode';
 import {CyEdge, CyEdgeData, emi} from './CyEdge';
-import {action, computed, observable, ObservableMap} from 'mobx';
+import {action, computed, observable, ObservableMap, runInAction} from 'mobx';
 import {Classifier, debug, filterCommonId, IPoint} from '../../../utils';
 import {CyElementData} from './CyElement';
 import {CyCommunityNodeData} from './CyCommunityNode';
@@ -1256,6 +1256,10 @@ export class CyState {
         const eligibleEdgeIds: string[] = this.cyEdges.filter((e) => this.eligible(e.data, idOrName))
             .map(e => e.data.id);
         return [...eligibleEdgeIds, ...eligibleNodeIds];
+    }
+
+    public transaction(func: (...val: any[]) => any) {
+        runInAction(func);
     }
 
 }

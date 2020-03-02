@@ -141,6 +141,13 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
+"@babel/runtime@^7.5.5":
+  version "7.8.4"
+  resolved "http://172.16.1.161:30033/repository/npm-group/@babel/runtime/-/runtime-7.8.4.tgz#d79f5a2040f7caa24d53e563aad49cbc05581308"
+  integrity sha1-159aIED3yqJNU+VjqtScvAVYEwg=
+  dependencies:
+    regenerator-runtime "^0.13.2"
+
 "@babel/runtime@^7.6.3":
   version "7.7.7"
   resolved "http://172.16.1.161:30033/repository/npm-group/@babel/runtime/-/runtime-7.7.7.tgz#194769ca8d6d7790ec23605af9ee3e42a0aa79cf"
@@ -220,10 +227,31 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
+"@nodelib/fs.scandir@2.1.3":
+  version "2.1.3"
+  resolved "http://172.16.1.161:30033/repository/npm-group/@nodelib/fs.scandir/-/fs.scandir-2.1.3.tgz#3a582bdb53804c6ba6d146579c46e52130cf4a3b"
+  integrity sha1-Olgr21OATGum0UZXnEblITDPSjs=
+  dependencies:
+    "@nodelib/fs.stat" "2.0.3"
+    run-parallel "^1.1.9"
+
+"@nodelib/fs.stat@2.0.3", "@nodelib/fs.stat@^2.0.2":
+  version "2.0.3"
+  resolved "http://172.16.1.161:30033/repository/npm-group/@nodelib/fs.stat/-/fs.stat-2.0.3.tgz#34dc5f4cabbc720f4e60f75a747e7ecd6c175bd3"
+  integrity sha1-NNxfTKu8cg9OYPdadH5+zWwXW9M=
+
 "@nodelib/fs.stat@^1.1.2":
   version "1.1.3"
   resolved "http://172.16.1.161:30033/repository/npm-group/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
   integrity sha1-K1o6s/kYzKSKjHVMCBaOPwPrphs=
+
+"@nodelib/fs.walk@^1.2.3":
+  version "1.2.4"
+  resolved "http://172.16.1.161:30033/repository/npm-group/@nodelib/fs.walk/-/fs.walk-1.2.4.tgz#011b9202a70a6366e436ca5c065844528ab04976"
+  integrity sha1-ARuSAqcKY2bkNspcBlhEUoqwSXY=
+  dependencies:
+    "@nodelib/fs.scandir" "2.1.3"
+    fastq "^1.6.0"
 
 "@sophon/flvjs@^1.5.0":
   version "1.5.2"
@@ -902,7 +930,7 @@ ansi-styles@^3.2.0, ansi-styles@^3.2.1:
   dependencies:
     color-convert "^1.9.0"
 
-ansi-styles@^4.1.0:
+ansi-styles@^4.0.0, ansi-styles@^4.1.0:
   version "4.2.1"
   resolved "http://172.16.1.161:30033/repository/npm-group/ansi-styles/-/ansi-styles-4.2.1.tgz#90ae75c424d008d2624c5bf29ead3177ebfcf359"
   integrity sha1-kK51xCTQCNJiTFvynq0xd+v881k=
@@ -1078,6 +1106,11 @@ array-union@^1.0.1, array-union@^1.0.2:
   dependencies:
     array-uniq "^1.0.1"
 
+array-union@^2.1.0:
+  version "2.1.0"
+  resolved "http://172.16.1.161:30033/repository/npm-group/array-union/-/array-union-2.1.0.tgz#b798420adbeb1de828d84acd8a2e23d3efe85e8d"
+  integrity sha1-t5hCCtvrHego2ErNii4j0+/oXo0=
+
 array-uniq@^1.0.1, array-uniq@^1.0.2:
   version "1.0.3"
   resolved "http://172.16.1.161:30033/repository/npm-group/array-uniq/-/array-uniq-1.0.3.tgz#af6ac877a25cc7f74e058894753858dfdb24fdb6"
@@ -1200,18 +1233,6 @@ atob@^2.1.1:
   resolved "http://172.16.1.161:30033/repository/npm-group/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha1-bZUX654DDSQ2ZmZR6GvZ9vE1M8k=
 
-autoprefixer@^9.1.5:
-  version "9.5.1"
-  resolved "http://172.16.1.161:30033/repository/npm-group/autoprefixer/-/autoprefixer-9.5.1.tgz#243b1267b67e7e947f28919d786b50d3bb0fb357"
-  integrity sha1-JDsSZ7Z+fpR/KJGdeGtQ07sPs1c=
-  dependencies:
-    browserslist "^4.5.4"
-    caniuse-lite "^1.0.30000957"
-    normalize-range "^0.1.2"
-    num2fraction "^1.2.2"
-    postcss "^7.0.14"
-    postcss-value-parser "^3.3.1"
-
 autoprefixer@^9.7.1:
   version "9.7.3"
   resolved "http://172.16.1.161:30033/repository/npm-group/autoprefixer/-/autoprefixer-9.7.3.tgz#fd42ed03f53de9beb4ca0d61fb4f7268a9bb50b4"
@@ -1223,6 +1244,19 @@ autoprefixer@^9.7.1:
     normalize-range "^0.1.2"
     num2fraction "^1.2.2"
     postcss "^7.0.23"
+    postcss-value-parser "^4.0.2"
+
+autoprefixer@^9.7.4:
+  version "9.7.4"
+  resolved "http://172.16.1.161:30033/repository/npm-group/autoprefixer/-/autoprefixer-9.7.4.tgz#f8bf3e06707d047f0641d87aee8cfb174b2a5378"
+  integrity sha1-+L8+BnB9BH8GQdh67oz7F0sqU3g=
+  dependencies:
+    browserslist "^4.8.3"
+    caniuse-lite "^1.0.30001020"
+    chalk "^2.4.2"
+    normalize-range "^0.1.2"
+    num2fraction "^1.2.2"
+    postcss "^7.0.26"
     postcss-value-parser "^4.0.2"
 
 awesome-typescript-loader@^5.2.1:
@@ -1660,14 +1694,14 @@ browserslist@^4.0.0, browserslist@^4.8.0:
     electron-to-chromium "^1.3.322"
     node-releases "^1.1.44"
 
-browserslist@^4.5.4:
-  version "4.5.5"
-  resolved "http://172.16.1.161:30033/repository/npm-group/browserslist/-/browserslist-4.5.5.tgz#fe1a352330d2490d5735574c149a85bc18ef9b82"
-  integrity sha1-/ho1IzDSSQ1XNVdMFJqFvBjvm4I=
+browserslist@^4.8.3:
+  version "4.9.0"
+  resolved "http://172.16.1.161:30033/repository/npm-group/browserslist/-/browserslist-4.9.0.tgz#ff85c390889e0f754d7bd8ad13412575cdcf5dc7"
+  integrity sha1-/4XDkIieD3VNe9itE0Eldc3PXcc=
   dependencies:
-    caniuse-lite "^1.0.30000960"
-    electron-to-chromium "^1.3.124"
-    node-releases "^1.1.14"
+    caniuse-lite "^1.0.30001030"
+    electron-to-chromium "^1.3.361"
+    node-releases "^1.1.50"
 
 buffer-from@^1.0.0:
   version "1.1.1"
@@ -1889,10 +1923,10 @@ caniuse-lite@^1.0.0, caniuse-lite@^1.0.30001012, caniuse-lite@^1.0.30001017:
   resolved "http://172.16.1.161:30033/repository/npm-group/caniuse-lite/-/caniuse-lite-1.0.30001020.tgz#3f04c1737500ffda78be9beb0b5c1e2070e15926"
   integrity sha1-PwTBc3UA/9p4vpvrC1weIHDhWSY=
 
-caniuse-lite@^1.0.30000957, caniuse-lite@^1.0.30000960:
-  version "1.0.30000963"
-  resolved "http://172.16.1.161:30033/repository/npm-group/caniuse-lite/-/caniuse-lite-1.0.30000963.tgz#5be481d5292f22aff5ee0db4a6c049b65b5798b1"
-  integrity sha1-W+SB1SkvIq/17g20psBJtltXmLE=
+caniuse-lite@^1.0.30001020, caniuse-lite@^1.0.30001030:
+  version "1.0.30001030"
+  resolved "http://172.16.1.161:30033/repository/npm-group/caniuse-lite/-/caniuse-lite-1.0.30001030.tgz#78076c4c6d67d3e41d6eb9399853fb27fe6e44ee"
+  integrity sha1-eAdsTG1n0+Qdbrk5mFP7J/5uRO4=
 
 cardinal@^2.1.1:
   version "2.1.1"
@@ -1965,7 +1999,7 @@ character-reference-invalid@^1.0.0:
   resolved "http://172.16.1.161:30033/repository/npm-group/character-reference-invalid/-/character-reference-invalid-1.1.3.tgz#1647f4f726638d3ea4a750cf5d1975c1c7919a85"
   integrity sha1-Fkf09yZjjT6kp1DPXRl1wceRmoU=
 
-"chokidar@>=2.0.0 <4.0.0":
+"chokidar@>=2.0.0 <4.0.0", chokidar@^3.3.0:
   version "3.3.1"
   resolved "http://172.16.1.161:30033/repository/npm-group/chokidar/-/chokidar-3.3.1.tgz#c84e5b3d18d9a4d77558fef466b1bf16bbeb3450"
   integrity sha1-yE5bPRjZpNd1WP70ZrG/FrvrNFA=
@@ -2099,6 +2133,15 @@ cliui@^4.0.0:
     string-width "^2.1.1"
     strip-ansi "^4.0.0"
     wrap-ansi "^2.0.0"
+
+cliui@^6.0.0:
+  version "6.0.0"
+  resolved "http://172.16.1.161:30033/repository/npm-group/cliui/-/cliui-6.0.0.tgz#511d702c0c4e41ca156d7d0e96021f23e13225b1"
+  integrity sha1-UR1wLAxOQcoVbX0OlgIfI+EyJbE=
+  dependencies:
+    string-width "^4.2.0"
+    strip-ansi "^6.0.0"
+    wrap-ansi "^6.2.0"
 
 clone-deep@^4.0.1:
   version "4.0.1"
@@ -3052,6 +3095,11 @@ depd@~1.1.2:
   resolved "http://172.16.1.161:30033/repository/npm-group/depd/-/depd-1.1.2.tgz#9bcd52e14c097763e749b274c4346ed2e560b5a9"
   integrity sha1-m81S4UwJd2PnSbJ0xDRu0uVgtak=
 
+dependency-graph@^0.8.0:
+  version "0.8.1"
+  resolved "http://172.16.1.161:30033/repository/npm-group/dependency-graph/-/dependency-graph-0.8.1.tgz#9b8cae3aa2c7bd95ccb3347a09a2d1047a6c3c5a"
+  integrity sha1-m4yuOqLHvZXMszR6CaLRBHpsPFo=
+
 deps-sort@^2.0.0:
   version "2.0.0"
   resolved "http://172.16.1.161:30033/repository/npm-group/deps-sort/-/deps-sort-2.0.0.tgz#091724902e84658260eb910748cccd1af6e21fb5"
@@ -3134,6 +3182,13 @@ dir-glob@^2.2.2:
   integrity sha1-+gnwaUFTyJGLGLoN6vrpR2n8UMQ=
   dependencies:
     path-type "^3.0.0"
+
+dir-glob@^3.0.1:
+  version "3.0.1"
+  resolved "http://172.16.1.161:30033/repository/npm-group/dir-glob/-/dir-glob-3.0.1.tgz#56dbf73d992a4a93ba1584f4534063fd2e41717f"
+  integrity sha1-Vtv3PZkqSpO6FYT0U0Bj/S5BcX8=
+  dependencies:
+    path-type "^4.0.0"
 
 dnd-core@^9.3.2:
   version "9.3.2"
@@ -3308,15 +3363,15 @@ ee-first@1.1.1:
   resolved "http://172.16.1.161:30033/repository/npm-group/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
-electron-to-chromium@^1.3.124:
-  version "1.3.127"
-  resolved "http://172.16.1.161:30033/repository/npm-group/electron-to-chromium/-/electron-to-chromium-1.3.127.tgz#9b34d3d63ee0f3747967205b953b25fe7feb0e10"
-  integrity sha1-mzTT1j7g83R5ZyBblTsl/n/rDhA=
-
 electron-to-chromium@^1.3.322:
   version "1.3.329"
   resolved "http://172.16.1.161:30033/repository/npm-group/electron-to-chromium/-/electron-to-chromium-1.3.329.tgz#ff3644fb216bdccc33b2063c36f679deb5316cde"
   integrity sha1-/zZE+yFr3MwzsgY8NvZ53rUxbN4=
+
+electron-to-chromium@^1.3.361:
+  version "1.3.364"
+  resolved "http://172.16.1.161:30033/repository/npm-group/electron-to-chromium/-/electron-to-chromium-1.3.364.tgz#524bd0cf9c45ba49c508fd3b731a07efbf310b1c"
+  integrity sha1-UkvQz5xFuknFCP07cxoH778xCxw=
 
 element-resize-event@^2.0.4:
   version "2.0.9"
@@ -3819,6 +3874,18 @@ fast-glob@^2.2.6:
     merge2 "^1.2.3"
     micromatch "^3.1.10"
 
+fast-glob@^3.0.3:
+  version "3.2.2"
+  resolved "http://172.16.1.161:30033/repository/npm-group/fast-glob/-/fast-glob-3.2.2.tgz#ade1a9d91148965d4bf7c51f72e1ca662d32e63d"
+  integrity sha1-reGp2RFIll1L98UfcuHKZi0y5j0=
+  dependencies:
+    "@nodelib/fs.stat" "^2.0.2"
+    "@nodelib/fs.walk" "^1.2.3"
+    glob-parent "^5.1.0"
+    merge2 "^1.3.0"
+    micromatch "^4.0.2"
+    picomatch "^2.2.1"
+
 fast-json-stable-stringify@^2.0.0:
   version "2.1.0"
   resolved "http://172.16.1.161:30033/repository/npm-group/fast-json-stable-stringify/-/fast-json-stable-stringify-2.1.0.tgz#874bf69c6f404c2b5d99c481341399fd55892633"
@@ -3828,6 +3895,13 @@ fastparse@^1.1.1:
   version "1.1.2"
   resolved "http://172.16.1.161:30033/repository/npm-group/fastparse/-/fastparse-1.1.2.tgz#91728c5a5942eced8531283c79441ee4122c35a9"
   integrity sha1-kXKMWllC7O2FMSg8eUQe5BIsNak=
+
+fastq@^1.6.0:
+  version "1.6.1"
+  resolved "http://172.16.1.161:30033/repository/npm-group/fastq/-/fastq-1.6.1.tgz#4570c74f2ded173e71cf0beb08ac70bb85826791"
+  integrity sha1-RXDHTy3tFz5xzwvrCKxwu4WCZ5E=
+  dependencies:
+    reusify "^1.0.4"
 
 faye-websocket@^0.10.0:
   version "0.10.0"
@@ -3946,6 +4020,14 @@ find-up@^3.0.0:
   dependencies:
     locate-path "^3.0.0"
 
+find-up@^4.1.0:
+  version "4.1.0"
+  resolved "http://172.16.1.161:30033/repository/npm-group/find-up/-/find-up-4.1.0.tgz#97afe7d6cdc0bc5928584b7c8d7b16e8a9aa5d19"
+  integrity sha1-l6/n1s3AvFkoWEt8jXsW6KmqXRk=
+  dependencies:
+    locate-path "^5.0.0"
+    path-exists "^4.0.0"
+
 findup-sync@^2.0.0:
   version "2.0.0"
   resolved "http://172.16.1.161:30033/repository/npm-group/findup-sync/-/findup-sync-2.0.0.tgz#9326b1488c22d1a6088650a86901b2d9a90a2cbc"
@@ -4038,6 +4120,15 @@ fs-extra@^4.0.2:
     jsonfile "^4.0.0"
     universalify "^0.1.0"
 
+fs-extra@^8.1.0:
+  version "8.1.0"
+  resolved "http://172.16.1.161:30033/repository/npm-group/fs-extra/-/fs-extra-8.1.0.tgz#49d43c45a88cd9677668cb7be1b46efdb8d2e1c0"
+  integrity sha1-SdQ8RaiM2Wd2aMt74bRu/bjS4cA=
+  dependencies:
+    graceful-fs "^4.2.0"
+    jsonfile "^4.0.0"
+    universalify "^0.1.0"
+
 fs-minipass@^1.2.5:
   version "1.2.5"
   resolved "http://172.16.1.161:30033/repository/npm-group/fs-minipass/-/fs-minipass-1.2.5.tgz#06c277218454ec288df77ada54a03b8702aacb9d"
@@ -4119,6 +4210,11 @@ get-caller-file@^1.0.1:
   resolved "http://172.16.1.161:30033/repository/npm-group/get-caller-file/-/get-caller-file-1.0.3.tgz#f978fa4c90d1dfe7ff2d6beda2a515e713bdcf4a"
   integrity sha1-+Xj6TJDR3+f/LWvtoqUV5xO9z0o=
 
+get-caller-file@^2.0.1:
+  version "2.0.5"
+  resolved "http://172.16.1.161:30033/repository/npm-group/get-caller-file/-/get-caller-file-2.0.5.tgz#4f94412a82db32f36e3b0b9741f8a97feb031f7e"
+  integrity sha1-T5RBKoLbMvNuOwuXQfipf+sDH34=
+
 get-stdin@^4.0.1:
   version "4.0.1"
   resolved "http://172.16.1.161:30033/repository/npm-group/get-stdin/-/get-stdin-4.0.1.tgz#b968c6b0a04384324902e8bf1a5df32579a450fe"
@@ -4156,7 +4252,7 @@ glob-parent@^3.1.0:
     is-glob "^3.1.0"
     path-dirname "^1.0.0"
 
-glob-parent@~5.1.0:
+glob-parent@^5.1.0, glob-parent@~5.1.0:
   version "5.1.0"
   resolved "http://172.16.1.161:30033/repository/npm-group/glob-parent/-/glob-parent-5.1.0.tgz#5f4c1d1e748d30cd73ad2944b3577a81b081e8c2"
   integrity sha1-X0wdHnSNMM1zrSlEs1d6gbCB6MI=
@@ -4232,6 +4328,20 @@ globals@^11.1.0:
   version "11.12.0"
   resolved "http://172.16.1.161:30033/repository/npm-group/globals/-/globals-11.12.0.tgz#ab8795338868a0babd8525758018c2a7eb95c42e"
   integrity sha1-q4eVM4hooLq9hSV1gBjCp+uVxC4=
+
+globby@^10.0.1:
+  version "10.0.2"
+  resolved "http://172.16.1.161:30033/repository/npm-group/globby/-/globby-10.0.2.tgz#277593e745acaa4646c3ab411289ec47a0392543"
+  integrity sha1-J3WT50WsqkZGw6tBEonsR6A5JUM=
+  dependencies:
+    "@types/glob" "^7.1.1"
+    array-union "^2.1.0"
+    dir-glob "^3.0.1"
+    fast-glob "^3.0.3"
+    glob "^7.1.3"
+    ignore "^5.1.1"
+    merge2 "^1.2.3"
+    slash "^3.0.0"
 
 globby@^5.0.0:
   version "5.0.0"
@@ -4314,6 +4424,11 @@ graceful-fs@^4.1.4:
   version "4.2.2"
   resolved "http://172.16.1.161:30033/repository/npm-group/graceful-fs/-/graceful-fs-4.2.2.tgz#6f0952605d0140c1cfdb138ed005775b92d67b02"
   integrity sha1-bwlSYF0BQMHP2xOO0AV3W5LWewI=
+
+graceful-fs@^4.2.0:
+  version "4.2.3"
+  resolved "http://172.16.1.161:30033/repository/npm-group/graceful-fs/-/graceful-fs-4.2.3.tgz#4a12ff1b60376ef09862c2093edd908328be8423"
+  integrity sha1-ShL/G2A3bvCYYsIJPt2Qgyi+hCM=
 
 graphlib@^2.1.7:
   version "2.1.7"
@@ -4530,6 +4645,18 @@ hex-color-regex@^1.1.0:
   version "1.1.0"
   resolved "http://172.16.1.161:30033/repository/npm-group/hex-color-regex/-/hex-color-regex-1.1.0.tgz#4c06fccb4602fe2602b3c93df82d7e7dbf1a8a8e"
   integrity sha1-TAb8y0YC/iYCs8k9+C1+fb8aio4=
+
+history@^4.10.1:
+  version "4.10.1"
+  resolved "http://172.16.1.161:30033/repository/npm-group/history/-/history-4.10.1.tgz#33371a65e3a83b267434e2b3f3b1b4c58aad4cf3"
+  integrity sha1-MzcaZeOoOyZ0NOKz87G0xYqtTPM=
+  dependencies:
+    "@babel/runtime" "^7.1.2"
+    loose-envify "^1.2.0"
+    resolve-pathname "^3.0.0"
+    tiny-invariant "^1.0.2"
+    tiny-warning "^1.0.0"
+    value-equal "^1.0.1"
 
 history@^4.9.0:
   version "4.9.0"
@@ -4805,7 +4932,7 @@ ignore@^5.0.4:
   resolved "http://172.16.1.161:30033/repository/npm-group/ignore/-/ignore-5.1.1.tgz#2fc6b8f518aff48fef65a7f348ed85632448e4a5"
   integrity sha1-L8a49Riv9I/vZafzSO2FYyRI5KU=
 
-ignore@^5.1.4:
+ignore@^5.1.1, ignore@^5.1.4:
   version "5.1.4"
   resolved "http://172.16.1.161:30033/repository/npm-group/ignore/-/ignore-5.1.4.tgz#84b7b3dbe64552b6ef0eca99f6743dbec6d97adf"
   integrity sha1-hLez2+ZFUrbvDsqZ9nQ9vsbZet8=
@@ -5733,6 +5860,13 @@ locate-path@^3.0.0:
     p-locate "^3.0.0"
     path-exists "^3.0.0"
 
+locate-path@^5.0.0:
+  version "5.0.0"
+  resolved "http://172.16.1.161:30033/repository/npm-group/locate-path/-/locate-path-5.0.0.tgz#1afba396afd676a6d42504d0a67a3a7eb9f62aa0"
+  integrity sha1-Gvujlq/WdqbUJQTQpno6frn2KqA=
+  dependencies:
+    p-locate "^4.1.0"
+
 lodash._arraycopy@^3.0.0:
   version "3.0.0"
   resolved "http://172.16.1.161:30033/repository/npm-group/lodash._arraycopy/-/lodash._arraycopy-3.0.0.tgz#76e7b7c1f1fb92547374878a562ed06a3e50f6e1"
@@ -6204,7 +6338,7 @@ merge-descriptors@1.0.1:
   resolved "http://172.16.1.161:30033/repository/npm-group/merge-descriptors/-/merge-descriptors-1.0.1.tgz#b00aaa556dd8b44568150ec9d1b953f3f90cbb61"
   integrity sha1-sAqqVW3YtEVoFQ7J0blT8/kMu2E=
 
-merge2@^1.2.3:
+merge2@^1.2.3, merge2@^1.3.0:
   version "1.3.0"
   resolved "http://172.16.1.161:30033/repository/npm-group/merge2/-/merge2-1.3.0.tgz#5b366ee83b2f1582c48f87e47cf1a9352103ca81"
   integrity sha1-WzZu6DsvFYLEj4fkfPGpNSEDyoE=
@@ -6787,17 +6921,17 @@ node-pre-gyp@^0.12.0:
     semver "^5.3.0"
     tar "^4"
 
-node-releases@^1.1.14:
-  version "1.1.17"
-  resolved "http://172.16.1.161:30033/repository/npm-group/node-releases/-/node-releases-1.1.17.tgz#71ea4631f0a97d5cd4f65f7d04ecf9072eac711a"
-  integrity sha1-cepGMfCpfVzU9l99BOz5By6scRo=
-  dependencies:
-    semver "^5.3.0"
-
 node-releases@^1.1.44:
   version "1.1.45"
   resolved "http://172.16.1.161:30033/repository/npm-group/node-releases/-/node-releases-1.1.45.tgz#4cf7e9175d71b1317f15ffd68ce63bce1d53e9f2"
   integrity sha1-TPfpF11xsTF/Ff/WjOY7zh1T6fI=
+  dependencies:
+    semver "^6.3.0"
+
+node-releases@^1.1.50:
+  version "1.1.50"
+  resolved "http://172.16.1.161:30033/repository/npm-group/node-releases/-/node-releases-1.1.50.tgz#803c40d2c45db172d0410e4efec83aa8c6ad0592"
+  integrity sha1-gDxA0sRdsXLQQQ5O/sg6qMatBZI=
   dependencies:
     semver "^6.3.0"
 
@@ -7138,6 +7272,13 @@ p-limit@^2.0.0:
   dependencies:
     p-try "^2.0.0"
 
+p-limit@^2.2.0:
+  version "2.2.2"
+  resolved "http://172.16.1.161:30033/repository/npm-group/p-limit/-/p-limit-2.2.2.tgz#61279b67721f5287aa1c13a9a7fbbc48c9291b1e"
+  integrity sha1-YSebZ3IfUoeqHBOpp/u8SMkpGx4=
+  dependencies:
+    p-try "^2.0.0"
+
 p-locate@^2.0.0:
   version "2.0.0"
   resolved "http://172.16.1.161:30033/repository/npm-group/p-locate/-/p-locate-2.0.0.tgz#20a0103b222a70c8fd39cc2e580680f3dde5ec43"
@@ -7151,6 +7292,13 @@ p-locate@^3.0.0:
   integrity sha1-Mi1poFwCZLJZl9n0DNiokasAZKQ=
   dependencies:
     p-limit "^2.0.0"
+
+p-locate@^4.1.0:
+  version "4.1.0"
+  resolved "http://172.16.1.161:30033/repository/npm-group/p-locate/-/p-locate-4.1.0.tgz#a3428bb7088b3a60292f66919278b7c297ad4f07"
+  integrity sha1-o0KLtwiLOmApL2aRkni3wpetTwc=
+  dependencies:
+    p-limit "^2.2.0"
 
 p-map@^2.0.0:
   version "2.1.0"
@@ -7312,6 +7460,11 @@ path-exists@^3.0.0:
   resolved "http://172.16.1.161:30033/repository/npm-group/path-exists/-/path-exists-3.0.0.tgz#ce0ebeaa5f78cb18925ea7d810d7b59b010fd515"
   integrity sha1-zg6+ql94yxiSXqfYENe1mwEP1RU=
 
+path-exists@^4.0.0:
+  version "4.0.0"
+  resolved "http://172.16.1.161:30033/repository/npm-group/path-exists/-/path-exists-4.0.0.tgz#513bdbe2d3b95d7762e8c1137efa195c6c61b5b3"
+  integrity sha1-UTvb4tO5XXdi6METfvoZXGxhtbM=
+
 path-is-absolute@^1.0.0, path-is-absolute@^1.0.1:
   version "1.0.1"
   resolved "http://172.16.1.161:30033/repository/npm-group/path-is-absolute/-/path-is-absolute-1.0.1.tgz#174b9268735534ffbc7ace6bf53a5a9e1b5c5f5f"
@@ -7396,7 +7549,7 @@ picomatch@^2.0.4, picomatch@^2.0.7:
   resolved "http://172.16.1.161:30033/repository/npm-group/picomatch/-/picomatch-2.1.1.tgz#ecdfbea7704adb5fe6fb47f9866c4c0e15e905c5"
   integrity sha1-7N++p3BK21/m+0f5hmxMDhXpBcU=
 
-picomatch@^2.0.5:
+picomatch@^2.0.5, picomatch@^2.2.1:
   version "2.2.1"
   resolved "http://172.16.1.161:30033/repository/npm-group/picomatch/-/picomatch-2.2.1.tgz#21bac888b6ed8601f831ce7816e335bc779f0a4a"
   integrity sha1-IbrIiLbthgH4Mc54FuM1vHefCko=
@@ -7465,6 +7618,24 @@ postcss-calc@^7.0.1:
     postcss "^7.0.5"
     postcss-selector-parser "^5.0.0-rc.4"
     postcss-value-parser "^3.3.1"
+
+postcss-cli@^7.1.0:
+  version "7.1.0"
+  resolved "http://172.16.1.161:30033/repository/npm-group/postcss-cli/-/postcss-cli-7.1.0.tgz#769b07b8865aaa3e98c7c63a3d256b4f51e3e237"
+  integrity sha1-dpsHuIZaqj6Yx8Y6PSVrT1Hj4jc=
+  dependencies:
+    chalk "^3.0.0"
+    chokidar "^3.3.0"
+    dependency-graph "^0.8.0"
+    fs-extra "^8.1.0"
+    get-stdin "^7.0.0"
+    globby "^10.0.1"
+    postcss "^7.0.0"
+    postcss-load-config "^2.0.0"
+    postcss-reporter "^6.0.0"
+    pretty-hrtime "^1.0.3"
+    read-cache "^1.0.0"
+    yargs "^15.0.2"
 
 postcss-colormin@^4.0.3:
   version "4.0.3"
@@ -7768,7 +7939,7 @@ postcss-reduce-transforms@^4.0.2:
     postcss "^7.0.0"
     postcss-value-parser "^3.0.0"
 
-postcss-reporter@^6.0.1:
+postcss-reporter@^6.0.0, postcss-reporter@^6.0.1:
   version "6.0.1"
   resolved "http://172.16.1.161:30033/repository/npm-group/postcss-reporter/-/postcss-reporter-6.0.1.tgz#7c055120060a97c8837b4e48215661aafb74245f"
   integrity sha1-fAVRIAYKl8iDe05IIVZhqvt0JF8=
@@ -7908,6 +8079,11 @@ pretty-error@^2.0.2:
   dependencies:
     renderkid "^2.0.1"
     utila "~0.4"
+
+pretty-hrtime@^1.0.3:
+  version "1.0.3"
+  resolved "http://172.16.1.161:30033/repository/npm-group/pretty-hrtime/-/pretty-hrtime-1.0.3.tgz#b7e3ea42435a4c9b2759d99e0f201eb195802ee1"
+  integrity sha1-t+PqQkNaTJsnWdmeDyAesZWALuE=
 
 process-nextick-args@~1.0.6:
   version "1.0.7"
@@ -8794,6 +8970,11 @@ react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1:
   resolved "http://172.16.1.161:30033/repository/npm-group/react-is/-/react-is-16.8.6.tgz#5bbc1e2d29141c9fbdfed456343fe2bc430a6a16"
   integrity sha1-W7weLSkUHJ+9/tRWND/ivEMKahY=
 
+react-is@^16.9.0:
+  version "16.13.0"
+  resolved "http://172.16.1.161:30033/repository/npm-group/react-is/-/react-is-16.13.0.tgz#0f37c3613c34fe6b37cd7f763a0d6293ab15c527"
+  integrity sha1-DzfDYTw0/ms3zX92Og1ik6sVxSc=
+
 react-lazy-load@^3.0.13:
   version "3.0.13"
   resolved "http://172.16.1.161:30033/repository/npm-group/react-lazy-load/-/react-lazy-load-3.0.13.tgz#3b0a92d336d43d3f0d73cbe6f35b17050b08b824"
@@ -8817,6 +8998,17 @@ react-motion@^0.5.0:
     performance-now "^0.2.0"
     prop-types "^15.5.8"
     raf "^3.1.0"
+
+react-redux@^7.2.0:
+  version "7.2.0"
+  resolved "http://172.16.1.161:30033/repository/npm-group/react-redux/-/react-redux-7.2.0.tgz#f970f62192b3981642fec46fd0db18a074fe879d"
+  integrity sha1-+XD2IZKzmBZC/sRv0NsYoHT+h50=
+  dependencies:
+    "@babel/runtime" "^7.5.5"
+    hoist-non-react-statics "^3.3.0"
+    loose-envify "^1.4.0"
+    prop-types "^15.7.2"
+    react-is "^16.9.0"
 
 react-router-dom@^5.0.0:
   version "5.0.0"
@@ -8897,6 +9089,13 @@ reactcss@^1.2.0:
   integrity sha1-wAATh15Vexzw39mjaKHD2rO1SN0=
   dependencies:
     lodash "^4.0.1"
+
+read-cache@^1.0.0:
+  version "1.0.0"
+  resolved "http://172.16.1.161:30033/repository/npm-group/read-cache/-/read-cache-1.0.0.tgz#e664ef31161166c9751cdbe8dbcf86b5fb58f774"
+  integrity sha1-5mTvMRYRZsl1HNvo28+GtftY93Q=
+  dependencies:
+    pify "^2.3.0"
 
 read-only-stream@^2.0.0:
   version "2.0.0"
@@ -9047,6 +9246,11 @@ redeyed@~2.1.0:
   integrity sha1-iYS1gV2ZyyIEacme7v/jiRPmzAs=
   dependencies:
     esprima "~4.0.0"
+
+redux-thunk@^2.3.0:
+  version "2.3.0"
+  resolved "http://172.16.1.161:30033/repository/npm-group/redux-thunk/-/redux-thunk-2.3.0.tgz#51c2c19a185ed5187aaa9a2d08b666d0d6467622"
+  integrity sha1-UcLBmhhe1Rh6qpotCLZm0NZGdiI=
 
 redux@^4.0.1:
   version "4.0.1"
@@ -9247,10 +9451,20 @@ require-main-filename@^1.0.1:
   resolved "http://172.16.1.161:30033/repository/npm-group/require-main-filename/-/require-main-filename-1.0.1.tgz#97f717b69d48784f5f526a6c5aa8ffdda055a4d1"
   integrity sha1-l/cXtp1IeE9fUmpsWqj/3aBVpNE=
 
+require-main-filename@^2.0.0:
+  version "2.0.0"
+  resolved "http://172.16.1.161:30033/repository/npm-group/require-main-filename/-/require-main-filename-2.0.0.tgz#d0b329ecc7cc0f61649f62215be69af54aa8989b"
+  integrity sha1-0LMp7MfMD2Fkn2IhW+aa9UqomJs=
+
 requires-port@^1.0.0:
   version "1.0.0"
   resolved "http://172.16.1.161:30033/repository/npm-group/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
   integrity sha1-kl0mAdOaxIXgkc8NpcbmlNw9yv8=
+
+reselect@^4.0.0:
+  version "4.0.0"
+  resolved "http://172.16.1.161:30033/repository/npm-group/reselect/-/reselect-4.0.0.tgz#f2529830e5d3d0e021408b246a206ef4ea4437f7"
+  integrity sha1-8lKYMOXT0OAhQIskaiBu9OpEN/c=
 
 resize-observer-polyfill@^1.5.0, resize-observer-polyfill@^1.5.1:
   version "1.5.1"
@@ -9292,6 +9506,11 @@ resolve-pathname@^2.2.0:
   resolved "http://172.16.1.161:30033/repository/npm-group/resolve-pathname/-/resolve-pathname-2.2.0.tgz#7e9ae21ed815fd63ab189adeee64dc831eefa879"
   integrity sha1-fpriHtgV/WOrGJre7mTcgx7vqHk=
 
+resolve-pathname@^3.0.0:
+  version "3.0.0"
+  resolved "http://172.16.1.161:30033/repository/npm-group/resolve-pathname/-/resolve-pathname-3.0.0.tgz#99d02224d3cf263689becbb393bc560313025dcd"
+  integrity sha1-mdAiJNPPJjaJvsuzk7xWAxMCXc0=
+
 resolve-url@^0.2.1:
   version "0.2.1"
   resolved "http://172.16.1.161:30033/repository/npm-group/resolve-url/-/resolve-url-0.2.1.tgz#2c637fe77c893afd2a663fe21aa9080068e2052a"
@@ -9320,6 +9539,11 @@ ret@~0.1.10:
   version "0.1.15"
   resolved "http://172.16.1.161:30033/repository/npm-group/ret/-/ret-0.1.15.tgz#b8a4825d5bdb1fc3f6f53c2bc33f81388681c7bc"
   integrity sha1-uKSCXVvbH8P29Twrwz+BOIaBx7w=
+
+reusify@^1.0.4:
+  version "1.0.4"
+  resolved "http://172.16.1.161:30033/repository/npm-group/reusify/-/reusify-1.0.4.tgz#90da382b1e126efc02146e90845a88db12925d76"
+  integrity sha1-kNo4Kx4SbvwCFG6QhFqI2xKSXXY=
 
 rgb-regex@^1.0.1:
   version "1.0.1"
@@ -9360,6 +9584,11 @@ rmc-feedback@^2.0.0:
   dependencies:
     babel-runtime "6.x"
     classnames "^2.2.5"
+
+run-parallel@^1.1.9:
+  version "1.1.9"
+  resolved "http://172.16.1.161:30033/repository/npm-group/run-parallel/-/run-parallel-1.1.9.tgz#c9dd3a7cf9f4b2c4b6244e173a6ed866e61dd679"
+  integrity sha1-yd06fPn0ssS2JE4XOm7YZuYd1nk=
 
 run-queue@^1.0.0, run-queue@^1.0.3:
   version "1.0.3"
@@ -10071,7 +10300,7 @@ string-width@^3.0.0:
     is-fullwidth-code-point "^2.0.0"
     strip-ansi "^5.1.0"
 
-string-width@^4.2.0:
+string-width@^4.1.0, string-width@^4.2.0:
   version "4.2.0"
   resolved "http://172.16.1.161:30033/repository/npm-group/string-width/-/string-width-4.2.0.tgz#952182c46cc7b2c313d1596e623992bd163b72b5"
   integrity sha1-lSGCxGzHssMT0VluYjmSvRY7crU=
@@ -11080,6 +11309,11 @@ value-equal@^0.4.0:
   resolved "http://172.16.1.161:30033/repository/npm-group/value-equal/-/value-equal-0.4.0.tgz#c5bdd2f54ee093c04839d71ce2e4758a6890abc7"
   integrity sha1-xb3S9U7gk8BIOdcc4uR1imiQq8c=
 
+value-equal@^1.0.1:
+  version "1.0.1"
+  resolved "http://172.16.1.161:30033/repository/npm-group/value-equal/-/value-equal-1.0.1.tgz#1e0b794c734c5c0cade179c437d356d931a34d6c"
+  integrity sha1-Hgt5THNMXAyt4XnEN9NW2TGjTWw=
+
 vary@~1.1.2:
   version "1.1.2"
   resolved "http://172.16.1.161:30033/repository/npm-group/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
@@ -11435,6 +11669,15 @@ wrap-ansi@^2.0.0:
     string-width "^1.0.1"
     strip-ansi "^3.0.1"
 
+wrap-ansi@^6.2.0:
+  version "6.2.0"
+  resolved "http://172.16.1.161:30033/repository/npm-group/wrap-ansi/-/wrap-ansi-6.2.0.tgz#e9393ba07102e6c91a3b221478f0257cd2856e53"
+  integrity sha1-6Tk7oHEC5skaOyIUePAlfNKFblM=
+  dependencies:
+    ansi-styles "^4.0.0"
+    string-width "^4.1.0"
+    strip-ansi "^6.0.0"
+
 wrappy@1:
   version "1.0.2"
   resolved "http://172.16.1.161:30033/repository/npm-group/wrappy/-/wrappy-1.0.2.tgz#b5243d8f3ec1aa35f1364605bc0d1036e30ab69f"
@@ -11534,6 +11777,14 @@ yargs-parser@^11.1.1:
     camelcase "^5.0.0"
     decamelize "^1.2.0"
 
+yargs-parser@^16.1.0:
+  version "16.1.0"
+  resolved "http://172.16.1.161:30033/repository/npm-group/yargs-parser/-/yargs-parser-16.1.0.tgz#73747d53ae187e7b8dbe333f95714c76ea00ecf1"
+  integrity sha1-c3R9U64YfnuNvjM/lXFMduoA7PE=
+  dependencies:
+    camelcase "^5.0.0"
+    decamelize "^1.2.0"
+
 yargs-parser@^4.2.0:
   version "4.2.1"
   resolved "http://172.16.1.161:30033/repository/npm-group/yargs-parser/-/yargs-parser-4.2.1.tgz#29cceac0dc4f03c6c87b4a9f217dd18c9f74871c"
@@ -11565,6 +11816,23 @@ yargs@12.0.5, yargs@^12.0.5:
     which-module "^2.0.0"
     y18n "^3.2.1 || ^4.0.0"
     yargs-parser "^11.1.1"
+
+yargs@^15.0.2:
+  version "15.1.0"
+  resolved "http://172.16.1.161:30033/repository/npm-group/yargs/-/yargs-15.1.0.tgz#e111381f5830e863a89550bd4b136bb6a5f37219"
+  integrity sha1-4RE4H1gw6GOolVC9SxNrtqXzchk=
+  dependencies:
+    cliui "^6.0.0"
+    decamelize "^1.2.0"
+    find-up "^4.1.0"
+    get-caller-file "^2.0.1"
+    require-directory "^2.1.1"
+    require-main-filename "^2.0.0"
+    set-blocking "^2.0.0"
+    string-width "^4.2.0"
+    which-module "^2.0.0"
+    y18n "^4.0.0"
+    yargs-parser "^16.1.0"
 
 yargs@^6.5.0:
   version "6.6.0"

@@ -18,7 +18,7 @@ const proxyBaseConfig = devCommon.getProxyBaseConfig(customConfig.proxyUrl);
 const result = merge.smart(common, devCommon.config, {
     entry: {
         index: [
-            './src/index.tsx',
+            './src/InvestmentApp/components/InvestmentApp.tsx',
         ]
     },
     devServer: {

@@ -1,0 +1,61 @@
+@use '../../../themes/tm';
+
+.data-query {
+  height: 100%;
+  padding: 30px;
+
+  .search-area {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+
+    &-input {
+      width: 300px;
+    }
+
+    &-confirm {
+      margin-left: 10px;
+    }
+  }
+
+  .content-area {
+    .content-switcher {
+      padding: 8px 10px;
+      font-size: 12px;
+      color: #4B5668;
+      background: #eef2f8;
+      cursor: pointer;
+
+      &.active {
+        background: #5099ea;
+        color: white;
+      }
+    }
+
+    .company-meta {
+      padding: 20px;
+      background: #f8f9fb;
+      height: 300px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      margin-top: 20px;
+
+      &-item {
+        width: 50%;
+        margin-bottom: 8px;
+        font-size: 12px;
+
+        span:first-child {
+          color: #949DAD;
+          margin-right: 8px;
+        }
+
+        span:nth-child(2) {
+          color: #4B5668;
+        }
+      }
+    }
+  }
+}
